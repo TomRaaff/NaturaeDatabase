@@ -1,0 +1,17 @@
+Naturae Design Prioriteiten
+
+
+1: Overzicht stockists en wat er bij hun ligt.
+	contract
+	contract einde
+
+2. Overzicht hoeveel samples ik heb en waar ze liggen
+
+3. Planning wat er besteld is bij winkels en klanten
+	gekoppeld aan inkomsten
+
+4. Wat er binnenkomt: stockist/klanten
+
+5. wat er uitgaat aan inkoop. (materiaalkosten? Hoeveel verkochte producten?)
+
+6. Hoeveel geld is er over voor campagnes
