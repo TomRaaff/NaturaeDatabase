@@ -3,7 +3,7 @@ package naturaedatabase;
 import java.util.Date;
 
 public class Winkel {
-	private String naam;
+	private String klantNaam;
 	private String adres;
 	private String mail;
 	private String telNr;
@@ -12,6 +12,7 @@ public class Winkel {
 	private Date startDatumContract;
 	private int klantId;
 	private String notitie;
+	private String contactPersoon;
 	
 	
 }

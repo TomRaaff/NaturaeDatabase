@@ -1,7 +1,7 @@
 package naturaedatabase;
 
 public class Product {
-	private String naam;
+	private String productNaam;
 	private double inkoopprijs;
 	private double verkoopprijs;
 	private double werkUren;
@@ -21,7 +21,7 @@ public class Product {
 	public boolean isSample() {
 		return isSample;
 	}
-
+/*
 	public String getNaam() {
 		return naam;
 	}
@@ -29,7 +29,7 @@ public class Product {
 	public void setNaam(String naam) {
 		this.naam = naam;
 	}
-
+*/
 	public double getInkoopprijs() {
 		return inkoopprijs;
 	}
