@@ -40,6 +40,7 @@ WebPagina's:
 	- welke deadlines?
 	- wat wordt er besteld door winkels?
 	- wat wordt er besteld door klanten
+	- Hoe vaak is ieder product besteld
 - Financiën
 	- inkomsten
 	- uitgaven
