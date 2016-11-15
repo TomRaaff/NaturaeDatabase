@@ -46,38 +46,51 @@ WebPagina's:
 	- uitgaven
 	- in kas
 - Invoerpagina
+- ProductPagina
 - Contract invulpagina
 	verhuur van samples (fotografen, winkels)
-	3 contracten: verhuur, consignatie en wholesale
+	4 contracten: verhuur, consignatie, wholesale en trunkshow
 	Consignatie (spullen liggen daar maar zijn nog niet verkocht) 7 maanden
 		melding klant naar inkopen overgaan
-		bied ze niet meer aan
+		als deadline contract verstreken: melding
 	Consignment en wholesale
 		melding met mail vraag hoe het gaat
 	wholesale = bestelling
 	trunkshow contract
 
-
-als deadline contract verstreken: melding
-overzicht adressen in bezit van samples
-trunkshow pagina:
+- overzicht adressen/organisaties/personen in bezit van samples
+- trunkshow pagina:
 	route van producten
 	invul pagina
 
 - verkoop overzicht pagina
-Per product: materialen in url's, prijs, uren werk in euros, inkoopprijs, verkoopprijs 
 
 
 Databases:
 - Stockists
 	Stockist Naam / adres / contact / website / hebben samples? / welke samples / 
-	contract / verloop datum contract / contact persoon / notities
+	contract / verloop datum contract / contact persoon / notities / klantnummer
 - Product
 	Product Naam / prijs / hoeveel op consignatie? / huidige locatie / op voorraad / in bestelling / hoe vaak verkocht? /
- 	website url / is sample? /  
-- Sample overzicht
-	hoeveel uitgeleend? / 
-- (materiaal)
+ 	website url / is sample? / materialen per product (url) / inkoopprijs / verkoopprijs / uren werk in euro's
+
+
+
+
+
+Prioriteit:
+- toverstok
+- bestellingen
+- Overzicht van wie welke producten heeft
+
+
+
+
+
+
+
+
+
 
 
 
