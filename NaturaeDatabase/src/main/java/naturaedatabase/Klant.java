@@ -1,7 +1,5 @@
 package naturaedatabase;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +14,8 @@ public class Klant {
 	private String mail;
 	private String telNr;
 	private int typeContract;	//0 = geen, 1 = verhuur, 2 = consignatie, 3 = Verkoop, 4 = Trunkshow, 5 = verhuur&consignatie
-	private Date eindDatumContract;
-	private Date startDatumContract;
+	private String eindDatumContract;
+	private String startDatumContract;
 	private String notitie;
 	private String contactPersoon;
 	
@@ -66,16 +64,16 @@ public class Klant {
 	public void setTypeContract(int typeContract) {
 		this.typeContract = typeContract;
 	}
-	public Date getEindDatumContract() {
+	public String getEindDatumContract() {
 		return eindDatumContract;
 	}
-	public void setEindDatumContract(Date eindDatumContract) {
+	public void setEindDatumContract(String eindDatumContract) {
 		this.eindDatumContract = eindDatumContract;
 	}
-	public Date getStartDatumContract() {
+	public String getStartDatumContract() {
 		return startDatumContract;
 	}
-	public void setStartDatumContract(Date startDatumContract) {
+	public void setStartDatumContract(String startDatumContract) {
 		this.startDatumContract = startDatumContract;
 	}
 	public String getNotitie() {
