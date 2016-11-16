@@ -36,6 +36,7 @@ Consigned merchandise shall remain the property of Naturae Design until sold, ex
 <p>6.DEFAULTS<br>
 If ${klantNaam} fails to abide by the obligations of this Agreement, including the obligation to remit consignment payment to Naturae Design when due. Naturae Design shall have the option to cancel this Agreement within 30 days written notice to ${klantNaam}.
  It is agreed that if ${klantNaam} violates the terms of this Agreement irreparable harm will occur, and money damages will be insufficient to compensate Naturae Design. Therefore, Naturae Design will be entitled to seek injunctive relief (i.e., a court order that requires ${klantNaam} to comply with this Agreement) to enforce the terms of this Agreement. The prevailing party shall have the right to collect from the other party its reasonable costs and necessary disbursements and attorneys' fees incurred in enforcing this Agreement.
+<br><br><br><br><br>
 <p>
 7. APPLICABLE LAW. <br>
 This Agreement shall be governed by the laws of the Netherlands.
