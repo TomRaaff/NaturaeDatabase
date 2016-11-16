@@ -71,9 +71,10 @@ Databases:
 	Stockist Naam / adres / contact / website / hebben samples? / welke samples / 
 	contract / verloop datum contract / contact persoon / notities / klantnummer
 - Product
-	Product Naam / prijs / hoeveel op consignatie? / huidige locatie / op voorraad / in bestelling / hoe vaak verkocht? /
- 	website url / is sample? / materialen per product (url) / inkoopprijs / verkoopprijs / uren werk in euro's
-
+	Product Naam / prijs / op voorraad / hoe vaak verkocht? /
+ 	materialen per product (url) / inkoopprijs / verkoopprijs / uren werk in euro's
+- Sample
+	hoeveel op consignatie? / huidige locatie / 
 
 
 
@@ -83,6 +84,17 @@ Prioriteit:
 - bestellingen
 - Overzicht van wie welke producten heeft
 
+Benodigdheden:
+- producten db
+- bestelling invoer pagina (Nieuwe klant / bestaande klant optie)
+- bestellingen overzicht pagina
+	deadlines
+	producthoeveelheden
+	Zoeken per bestelling
+		Producten
+		info klant
+	evt. producten op voorraad.
+	
 
 
 

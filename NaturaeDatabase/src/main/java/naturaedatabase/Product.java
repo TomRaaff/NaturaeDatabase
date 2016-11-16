@@ -1,74 +1,67 @@
 package naturaedatabase;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
+	private int productId;
 	private String productNaam;
-	private double inkoopprijs;
-	private double verkoopprijs;
+	private double inkoopPrijs;
+	private double verkoopPrijs;
 	private double werkUren;
-	private boolean isSample;
-	private int productId;		//moet later geïnstantieerd worden op basis van de database
-	private Object klant;		
-	
-	
-	//constructor
-	public Product(){
-		
-	}
-	
+	private int hoeVaakVerkocht = 0;
+	private String materialenUrls;
 	
 	
 	//getters en setters
-	public boolean isSample() {
-		return isSample;
-	}
-/*
-	public String getNaam() {
-		return naam;
-	}
-
-	public void setNaam(String naam) {
-		this.naam = naam;
-	}
-*/
-	public double getInkoopprijs() {
-		return inkoopprijs;
-	}
-
-	public void setInkoopprijs(double inkoopprijs) {
-		this.inkoopprijs = inkoopprijs;
-	}
-
-	public double getVerkoopprijs() {
-		return verkoopprijs;
-	}
-
-	public void setVerkoopprijs(double verkoopprijs) {
-		this.verkoopprijs = verkoopprijs;
-	}
-
-	public double getWerkUren() {
-		return werkUren;
-	}
-
-	public void setWerkUren(double werkUren) {
-		this.werkUren = werkUren;
-	}
-
-	public void setSample(boolean isSample) {
-		this.isSample = isSample;
-	}
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	public int getProductId() {
 		return productId;
 	}
-
-	public Object getKlant() {
-		return klant;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
-
-	public void setKlant(Object klant) {
-		this.klant = klant;
+	public String getProductNaam() {
+		return productNaam;
 	}
+	public void setProductNaam(String productNaam) {
+		this.productNaam = productNaam;
+	}
+	public double getInkoopPrijs() {
+		return inkoopPrijs;
+	}
+	public void setInkoopPrijs(double inkoopPrijs) {
+		this.inkoopPrijs = inkoopPrijs;
+	}
+	public double getVerkoopPrijs() {
+		return verkoopPrijs;
+	}
+	public void setVerkoopPrijs(double verkoopPrijs) {
+		this.verkoopPrijs = verkoopPrijs;
+	}
+	public double getWerkUren() {
+		return werkUren;
+	}
+	public void setWerkUren(double werkUren) {
+		this.werkUren = werkUren;
+	}
+	public int getHoeVaakVerkocht() {
+		return hoeVaakVerkocht;
+	}
+	public void setHoeVaakVerkocht(int hoeVaakVerkocht) {
+		this.hoeVaakVerkocht = hoeVaakVerkocht;
+	}
+	public String getMaterialenUrls() {
+		return materialenUrls;
+	}
+	public void setMaterialenUrls(String materialenUrls) {
+		this.materialenUrls = materialenUrls;
+	}
+	
 
 	
 }

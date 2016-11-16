@@ -2,3 +2,10 @@ To Do:
 
 invloerKLant.jsp
 - start en eind datum moet een date object worden
+
+Bestelling.class
+- wat moet er in?
+- gemaakt worden
+
+Sample.class
+- ontwerp maken
