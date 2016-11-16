@@ -1,0 +1,4 @@
+To Do:
+
+invloerKLant.jsp
+- start en eind datum moet een date object worden
