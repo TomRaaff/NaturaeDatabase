@@ -52,19 +52,13 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Invoer Bestelling</h1>
-						<c:forEach items="${alleBestellingen }" var="b">
-							<ul>
-								<li>${b.bestellingId}
-							</ul>
-						</c:forEach>
-
 
 
 						<form method="post">
 							<table>
 								<tr>
-									<td>Product naam:</td>
-									<td><input type="text" name="productNaam"></td>
+									<td>Opleverdatum:</td>
+									<td><input type="text" name="opleverDatum"></td>
 								</tr>
 
 								

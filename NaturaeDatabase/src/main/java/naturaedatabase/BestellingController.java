@@ -9,20 +9,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BestellingController {
 	@Autowired
-	private BestellingRepository repo;
+	private BestellingRepository repoBestelling;
+	
+	@Autowired
+	private OrderlineRepository repoOrderline;
 	
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
-		model.addAttribute("alleBestellingen", repo.findAll());
+		model.addAttribute("alleBestellingen", repoBestelling.findAll());
+		model.addAttribute("alleOrderlines", repoOrderline.findAll());
 		return "invoerBestelling";
 	}
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
 	public String maakBestelling(String opleverDatum){
 		Bestelling b = new Bestelling();
-		b.setOpleverdatum(opleverDatum);
+		b.setOpleverDatum(opleverDatum);
+		repoBestelling.save(b);
 		
-		repo.save(b);
+		Orderline o = new Orderline();
+		repoOrderline.save(o);
+		
 		return "redirect:invoerBestelling";
 	}
 }
