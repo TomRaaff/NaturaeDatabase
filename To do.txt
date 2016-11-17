@@ -10,12 +10,7 @@ Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
 - Is bestelling geleverd? / klaar?
 - hoe vaak verkocht updaten.
 
-Sample
-- ontwerp maken
-
-
 Sample.class
 - ontwerp maken
-
-
-Joeri doet een wijziging
+- is een subclass van product
+- moet verwijzen naar een klant (hierin staat type contract en einddatum)
