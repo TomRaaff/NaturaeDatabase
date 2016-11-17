@@ -13,4 +13,9 @@ Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
 Sample
 - ontwerp maken
 
-Wijziging die git als het goed is, meeneemt.
+
+Sample.class
+- ontwerp maken
+
+
+Joeri doet een wijziging
