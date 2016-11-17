@@ -14,29 +14,35 @@ WebPagina's:
 - Invoerpagina Klant
 - Invoerpagina Product
 - Invoerpagina Bestelling
-- Overzichtpagina Samples
+- Invoerpagina Trunkshow
+- Invoerpagina Sample?
+
+- Overzicht: Samples
 	- Sample view: Waar liggen de samples?
 	- Stockist view: Welke stockist heeft welke samples
 	- Wanneer eindigt het contract?
 
-	
-- Bestellingen
-	- wat moet er geproduceerd worden?
-	- welke deadlines?
-	- wat wordt er besteld door winkels?
-	- wat wordt er besteld door klanten
-	- Hoe vaak is ieder product besteld
-- Financiën
+- Overzicht: Bestellingen
+	- Lijstje aan bestellingen
+		Per bestelling:
+		- Welke producten en hoeveel?
+		- Welke deadlines?
+		- Totale prijs
+		- Klant info: naam, adres
+		- Verzonden: Ja/Nee
+		- Betaald: Ja/Nee
+
+- Overzicht: Financiën
 	- Verkoop statistieken
 	- inkomsten
 	- uitgaven
 	- in kas
-- ProductPagina
 
+- Overzicht: Producten
+	- Url's van materialen
 
 - Trunkshow pagina:
 	route van producten
-	invul pagina
 
 
 
@@ -58,20 +64,11 @@ Databases:
 
 
 
-Benodigdheden:
-- producten db
-- bestelling invoer pagina (Nieuwe klant / bestaande klant optie)
-- bestellingen overzicht pagina
-	deadlines
-	producthoeveelheden
-	Zoeken per bestelling
-		Producten
-		info klant
-	evt. producten op voorraad.
-	
 
 
 
+
+Initiële wensen Daniella
 1: Stockists
 	Welke stockists zijn er?
 	Welke samples hebben zij?
