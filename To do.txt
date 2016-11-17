@@ -9,7 +9,8 @@ Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
 - invoerpagina
 - Is bestelling geleverd? / klaar?
 - hoe vaak verkocht updaten.
-- 
 
-Sample.class
+Sample
 - ontwerp maken
+
+Wijziging die git als het goed is, meeneemt.
