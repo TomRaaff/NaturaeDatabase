@@ -1,4 +1,75 @@
-Naturae Design Prioriteiten
+Naturae Design
+Product Backlog
+
+Prioriteit:
+- toverstok
+- bestellingen
+- Overzicht van wie welke producten heeft
+
+
+
+
+
+WebPagina's:
+- Invoerpagina Klant
+- Invoerpagina Product
+- Invoerpagina Bestelling
+- Overzichtpagina Samples
+	- Sample view: Waar liggen de samples?
+	- Stockist view: Welke stockist heeft welke samples
+	- Wanneer eindigt het contract?
+
+	
+- Bestellingen
+	- wat moet er geproduceerd worden?
+	- welke deadlines?
+	- wat wordt er besteld door winkels?
+	- wat wordt er besteld door klanten
+	- Hoe vaak is ieder product besteld
+- Financiën
+	- Verkoop statistieken
+	- inkomsten
+	- uitgaven
+	- in kas
+- ProductPagina
+
+
+- Trunkshow pagina:
+	route van producten
+	invul pagina
+
+
+
+
+
+
+
+Databases:
+- Stockists
+	Stockist Naam / adres / contact / website / hebben samples? / welke samples / 
+	contract / verloop datum contract / contact persoon / notities / klantnummer
+- Product
+	Product Naam / prijs / op voorraad / hoe vaak verkocht? /
+ 	materialen per product (url) / inkoopprijs / verkoopprijs / uren werk in euro's
+- Sample
+	hoeveel op consignatie? / huidige locatie / 
+
+
+
+
+
+Benodigdheden:
+- producten db
+- bestelling invoer pagina (Nieuwe klant / bestaande klant optie)
+- bestellingen overzicht pagina
+	deadlines
+	producthoeveelheden
+	Zoeken per bestelling
+		Producten
+		info klant
+	evt. producten op voorraad.
+	
+
 
 
 1: Stockists
@@ -26,77 +97,6 @@ Naturae Design Prioriteiten
 // Materiaalkosten? Hoeveel verkochte producten?
 
 6. Hoeveel geld is er over voor campagnes?
-
-
-WebPagina's:
-- Stockists
-	- Zoeken op samples of op stockist
-		- waar liggen de samples?
-		- Welke samples heeft een stockist?
-	- Contract inzien
-	- contract verloop datum	
-- Bestellingen
-	- wat moet er geproduceerd worden?
-	- welke deadlines?
-	- wat wordt er besteld door winkels?
-	- wat wordt er besteld door klanten
-	- Hoe vaak is ieder product besteld
-- Financiën
-	- inkomsten
-	- uitgaven
-	- in kas
-- Invoerpagina
-- ProductPagina
-- Contract invulpagina
-	verhuur van samples (fotografen, winkels)
-	4 contracten: verhuur, consignatie, wholesale en trunkshow
-	Consignatie (spullen liggen daar maar zijn nog niet verkocht) 7 maanden
-		melding klant naar inkopen overgaan
-		als deadline contract verstreken: melding
-	Consignment en wholesale
-		melding met mail vraag hoe het gaat
-	wholesale = bestelling
-	trunkshow contract
-
-- overzicht adressen/organisaties/personen in bezit van samples
-- trunkshow pagina:
-	route van producten
-	invul pagina
-
-- verkoop overzicht pagina
-
-
-Databases:
-- Stockists
-	Stockist Naam / adres / contact / website / hebben samples? / welke samples / 
-	contract / verloop datum contract / contact persoon / notities / klantnummer
-- Product
-	Product Naam / prijs / op voorraad / hoe vaak verkocht? /
- 	materialen per product (url) / inkoopprijs / verkoopprijs / uren werk in euro's
-- Sample
-	hoeveel op consignatie? / huidige locatie / 
-
-
-
-
-Prioriteit:
-- toverstok
-- bestellingen
-- Overzicht van wie welke producten heeft
-
-Benodigdheden:
-- producten db
-- bestelling invoer pagina (Nieuwe klant / bestaande klant optie)
-- bestellingen overzicht pagina
-	deadlines
-	producthoeveelheden
-	Zoeken per bestelling
-		Producten
-		info klant
-	evt. producten op voorraad.
-	
-
-
 
 
 
