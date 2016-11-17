@@ -1,4 +1,5 @@
-Naturae Design Prioriteiten
+Naturae Design
+Product Backlog
 
 Prioriteit:
 - toverstok
@@ -8,13 +9,17 @@ Prioriteit:
 
 
 
+
 WebPagina's:
-- Stockists
-	- Zoeken op samples of op stockist
-		- waar liggen de samples?
-		- Welke samples heeft een stockist?
-	- Contract inzien
-	- contract verloop datum	
+- Invoerpagina Klant
+- Invoerpagina Product
+- Invoerpagina Bestelling
+- Overzichtpagina Samples
+	- Sample view: Waar liggen de samples?
+	- Stockist view: Welke stockist heeft welke samples
+	- Wanneer eindigt het contract?
+
+	
 - Bestellingen
 	- wat moet er geproduceerd worden?
 	- welke deadlines?
@@ -22,28 +27,21 @@ WebPagina's:
 	- wat wordt er besteld door klanten
 	- Hoe vaak is ieder product besteld
 - Financiën
+	- Verkoop statistieken
 	- inkomsten
 	- uitgaven
 	- in kas
-- Invoerpagina
 - ProductPagina
-- Contract invulpagina
-	verhuur van samples (fotografen, winkels)
-	4 contracten: verhuur, consignatie, wholesale en trunkshow
-	Consignatie (spullen liggen daar maar zijn nog niet verkocht) 7 maanden
-		melding klant naar inkopen overgaan
-		als deadline contract verstreken: melding
-	Consignment en wholesale
-		melding met mail vraag hoe het gaat
-	wholesale = bestelling
-	trunkshow contract
 
-- overzicht adressen/organisaties/personen in bezit van samples
-- trunkshow pagina:
+
+- Trunkshow pagina:
 	route van producten
 	invul pagina
 
-- verkoop overzicht pagina
+
+
+
+
 
 
 Databases:
