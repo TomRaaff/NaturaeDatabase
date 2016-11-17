@@ -43,13 +43,13 @@
                     <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="/invoerKlant">Invoeren Klant</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#">Invoeren Bestelling</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="/invoerProduct">Invoeren Product</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -70,8 +70,46 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+ <c:forEach items="${alleProducten }" var="p">
+		<ul>
+			<li>${p.productNaam}
+		</ul>
+	</c:forEach>
+
+
+
+	<form method="post">
+		<table>
+			<tr>
+				<td>Product naam:</td>
+				<td><input type="text" name="productNaam"></td>
+			</tr>
+
+			<tr>
+				<td>Inkoop prijs:</td>
+				<td><input type="number" step="0.01" name="inkoopPrijs"></td>
+			</tr>
+
+			<tr>
+				<td>Verkoop prijs:</td>
+				<td><input type="number" step="0.01" name="verkoopPrijs"></td>
+			</tr>
+
+			<tr>
+				<td>Werk uren per product:</td>
+				<td><input type="number" name="werkUren"></td>
+			</tr>
+
+			<tr>
+				<td>Materialen URL's:</td>
+				<td><input type="text" name="materialenUrls"></td>
+			</tr>
+			
+			<tr>
+				<td><input type="submit">
+			</tr>
+		</table>
+	</form>
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
                 </div>

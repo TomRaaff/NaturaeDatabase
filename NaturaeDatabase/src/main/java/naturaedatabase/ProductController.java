@@ -30,10 +30,7 @@ public class ProductController {
 			return "redirect:invoerProduct";
 		}
 		
-		@RequestMapping("/testPage")
-		public String klanten(){
-			return "test";
-		}
+
 		/*
 		private String productNaam;
 		private double inkoopPrijs;
