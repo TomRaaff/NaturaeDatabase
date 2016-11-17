@@ -1,33 +1,6 @@
 Naturae Design Prioriteiten
 
 
-1: Stockists
-	Welke stockists zijn er?
-	Welke samples hebben zij?
-	Functie om contract met stockist in te zien
-	Snelle weergave van de verloop datum van het contract.
-	
-
-2. Samples
-	Welke bestaan er?
-	Waar liggen ze?
-	
-
-3. Bestellingen
-	Planning wat er besteld is bij winkels en klanten
-	gekoppeld aan inkomsten
-///Wat voor planning?
-	
-
-4. Wat er binnenkomt: stockist/klanten
-// Aan geld? Aan bestellingen?
-
-5. Wat er uitgaat aan inkoop. 
-// Materiaalkosten? Hoeveel verkochte producten?
-
-6. Hoeveel geld is er over voor campagnes?
-
-
 WebPagina's:
 - Stockists
 	- Zoeken op samples of op stockist
@@ -97,6 +70,32 @@ Benodigdheden:
 	
 
 
+
+1: Stockists
+	Welke stockists zijn er?
+	Welke samples hebben zij?
+	Functie om contract met stockist in te zien
+	Snelle weergave van de verloop datum van het contract.
+	
+
+2. Samples
+	Welke bestaan er?
+	Waar liggen ze?
+	
+
+3. Bestellingen
+	Planning wat er besteld is bij winkels en klanten
+	gekoppeld aan inkomsten
+///Wat voor planning?
+	
+
+4. Wat er binnenkomt: stockist/klanten
+// Aan geld? Aan bestellingen?
+
+5. Wat er uitgaat aan inkoop. 
+// Materiaalkosten? Hoeveel verkochte producten?
+
+6. Hoeveel geld is er over voor campagnes?
 
 
 
