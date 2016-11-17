@@ -4,8 +4,12 @@ invloerKLant.jsp
 - start en eind datum moet een date object worden
 
 Bestelling.class
-- wat moet er in?
-- gemaakt worden
+Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
+- 2d arrayList
+- invoerpagina
+- Is bestelling geleverd? / klaar?
+- hoe vaak verkocht updaten.
+- 
 
 Sample.class
 - ontwerp maken
