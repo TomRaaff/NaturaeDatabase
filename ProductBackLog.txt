@@ -1,5 +1,12 @@
 Naturae Design Prioriteiten
 
+Prioriteit:
+- toverstok
+- bestellingen
+- Overzicht van wie welke producten heeft
+
+
+
 
 WebPagina's:
 - Stockists
@@ -52,10 +59,6 @@ Databases:
 
 
 
-Prioriteit:
-- toverstok
-- bestellingen
-- Overzicht van wie welke producten heeft
 
 Benodigdheden:
 - producten db
