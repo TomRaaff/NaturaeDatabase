@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Product Invoer</title>
+<title>Bestelling Invoer</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,10 +51,10 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Invoer Product</h1>
-						<c:forEach items="${alleProducten }" var="p">
+						<h1>Invoer Bestelling</h1>
+						<c:forEach items="${alleBestellingen }" var="b">
 							<ul>
-								<li>${p.productNaam}
+								<li>${b.bestellingId}
 							</ul>
 						</c:forEach>
 
@@ -67,25 +67,7 @@
 									<td><input type="text" name="productNaam"></td>
 								</tr>
 
-								<tr>
-									<td>Inkoop prijs:</td>
-									<td><input type="number" step="0.01" name="inkoopPrijs"></td>
-								</tr>
-
-								<tr>
-									<td>Verkoop prijs:</td>
-									<td><input type="number" step="0.01" name="verkoopPrijs"></td>
-								</tr>
-
-								<tr>
-									<td>Werk uren per product:</td>
-									<td><input type="number" name="werkUren"></td>
-								</tr>
-
-								<tr>
-									<td>Materialen URL's:</td>
-									<td><input type="text" name="materialenUrls"></td>
-								</tr>
+								
 
 								<tr>
 									<td><input type="submit">

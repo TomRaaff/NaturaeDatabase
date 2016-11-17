@@ -26,7 +26,7 @@ WebPagina's:
 	- Lijstje aan bestellingen
 		Per bestelling:
 		- Welke producten en hoeveel?
-		- Welke deadlines?
+		- Welke oplever datum?
 		- Totale prijs
 		- Klant info: naam, adres
 		- Verzonden: Ja/Nee
