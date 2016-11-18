@@ -53,7 +53,7 @@
 					<div class="col-lg-12">
 						<h1>Invoer Bestelling</h1>
 
-						<form method="post">
+						<form method="post" action="invoerKlant">
 							<table>
 								<tr>
 									<td> Klant:</td>
@@ -79,17 +79,13 @@
 									<td><input type="checkbox" name="betaald"></td>
 								</tr>
 								
-<%-- 								<c:forEach items="${alleOrderlines}" var="orderline">
+								<c:forEach items="${alleOrderlines}" var="orderline">
 								<tr>
 									<td>${orderline.product}
 									<td>${orderline.hoeveelheid }
-									
+
+								</c:forEach>
 								
-								
-								</c:forEach> --%>
-								
-														
-						
 							</table>
 							
 <!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							
@@ -107,6 +103,7 @@
 														
 							</form>
 							
+							<tr><input type="submit"></tr>
 						</form>
 						
 						<h1>Overzicht van bestellingen</h1>

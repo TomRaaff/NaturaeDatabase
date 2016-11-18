@@ -39,12 +39,19 @@ public class BestellingController {
 		bestelling.setBetaald(betaald);
 		repoBestelling.save(bestelling);
 		
-//		Orderline o = new Orderline();
-//		repoOrderline.save(o);
-		
 		return "redirect:invoerBestelling";
 	}
 	
+	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
+	public String maakBestelling(Long productId, int hoeveelheid, long bestellingId){
+		Orderline orderline = new Orderline();
+		orderline.setProduct(repoProduct.findOne(productId));
+		orderline.setBestelling(repoBestelling.findOne(bestellingId));
+		orderline.setHoeveelheid(hoeveelheid);
+		repoOrderline.save(orderline);
+		
+		return "redirect:invoerBestelling";
+	}
 	
 	
 }
