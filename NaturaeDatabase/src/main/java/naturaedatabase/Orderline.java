@@ -13,7 +13,6 @@ public class Orderline {
 	private int hoeveelheid;
 	private Bestelling bestelling;
 	
-	
 	//Getters en setters
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

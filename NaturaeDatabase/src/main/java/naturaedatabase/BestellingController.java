@@ -34,14 +34,16 @@ public class BestellingController {
 	}
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId){
-		Bestelling b = new Bestelling();
-		b.setOpleverDatum(opleverDatum);
-		b.setKlant(repoKlant.findOne(klantId));
-		repoBestelling.save(b);
+	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
+		Bestelling bestelling = new Bestelling();
+		bestelling.setOpleverDatum(opleverDatum);
+		bestelling.setKlant(repoKlant.findOne(klantId));
+		bestelling.setVerzonden(verzonden);
+		bestelling.setBetaald(betaald);
+		repoBestelling.save(bestelling);
 		
-		Orderline o = new Orderline();
-		repoOrderline.save(o);
+//		Orderline o = new Orderline();
+//		repoOrderline.save(o);
 		
 		return "redirect:invoerBestelling";
 	}
@@ -53,4 +55,5 @@ public class BestellingController {
 		model.addAttribute("alleKlanten", repoKlant.findAll());
 		return "sampleBestelling";
 	}
+
 }
