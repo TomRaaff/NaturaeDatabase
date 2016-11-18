@@ -50,6 +50,7 @@ public class BestellingController {
 	@RequestMapping("/sampleBestelling")
 	public String sample(Model model){
 		model.addAttribute("alleSamples", repoSample.findAll());
+		model.addAttribute("alleKlanten", repoKlant.findAll());
 		return "sampleBestelling";
 	}
 }

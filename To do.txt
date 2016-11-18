@@ -14,6 +14,10 @@ Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
 Sample.class
 - database relaties maken
 
+sampleBestelling.jsp
+- form afmaken
+
+invoerSample.jsp creëren
 
 
 
