@@ -60,8 +60,13 @@
 									<td>Opleverdatum:</td>
 									<td><input type="text" name="opleverDatum"></td>
 								</tr>
-
-								
+								<tr>
+									<td> Klant:</td>
+									<td><select name="typeKlant">
+											<c:forEach items="${alleKlanten }" var="k">
+												<option value="${k.klantId}">${k.klantNaam}</option>
+											</c:forEach>
+									</select></td>
 
 								<tr>
 									<td><input type="submit">
