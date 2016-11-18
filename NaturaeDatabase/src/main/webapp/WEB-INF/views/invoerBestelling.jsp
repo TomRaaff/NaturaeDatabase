@@ -56,10 +56,7 @@
 
 						<form method="post">
 							<table>
-								<tr>
-									<td>Opleverdatum:</td>
-									<td><input type="text" name="opleverDatum"></td>
-								</tr>
+							
 								<tr>
 									<td> Klant:</td>
 									<td><select name="klantId">
@@ -67,11 +64,22 @@
 												<option value="${k.klantId}">${k.klantNaam}</option>
 											</c:forEach>
 									</select></td>
-
-								<tr>
-									<td><input type="submit">
 								</tr>
+								
+								<tr>
+									<td>Opleverdatum:</td>
+									<td><input type="text" name="opleverDatum"></td>
+								</tr>
+						
 							</table>
+							
+							<c:forEach items="${alleProducten}" var="product">
+								<ul>
+									<li>${product.productNaam} <input type="number" name="hoeveelheid"></li>
+								</ul>
+							</c:forEach>
+							<input type="submit">
+							
 						</form>
 						
 						<h1>Overzicht van bestellingen</h1>

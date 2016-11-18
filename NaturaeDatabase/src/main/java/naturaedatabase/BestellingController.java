@@ -17,12 +17,16 @@ public class BestellingController {
 	@Autowired
 	private KlantRepository repoKlant;
 	
+	@Autowired
+	private ProductRepository repoProduct;
+	
 	
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
 		model.addAttribute("alleBestellingen", repoBestelling.findAll());
 		model.addAttribute("alleOrderlines", repoOrderline.findAll());
 		model.addAttribute("alleKlanten", repoKlant.findAll());
+		model.addAttribute("alleProducten", repoProduct.findAll());
 		return "invoerBestelling";
 	}
 	
