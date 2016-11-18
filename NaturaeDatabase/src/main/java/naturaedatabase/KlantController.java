@@ -37,16 +37,3 @@ public class KlantController {
 			return "redirect:invoerKlant";
 		}
 }
-
-/*
-private int typeKlant; //0 = Winkel, 1 = particulier, 2 = overig
-private String klantNaam;
-private String adres;
-private String mail;
-private String telNr;
-private int typeContract;	//0 = geen, 1 = verhuur, 2 = consignatie, 3 = Verkoop, 4 = Trunkshow, 5 = verhuur&consignatie
-private Date eindDatumContract;
-private Date startDatumContract;
-private String notitie;
-private String contactPersoon;
-*/

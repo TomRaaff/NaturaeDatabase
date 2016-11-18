@@ -32,16 +32,19 @@ public class BestellingController {
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
 	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
-		Bestelling b = new Bestelling();
-		b.setOpleverDatum(opleverDatum);
-		b.setKlant(repoKlant.findOne(klantId));
-		b.setVerzonden(verzonden);
-		b.setBetaald(betaald);
-		repoBestelling.save(b);
+		Bestelling bestelling = new Bestelling();
+		bestelling.setOpleverDatum(opleverDatum);
+		bestelling.setKlant(repoKlant.findOne(klantId));
+		bestelling.setVerzonden(verzonden);
+		bestelling.setBetaald(betaald);
+		repoBestelling.save(bestelling);
 		
-		Orderline o = new Orderline();
-		repoOrderline.save(o);
+//		Orderline o = new Orderline();
+//		repoOrderline.save(o);
 		
 		return "redirect:invoerBestelling";
 	}
+	
+	
+	
 }

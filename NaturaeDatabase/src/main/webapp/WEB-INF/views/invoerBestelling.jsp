@@ -40,7 +40,7 @@
 				<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
 				<li><a href="#">Dashboard</a></li>
 				<li><a href="/invoerKlant">Invoeren Klant</a></li>
-				<li><a href="#">Invoeren Bestelling</a></li>
+				<li><a href="/invoerBestelling">Invoeren Bestelling</a></li>
 				<li><a href="/invoerProduct">Invoeren Product</a></li>
 			</ul>
 		</div>
@@ -53,14 +53,13 @@
 					<div class="col-lg-12">
 						<h1>Invoer Bestelling</h1>
 
-
 						<form method="post">
 							<table>
 								<tr>
 									<td> Klant:</td>
 									<td><select name="klantId">
-											<c:forEach items="${alleKlanten }" var="k">
-												<option value="${k.klantId}">${k.klantNaam}</option>
+											<c:forEach items="${alleKlanten }" var="klant">
+												<option value="${klant.klantId}">${klant.klantNaam}</option>
 											</c:forEach>
 									</select></td>
 								</tr>
@@ -78,25 +77,46 @@
 								<tr>
 									<td>Betaald:</td>
 									<td><input type="checkbox" name="betaald"></td>
-								</tr>						
+								</tr>
+								
+<%-- 								<c:forEach items="${alleOrderlines}" var="orderline">
+								<tr>
+									<td>${orderline.product}
+									<td>${orderline.hoeveelheid }
+									
+								
+								
+								</c:forEach> --%>
+								
+														
 						
 							</table>
 							
-							<c:forEach items="${alleProducten}" var="product">
-								<ul>
-									<li>${product.productNaam} <input type="number" name="hoeveelheid"></li>
-								</ul>
-							</c:forEach>
-							<input type="submit">
+<!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							
+							
+							<form method="post">
+								<table>
+									<tr><td><select name="productId">
+											<c:forEach items="${alleProducten}" var="product">
+												<option value="${product.productId}">${product.productNaam}</option>
+											</c:forEach>
+									</select></td>
+									<td> hoeveelheid:<input type="number" name="hoeveelheid" >
+									<td> <input type="submit">
+								</table>
+														
+							</form>
 							
 						</form>
 						
 						<h1>Overzicht van bestellingen</h1>
 						
-						<c:forEach items="${alleBestellingen }" var="b">
+						<c:forEach items="${alleBestellingen }" var="bestelling">
 							<ul>
-								<li>${b.opleverDatum}<br>
-									${b.klant.klantNaam}
+								<li>${bestelling.opleverDatum}<br>
+									${bestelling.klant.klantNaam}<br>
+									Verzonden: ${bestelling.verzonden}<br>
+									Betaald: ${bestelling.betaald}
 							</ul>
 						</c:forEach>
 						
