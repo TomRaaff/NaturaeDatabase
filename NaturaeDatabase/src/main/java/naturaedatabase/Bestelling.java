@@ -1,14 +1,17 @@
 package naturaedatabase;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Bestelling {
 	private Long bestellingId;
-	private Long klantId;
+	private Klant klant;
 	private String opleverDatum;
 	
 	@Id
@@ -20,20 +23,18 @@ public class Bestelling {
 		this.bestellingId = bestellingId;
 	}
 	
-	public Long getKlantId() {
-		return klantId;
-	}
-	public void setKlantId(Long klantId) {
-		this.klantId = klantId;
-	}
 	public String getOpleverDatum() {
 		return opleverDatum;
 	}
 	public void setOpleverDatum(String opleverDatum) {
 		this.opleverDatum = opleverDatum;
 	}
-	
-
-	
+	@ManyToOne(targetEntity=Klant.class, fetch=FetchType.LAZY)
+	public Klant getKlant() {
+		return klant;
+	}
+	public void setKlant(Klant klant) {
+		this.klant = klant;
+	}
 	
 }

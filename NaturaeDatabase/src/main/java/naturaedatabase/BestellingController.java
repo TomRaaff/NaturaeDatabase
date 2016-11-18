@@ -27,9 +27,10 @@ public class BestellingController {
 	}
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum){
+	public String maakBestelling(String opleverDatum, Long klantId){
 		Bestelling b = new Bestelling();
 		b.setOpleverDatum(opleverDatum);
+		b.setKlant(repoKlant.findOne(klantId));
 		repoBestelling.save(b);
 		
 		Orderline o = new Orderline();

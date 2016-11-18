@@ -62,7 +62,7 @@
 								</tr>
 								<tr>
 									<td> Klant:</td>
-									<td><select name="typeKlant">
+									<td><select name="klantId">
 											<c:forEach items="${alleKlanten }" var="k">
 												<option value="${k.klantId}">${k.klantNaam}</option>
 											</c:forEach>
@@ -73,6 +73,17 @@
 								</tr>
 							</table>
 						</form>
+						
+						<h1>Overzicht van bestellingen</h1>
+						
+						<c:forEach items="${alleBestellingen }" var="b">
+							<ul>
+								<li>${b.opleverDatum}<br>
+									${b.klant.klantNaam}
+							</ul>
+						</c:forEach>
+						
+						
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
 							Menu</a>
 					</div>

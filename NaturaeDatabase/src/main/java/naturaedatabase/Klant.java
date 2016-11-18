@@ -1,9 +1,13 @@
 package naturaedatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Klant {
@@ -18,6 +22,7 @@ public class Klant {
 	private String startDatumContract;
 	private String notitie;
 	private String contactPersoon;
+	private List<Bestelling> bestellingen = new ArrayList<>();
 	
 	//Getters en Setters
 	@Id
@@ -88,6 +93,11 @@ public class Klant {
 	public void setContactPersoon(String contactPersoon) {
 		this.contactPersoon = contactPersoon;
 	}
-
-	
+	@OneToMany(mappedBy = "klant")
+	public List<Bestelling> getBestellingen() {
+		return bestellingen;
+	}
+	public void setBestellingen(List<Bestelling> bestellingen) {
+		this.bestellingen = bestellingen;
+	}
 }
