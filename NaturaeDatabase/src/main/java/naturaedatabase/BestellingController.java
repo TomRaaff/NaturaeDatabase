@@ -20,6 +20,9 @@ public class BestellingController {
 	@Autowired
 	private ProductRepository repoProduct;
 	
+	@Autowired
+	private SampleRepository repoSample;
+	
 	
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
@@ -41,5 +44,12 @@ public class BestellingController {
 		repoOrderline.save(o);
 		
 		return "redirect:invoerBestelling";
+	}
+	
+	//Sample Bestelling
+	@RequestMapping("/sampleBestelling")
+	public String sample(Model model){
+		model.addAttribute("alleSamples", repoSample.findAll());
+		return "sampleBestelling";
 	}
 }
