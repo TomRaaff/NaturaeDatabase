@@ -56,7 +56,6 @@
 
 						<form method="post">
 							<table>
-							
 								<tr>
 									<td> Klant:</td>
 									<td><select name="klantId">
@@ -70,6 +69,16 @@
 									<td>Opleverdatum:</td>
 									<td><input type="text" name="opleverDatum"></td>
 								</tr>
+								
+								<tr>
+									<td>Verzonden:</td>
+									<td><input type="checkbox" name="verzonden"></td>
+								</tr>
+								
+								<tr>
+									<td>Betaald:</td>
+									<td><input type="checkbox" name="betaald"></td>
+								</tr>						
 						
 							</table>
 							
