@@ -5,21 +5,18 @@ invloerKlant.jsp
 	ook in Sample.class en andere plekken
 
 Bestelling.class
-Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
-- 2d arrayList
 - invoerpagina
+	1. Wie bestelt er iets en wat zijn de voorwaarden?
+	2. Welke producten worden er besteld?
 - Is bestelling geleverd? / klaar?
-- hoe vaak verkocht updaten.
-
-Sample.class
-- database relaties maken
-
-sampleBestelling.jsp
-- form afmaken
-
-invoerSample.jsp creëren
 
 
+sampleOrderline form maken
+
+
+Delete buttons maken
+
+Classes moeten geupdate worden zodat ze kloppen met de UML
 
 
 

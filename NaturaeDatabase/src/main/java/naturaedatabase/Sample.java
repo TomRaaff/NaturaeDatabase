@@ -13,6 +13,7 @@ public class Sample {
 	private Product product;
 	private Klant klant;
 	private String datumTerug;
+
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

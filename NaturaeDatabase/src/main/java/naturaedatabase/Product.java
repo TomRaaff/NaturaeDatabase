@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Product {
-	private int productId;
+	private Long productId;
 	private String productNaam;
 	private double inkoopPrijs;
 	private double verkoopPrijs;
@@ -19,10 +19,10 @@ public class Product {
 	//getters en setters
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public int getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public String getProductNaam() {
