@@ -13,16 +13,21 @@ Prioriteit:
 WebPagina's:
 - Invoerpagina Klant
 - Invoerpagina Product
+	basisprijs
+	werk uren (1 uur = 60 euro)
+	productprijs   /// <- WTF?
+	wholesale prijs
+	retail prijs
 - Invoerpagina Bestelling / (sampleBestelling)
 - Invoerpagina Trunkshow
 - Invoerpagina Sample?
 
 
 - Dashboard: (schema's en statistieken)
+	- Inkomsten
+	- Hoeveelheid bestellingen
 	- optie kijken voor welke periode: afgelopen maand, afgelopen jaar
 	- optie kijken per land
-	- Hoeveelheid bestellingen
-	- Inkomsten
 	- Ranglijst welk product het meest verkocht is.
 
 
@@ -43,7 +48,8 @@ WebPagina's:
 		- Betaald: Ja/Nee
 		- Track&trace nr.
 	- Alert: 3 weken na invoerdatum bestelling wholesale
-	- Alert: 2 weken na invoerdatum bestelling retail
+	- Alert: 2 weken na invoerdatum bestelling 
+		// invoerdatum bestelling? Niet startdatum contract?
 
 	Alert: automatische e-mail + dikgedrukt in bestellingsoverzicht. (Niet rood, want is negatief)
 
@@ -83,15 +89,9 @@ Databases:
 
 
 
-
-
-Product:
-basisprijs
-werk uren (1 uur = 60 euro)
-productprijs
-wholesale prijs
-retail prijs
-
+Vragen:
+- productprijs?
+- invoerdatum? niet bestelling? bij alert van bestelling
 
 
 
