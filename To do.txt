@@ -18,5 +18,7 @@ Delete buttons maken
 
 Classes moeten geupdate worden zodat ze kloppen met de UML
 
+Classes moeten geupdate worden zodat ze kloppen met de UML
+
 
 

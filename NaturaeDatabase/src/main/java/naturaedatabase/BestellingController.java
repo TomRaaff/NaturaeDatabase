@@ -20,6 +20,7 @@ public class BestellingController {
 	@Autowired
 	private ProductRepository repoProduct;
 	
+
 	@Autowired
 	private SampleRepository repoSample;
 	
@@ -28,7 +29,9 @@ public class BestellingController {
 	
 	@Autowired
 	private SampleOrderlineRepository repoSampleOrderline;
-	
+
+	private Long aanmaakBestellingId;
+
 	
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
@@ -39,17 +42,27 @@ public class BestellingController {
 		return "invoerBestelling";
 	}
 	
+	@RequestMapping("/invoerOrderline")
+	public String bestelling(Model model){
+		model.addAttribute("bestelling", repoBestelling.findOne(aanmaakBestellingId));
+		model.addAttribute("alleProducten", repoProduct.findAll());
+				
+		return "invoerOrderline";
+	}
+	
+	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId){
-		Bestelling b = new Bestelling();
-		b.setOpleverDatum(opleverDatum);
-		b.setKlant(repoKlant.findOne(klantId));
-		repoBestelling.save(b);
+	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
+		Bestelling bestelling = new Bestelling();
+		bestelling.setOpleverDatum(opleverDatum);
+		bestelling.setKlant(repoKlant.findOne(klantId));
+		bestelling.setVerzonden(verzonden);
+		bestelling.setBetaald(betaald);
+		repoBestelling.save(bestelling);
 		
-		Orderline o = new Orderline();
-		repoOrderline.save(o);
-		
-		return "redirect:invoerBestelling";
+		aanmaakBestellingId = bestelling.getBestellingId();		
+
+		return "redirect:invoerOrderline";
 	}
 
 	
@@ -59,6 +72,7 @@ public class BestellingController {
 	
 	
 	
+
 	//Sample Bestelling
 	
 	
@@ -98,4 +112,17 @@ public class BestellingController {
 			repoSampleOrderline.save(so);
 			return "redirect:sampleOrderline";
 		}
+
+
+	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
+	public String maakBestelling(Long productId, int hoeveelheid){
+		Orderline orderline = new Orderline();
+		orderline.setProduct(repoProduct.findOne(productId));
+		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
+		orderline.setHoeveelheid(hoeveelheid);
+		repoOrderline.save(orderline);
+		
+		return "redirect:invoerOrderline";
+	}
+	
 }
