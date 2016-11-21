@@ -1,5 +1,6 @@
 package naturaedatabase;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,7 +38,7 @@ public class Orderline {
 		this.hoeveelheid = hoeveelheid;
 	}
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	public Bestelling getBestelling() {
 		return bestelling;
 	}

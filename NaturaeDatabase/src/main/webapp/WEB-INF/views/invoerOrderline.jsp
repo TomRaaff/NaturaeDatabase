@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Bestelling Invoer</title>
+<title>Orderline Invoer</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,51 +51,53 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Invoer Bestelling</h1>
-
-						<form method="post" action="invoerBestelling">
+						<h1>Invoer orderline</h1>
 							<table>
 								<tr>
-									<td> Klant:</td>
-									<td><select name="klantId">
-											<c:forEach items="${alleKlanten}" var="klant">
-												<option value="${klant.klantId}">${klant.klantNaam}</option>
+									<td>Klant: </td>
+									<td>${bestelling.klant.klantNaam}</td>
+								</tr>
+								<tr>
+									<td>Opleverdatum: </td>
+									<td>${bestelling.opleverDatum}</td>			
+								</tr>
+								
+								<tr>
+									<td>Verzonden: </td>
+									<td>${bestelling.verzonden}</td>
+								</tr>
+								<tr>
+									<td>Betaald: </td>
+									<td>${bestelling.betaald}</td>
+								</tr>
+				
+							</table>
+							<table>
+							<c:forEach items="${bestelling.orderlines}" var="orderline">
+									<tr>
+										<td>${orderline.product.productNaam}</td>
+										<td>${orderline.hoeveelheid}</td>
+									</tr>
+									
+							</c:forEach>
+							</table>
+							
+<!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							
+						
+							
+							<form method="post">
+								<table>
+									<tr><td><select name="productId">
+											<c:forEach items="${alleProducten}" var="product">
+												<option value="${product.productId}">${product.productNaam}</option>
 											</c:forEach>
 									</select></td>
-								</tr>
-								
-								<tr>
-									<td>Opleverdatum:</td>
-									<td><input type="text" name="opleverDatum"></td>
-								</tr>
-								
-								<tr>
-									<td>Verzonden:</td>
-									<td><input type="checkbox" name="verzonden"></td>
-								</tr>
-								
-								<tr>
-									<td>Betaald:</td>
-									<td><input type="checkbox" name="betaald"></td>
-								</tr>
-								
-								<tr>
-									<td><input type="submit"></td>
-								</tr>
-							</table>
-						</form>
-						
-						<h1>Overzicht van bestellingen</h1>
-						
-						<c:forEach items="${alleBestellingen}" var="bestelling">
-							<ul>
-								<li>${bestelling.opleverDatum}<br>
-									${bestelling.klant.klantNaam}<br>
-									Verzonden:${bestelling.verzonden}<br>
-									Betaald:${bestelling.betaald}
-							</ul>
-						</c:forEach>
-
+									<td> hoeveelheid:<input type="number" name="hoeveelheid" >
+									<td> <input type="submit">
+								</table>
+														
+							</form>
+												
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
 							Menu</a>
 					</div>
