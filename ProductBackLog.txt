@@ -13,14 +13,24 @@ Prioriteit:
 WebPagina's:
 - Invoerpagina Klant
 - Invoerpagina Product
-- Invoerpagina Bestelling
+- Invoerpagina Bestelling / (sampleBestelling)
 - Invoerpagina Trunkshow
 - Invoerpagina Sample?
+
+
+- Dashboard: (schema's en statistieken)
+	- optie kijken voor welke periode: afgelopen maand, afgelopen jaar
+	- optie kijken per land
+	- Hoeveelheid bestellingen
+	- Inkomsten
+	- Ranglijst welk product het meest verkocht is.
+
 
 - Overzicht: Samples
 	- Sample view: Waar liggen de samples?
 	- Stockist view: Welke stockist heeft welke samples
 	- Wanneer eindigt het contract?
+	- Alert: twee weken na afloopdatum contract (mail)
 
 - Overzicht: Bestellingen
 	- Lijstje aan bestellingen
@@ -29,8 +39,13 @@ WebPagina's:
 		- Welke oplever datum?
 		- Totale prijs
 		- Klant info: naam, adres
-		- Verzonden: Ja/Nee
+		- Verzonden: Ja/Nee	-> archiveren
 		- Betaald: Ja/Nee
+		- Track&trace nr.
+	- Alert: 3 weken na invoerdatum bestelling wholesale
+	- Alert: 2 weken na invoerdatum bestelling retail
+
+	Alert: automatische e-mail + dikgedrukt in bestellingsoverzicht. (Niet rood, want is negatief)
 
 - Overzicht: Financiën
 	- Verkoop statistieken
@@ -39,6 +54,9 @@ WebPagina's:
 	- in kas
 
 - Overzicht: Producten
+	- Overzicht in stock
+	- Hoe vaak verkocht 
+	- wijzig hoeveelheid functie
 	- Url's van materialen
 
 - Trunkshow pagina:
@@ -67,36 +85,12 @@ Databases:
 
 
 
-
-Initiële wensen Daniella
-1: Stockists
-	Welke stockists zijn er?
-	Welke samples hebben zij?
-	Functie om contract met stockist in te zien
-	Snelle weergave van de verloop datum van het contract.
-	
-
-2. Samples
-	Welke bestaan er?
-	Waar liggen ze?
-	
-
-3. Bestellingen
-	Planning wat er besteld is bij winkels en klanten
-	gekoppeld aan inkomsten
-///Wat voor planning?
-	
-
-4. Wat er binnenkomt: stockist/klanten
-// Aan geld? Aan bestellingen?
-
-5. Wat er uitgaat aan inkoop. 
-// Materiaalkosten? Hoeveel verkochte producten?
-
-6. Hoeveel geld is er over voor campagnes?
-
-
-
+Product:
+basisprijs
+werk uren (1 uur = 60 euro)
+productprijs
+wholesale prijs
+retail prijs
 
 
 
