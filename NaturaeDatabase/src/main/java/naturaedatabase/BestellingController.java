@@ -20,6 +20,7 @@ public class BestellingController {
 	@Autowired
 	private ProductRepository repoProduct;
 	
+	private Long aanmaakBestellingId;
 	
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
@@ -30,6 +31,15 @@ public class BestellingController {
 		return "invoerBestelling";
 	}
 	
+	@RequestMapping("/invoerOrderline")
+	public String bestelling(Model model){
+		model.addAttribute("bestelling", repoBestelling.findOne(aanmaakBestellingId));
+		model.addAttribute("alleProducten", repoProduct.findAll());
+				
+		return "invoerOrderline";
+	}
+	
+	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
 	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
 		Bestelling bestelling = new Bestelling();
@@ -39,18 +49,20 @@ public class BestellingController {
 		bestelling.setBetaald(betaald);
 		repoBestelling.save(bestelling);
 		
-		return "redirect:invoerBestelling";
+		aanmaakBestellingId = bestelling.getBestellingId();		
+
+		return "redirect:invoerOrderline";
 	}
 	
 	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
-	public String maakBestelling(Long productId, int hoeveelheid, long bestellingId){
+	public String maakBestelling(Long productId, int hoeveelheid){
 		Orderline orderline = new Orderline();
 		orderline.setProduct(repoProduct.findOne(productId));
-		orderline.setBestelling(repoBestelling.findOne(bestellingId));
+		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
 		orderline.setHoeveelheid(hoeveelheid);
 		repoOrderline.save(orderline);
 		
-		return "redirect:invoerBestelling";
+		return "redirect:invoerOrderline";
 	}
 	
 	
