@@ -1,17 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, shrink-to-fit=no, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+<%@include file="header.jsp" %>
 
 <title>Simple Sidebar - Start Bootstrap Template</title>
 
@@ -34,18 +21,7 @@
 
 	<div id="wrapper">
 
-		<!-- Sidebar -->
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
-				<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
-				<li><a href="#">Dashboard</a></li>
-				<li><a href="/invoerKlant">Invoeren Klant</a></li>
-				<li><a href="invoerBestelling">Invoeren Bestelling</a></li>
-				<li><a href="/invoerProduct">Invoeren Product</a></li>
-
-			</ul>
-		</div>
-		<!-- /#sidebar-wrapper -->
+<%@include file="sidebar.jsp" %>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper">

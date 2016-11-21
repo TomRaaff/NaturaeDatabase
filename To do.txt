@@ -1,16 +1,24 @@
 To Do:
 
-invloerKLant.jsp
+invloerKlant.jsp
 - start en eind datum moet een date object worden
+	ook in Sample.class en andere plekken
 
 Bestelling.class
-Wie heeft welke producten besteld en wanneer moeten ze geleverd worden.
-- 2d arrayList
 - invoerpagina
+	1. Wie bestelt er iets en wat zijn de voorwaarden?
+	2. Welke producten worden er besteld?
 - Is bestelling geleverd? / klaar?
-- hoe vaak verkocht updaten.
 
-Sample.class
-- ontwerp maken
-- is een subclass van product
-- moet verwijzen naar een klant (hierin staat type contract en einddatum)
+
+sampleOrderline form maken
+
+
+Delete buttons maken
+
+Classes moeten geupdate worden zodat ze kloppen met de UML
+
+Classes moeten geupdate worden zodat ze kloppen met de UML
+
+
+

@@ -97,6 +97,10 @@
 								</table>
 														
 							</form>
+							
+							<form action="/invoerBestelling">
+    							<input type="submit" value="Klaar"/>
+							</form>
 												
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
 							Menu</a>

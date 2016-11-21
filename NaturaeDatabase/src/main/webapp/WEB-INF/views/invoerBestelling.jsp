@@ -1,17 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@include file="header.jsp" %>
 
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, shrink-to-fit=no, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
 
 <title>Bestelling Invoer</title>
 
@@ -34,17 +22,7 @@
 
 	<div id="wrapper">
 
-		<!-- Sidebar -->
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
-				<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
-				<li><a href="#">Dashboard</a></li>
-				<li><a href="/invoerKlant">Invoeren Klant</a></li>
-				<li><a href="/invoerBestelling">Invoeren Bestelling</a></li>
-				<li><a href="/invoerProduct">Invoeren Product</a></li>
-			</ul>
-		</div>
-		<!-- /#sidebar-wrapper -->
+<%@include file="sidebar.jsp" %>
 
 		<!-- Page Content --------------------------------------------------------------------- -->
 		<div id="page-content-wrapper">
@@ -89,10 +67,20 @@
 						
 						<c:forEach items="${alleBestellingen}" var="bestelling">
 							<ul>
-								<li>${bestelling.opleverDatum}<br>
-									${bestelling.klant.klantNaam}<br>
+								<li>${bestelling.klant.klantNaam}<br>
+									${bestelling.opleverDatum}<br>
 									Verzonden:${bestelling.verzonden}<br>
-									Betaald:${bestelling.betaald}
+									Betaald:${bestelling.betaald}<br>
+									
+								<c:forEach items="${bestelling.orderlines}" var="orderline">
+									<table>
+									<tr>
+										<td>${orderline.product.productNaam}</td>
+										<td>${orderline.hoeveelheid}</td>
+									</tr>	
+									</table>
+								</c:forEach>
+																		
 							</ul>
 						</c:forEach>
 
