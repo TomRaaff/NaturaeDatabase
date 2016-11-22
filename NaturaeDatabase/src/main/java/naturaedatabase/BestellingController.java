@@ -118,7 +118,7 @@ public class BestellingController {
 		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
 		orderline.setHoeveelheid(hoeveelheid);
 		repoOrderline.save(orderline);		
-		return "redirect:invoerOrderline";
+		return "redirect:overzichtBestelling";
 	}
 	
 	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)
