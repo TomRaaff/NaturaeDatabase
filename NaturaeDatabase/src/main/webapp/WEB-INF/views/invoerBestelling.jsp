@@ -67,10 +67,20 @@
 						
 						<c:forEach items="${alleBestellingen}" var="bestelling">
 							<ul>
-								<li>${bestelling.opleverDatum}<br>
-									${bestelling.klant.klantNaam}<br>
+								<li>${bestelling.klant.klantNaam}<br>
+									${bestelling.opleverDatum}<br>
 									Verzonden:${bestelling.verzonden}<br>
-									Betaald:${bestelling.betaald}
+									Betaald:${bestelling.betaald}<br>
+									
+								<c:forEach items="${bestelling.orderlines}" var="orderline">
+									<table>
+									<tr>
+										<td>${orderline.product.productNaam}</td>
+										<td>${orderline.hoeveelheid}</td>
+									</tr>	
+									</table>
+								</c:forEach>
+																		
 							</ul>
 						</c:forEach>
 

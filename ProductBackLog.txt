@@ -9,7 +9,6 @@ Prioriteit:
 
 
 
-
 WebPagina's:
 - Invoerpagina Klant
 - Invoerpagina Product
@@ -67,10 +66,6 @@ WebPagina's:
 
 - Trunkshow pagina:
 	route van producten
-
-
-
-
 
 
 
