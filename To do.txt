@@ -14,11 +14,11 @@ Bestelling.class
 sampleOrderline form maken
 
 
-Delete buttons maken
+Delete buttons implementeren
 
 Classes moeten geupdate worden zodat ze kloppen met de UML
 
-Classes moeten geupdate worden zodat ze kloppen met de UML
-
+Jsp files
+include moet binnen de head vallen. Head tags moeten zichtbaar zijn.
 
 
