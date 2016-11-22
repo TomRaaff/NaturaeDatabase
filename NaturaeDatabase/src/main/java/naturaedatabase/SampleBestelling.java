@@ -1,5 +1,7 @@
 package naturaedatabase;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,11 +12,11 @@ import javax.persistence.OneToOne;
 public class SampleBestelling {
 	private Long SampleBestellingId;
 	private Klant klant;
+
 	private int contractId; //0 = geen, 1 = verhuur, 2 = consignatie, 3 = Verkoop, 4 = Trunkshow, 5 = verhuur&consignatie
-	private String opleverDatum;
-	private String startDatumContract;
-	private String eindDatumContract;
-	
+	private Date opleverDatum;
+	private Date startDatumContract;
+	private Date eindDatumContract;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -37,22 +39,22 @@ public class SampleBestelling {
 	public void setContractId(int contractId) {
 		this.contractId = contractId;
 	}
-	public String getOpleverDatum() {
+	public Date getOpleverDatum() {
 		return opleverDatum;
 	}
-	public void setOpleverDatum(String opleverDatum) {
+	public void setOpleverDatum(Date opleverDatum) {
 		this.opleverDatum = opleverDatum;
 	}
-	public String getStartDatumContract() {
+	public Date getStartDatumContract() {
 		return startDatumContract;
 	}
-	public void setStartDatumContract(String startDatumContract) {
+	public void setStartDatumContract(Date startDatumContract) {
 		this.startDatumContract = startDatumContract;
 	}
-	public String getEindDatumContract() {
+	public Date getEindDatumContract() {
 		return eindDatumContract;
 	}
-	public void setEindDatumContract(String eindDatumContract) {
+	public void setEindDatumContract(Date eindDatumContract) {
 		this.eindDatumContract = eindDatumContract;
 	}
 }

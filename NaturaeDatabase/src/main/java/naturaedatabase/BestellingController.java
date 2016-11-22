@@ -1,5 +1,7 @@
 package naturaedatabase;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,7 +59,7 @@ public class BestellingController {
 	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
+	public String maakBestelling(Date opleverDatum, Long klantId, boolean verzonden, boolean betaald){
 		Bestelling bestelling = new Bestelling();
 		bestelling.setOpleverDatum(opleverDatum);
 		bestelling.setKlant(repoKlant.findOne(klantId));
@@ -82,8 +84,8 @@ public class BestellingController {
 	
 	//Resultaat van de sample bestelling form
 	@RequestMapping(value="/sampleBestelling", method=RequestMethod.POST)
-	public String maakSampleBestelling(Long klantId, Integer contractId, String opleverDatum, 
-									   String startDatumContract, String eindDatumContract){
+	public String maakSampleBestelling(Long klantId, Integer contractId, Date opleverDatum, 
+									   Date startDatumContract, Date eindDatumContract){
 		SampleBestelling sb = new SampleBestelling();
 		sb.setKlant(repoKlant.findOne(klantId));
 		sb.setContractId(contractId);
@@ -109,7 +111,6 @@ public class BestellingController {
 			repoSampleOrderline.save(so);
 			return "redirect:sampleOrderline";
 		}
-
 
 	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
 	public String maakBestelling(Long productId, int hoeveelheid){

@@ -1,5 +1,6 @@
 package naturaedatabase;
 
+import java.sql.Date;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import javax.persistence.OneToMany;
 public class Bestelling {
 	private Long bestellingId;
 	private Klant klant;
-	private String opleverDatum;
+	private Date opleverDatum;
 	private boolean verzonden;
 	private boolean betaald;
 	private Set<Orderline> orderlines;
@@ -29,11 +30,11 @@ public class Bestelling {
 		this.bestellingId = bestellingId;
 	}
 	
-	public String getOpleverDatum() {
+	public Date getOpleverDatum() {
 		return opleverDatum;
 	}
-	public void setOpleverDatum(String opleverDatum) {
-		this.opleverDatum = opleverDatum;
+	public Date setOpleverDatum(Date opleverDatum) {
+		return this.opleverDatum = opleverDatum;
 	}
 	@ManyToOne
 	public Klant getKlant() {
