@@ -1,5 +1,7 @@
 package naturaedatabase;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,7 +59,7 @@ public class BestellingController {
 	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald){
+	public String maakBestelling(Date opleverDatum, Long klantId, boolean verzonden, boolean betaald){
 		Bestelling bestelling = new Bestelling();
 		bestelling.setOpleverDatum(opleverDatum);
 		bestelling.setKlant(repoKlant.findOne(klantId));
