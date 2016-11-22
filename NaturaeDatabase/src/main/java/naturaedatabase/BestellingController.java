@@ -84,8 +84,8 @@ public class BestellingController {
 	
 	//Resultaat van de sample bestelling form
 	@RequestMapping(value="/sampleBestelling", method=RequestMethod.POST)
-	public String maakSampleBestelling(Long klantId, Integer contractId, String opleverDatum, 
-									   String startDatumContract, String eindDatumContract){
+	public String maakSampleBestelling(Long klantId, Integer contractId, Date opleverDatum, 
+									   Date startDatumContract, Date eindDatumContract){
 		SampleBestelling sb = new SampleBestelling();
 		sb.setKlant(repoKlant.findOne(klantId));
 		sb.setContractId(contractId);
@@ -111,7 +111,6 @@ public class BestellingController {
 			repoSampleOrderline.save(so);
 			return "redirect:sampleOrderline";
 		}
-
 
 	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
 	public String maakBestelling(Long productId, int hoeveelheid){
