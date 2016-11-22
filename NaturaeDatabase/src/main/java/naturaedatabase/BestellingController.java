@@ -45,9 +45,14 @@ public class BestellingController {
 	@RequestMapping("/invoerOrderline")
 	public String bestelling(Model model){
 		model.addAttribute("bestelling", repoBestelling.findOne(aanmaakBestellingId));
-		model.addAttribute("alleProducten", repoProduct.findAll());
-				
+		model.addAttribute("alleProducten", repoProduct.findAll());			
 		return "invoerOrderline";
+	}
+	
+	@RequestMapping("/overzichtBestelling")
+	public String bestellingTotaal(Model model){
+		model.addAttribute("alleBestellingen", repoBestelling.findAll());
+		return "overzichtBestelling";	
 	}
 	
 	
@@ -64,14 +69,6 @@ public class BestellingController {
 
 		return "redirect:invoerOrderline";
 	}
-
-	
-	
-	
-	
-	
-	
-	
 
 	//Sample Bestelling
 	
@@ -120,9 +117,14 @@ public class BestellingController {
 		orderline.setProduct(repoProduct.findOne(productId));
 		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
 		orderline.setHoeveelheid(hoeveelheid);
-		repoOrderline.save(orderline);
-		
+		repoOrderline.save(orderline);		
 		return "redirect:invoerOrderline";
 	}
+	
+	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)
+	public String verwijderBestelling(Long Id){
+		repoBestelling.delete(Id);
+		return "redirect:overzichtBestelling";	
+	}	
 	
 }

@@ -2,7 +2,6 @@ package naturaedatabase;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -55,7 +54,7 @@ public class Bestelling {
 	public void setBetaald(boolean betaald) {
 		this.betaald = betaald;
 	}
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="bestelling")
+	@OneToMany(orphanRemoval=true, mappedBy="bestelling")
 	public Set<Orderline> getOrderlines() {
 		return orderlines;
 	}
