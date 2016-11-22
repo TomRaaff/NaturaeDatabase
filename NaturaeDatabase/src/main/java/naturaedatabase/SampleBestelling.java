@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 public class SampleBestelling {
 	private Long SampleBestellingId;
 	private Klant klant;
-	private int contractId;
+	private int contractId; //0 = geen, 1 = verhuur, 2 = consignatie, 3 = Verkoop, 4 = Trunkshow, 5 = verhuur&consignatie
 	private String opleverDatum;
 	private String startDatumContract;
 	private String eindDatumContract;

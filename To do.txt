@@ -4,21 +4,14 @@ invloerKlant.jsp
 - start en eind datum moet een date object worden
 	ook in Sample.class en andere plekken
 
-Bestelling.class
-- invoerpagina
-	1. Wie bestelt er iets en wat zijn de voorwaarden?
-	2. Welke producten worden er besteld?
-- Is bestelling geleverd? / klaar?
-
-
 sampleOrderline form maken
 
+datepicker implementerem
 
-Delete buttons implementeren
-
-Classes moeten geupdate worden zodat ze kloppen met de UML
+invoer klant bijwerken
 
 Jsp files
 include moet binnen de head vallen. Head tags moeten zichtbaar zijn.
 
 
+Overzicht paginas: Klant, product, sample

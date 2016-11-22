@@ -47,8 +47,7 @@
 										</tr>	
 									</table>
 								</c:forEach>							
-										<a href="/verwijderBestelling?Id=${bestelling.bestellingId}">Verwijderen</a>
-													
+										<a class="btn btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>			
 							</ul>
 						</c:forEach>
 

@@ -9,10 +9,11 @@ import javax.persistence.Id;
 public class Product {
 	private Long productId;
 	private String productNaam;
+	private double basisPrijs;
+	private double productPrijs;
 	private double inkoopPrijs;
 	private double verkoopPrijs;
 	private double werkUren;
-	private int hoeVaakVerkocht = 0;
 	private String materialenUrls;
 	
 	
@@ -30,6 +31,18 @@ public class Product {
 	}
 	public void setProductNaam(String productNaam) {
 		this.productNaam = productNaam;
+	}
+	public double getBasisPrijs() {
+		return basisPrijs;
+	}
+	public void setBasisPrijs(double basisPrijs) {
+		this.basisPrijs = basisPrijs;
+	}
+	public double getProductPrijs() {
+		return productPrijs;
+	}
+	public void setProductPrijs(double productPrijs) {
+		this.productPrijs = productPrijs;
 	}
 	public double getInkoopPrijs() {
 		return inkoopPrijs;
@@ -49,18 +62,13 @@ public class Product {
 	public void setWerkUren(double werkUren) {
 		this.werkUren = werkUren;
 	}
-	public int getHoeVaakVerkocht() {
-		return hoeVaakVerkocht;
-	}
-	public void setHoeVaakVerkocht(int hoeVaakVerkocht) {
-		this.hoeVaakVerkocht = hoeVaakVerkocht;
-	}
 	public String getMaterialenUrls() {
 		return materialenUrls;
 	}
 	public void setMaterialenUrls(String materialenUrls) {
 		this.materialenUrls = materialenUrls;
 	}
+
 	
 
 	

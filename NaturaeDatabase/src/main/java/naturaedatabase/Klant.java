@@ -14,14 +14,16 @@ public class Klant {
 	private Long klantId;
 	private int typeKlant; //0 = Winkel, 1 = particulier, 2 = overig
 	private String klantNaam;
-	private String adres;
+	private String straat;
+	private String huisnummer;
+	private String postcode;
+	private String stad;
+	private String staat;
+	private String land;
 	private String mail;
 	private String telNr;
-	private int typeContract;	//0 = geen, 1 = verhuur, 2 = consignatie, 3 = Verkoop, 4 = Trunkshow, 5 = verhuur&consignatie
-	private String eindDatumContract;
-	private String startDatumContract;
-	private String notitie;
 	private String contactPersoon;
+	private String notitie;
 	private List<Bestelling> bestellingen = new ArrayList<>();
 	
 	//Getters en Setters
@@ -45,11 +47,41 @@ public class Klant {
 	public void setKlantNaam(String klantNaam) {
 		this.klantNaam = klantNaam;
 	}
-	public String getAdres() {
-		return adres;
+	public String getStraat() {
+		return straat;
 	}
-	public void setAdres(String adres) {
-		this.adres = adres;
+	public void setStraat(String straat) {
+		this.straat = straat;
+	}
+	public String getHuisnummer() {
+		return huisnummer;
+	}
+	public void setHuisnummer(String huisnummer) {
+		this.huisnummer = huisnummer;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	public String getStad() {
+		return stad;
+	}
+	public void setStad(String stad) {
+		this.stad = stad;
+	}
+	public String getStaat() {
+		return staat;
+	}
+	public void setStaat(String staat) {
+		this.staat = staat;
+	}
+	public String getLand() {
+		return land;
+	}
+	public void setLand(String land) {
+		this.land = land;
 	}
 	public String getMail() {
 		return mail;
@@ -62,24 +94,6 @@ public class Klant {
 	}
 	public void setTelNr(String telNr) {
 		this.telNr = telNr;
-	}
-	public int getTypeContract() {
-		return typeContract;
-	}
-	public void setTypeContract(int typeContract) {
-		this.typeContract = typeContract;
-	}
-	public String getEindDatumContract() {
-		return eindDatumContract;
-	}
-	public void setEindDatumContract(String eindDatumContract) {
-		this.eindDatumContract = eindDatumContract;
-	}
-	public String getStartDatumContract() {
-		return startDatumContract;
-	}
-	public void setStartDatumContract(String startDatumContract) {
-		this.startDatumContract = startDatumContract;
 	}
 	public String getNotitie() {
 		return notitie;
@@ -100,4 +114,6 @@ public class Klant {
 	public void setBestellingen(List<Bestelling> bestellingen) {
 		this.bestellingen = bestellingen;
 	}
+	
+	
 }

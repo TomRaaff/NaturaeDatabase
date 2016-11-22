@@ -54,8 +54,33 @@
 								</tr>
 
 								<tr>
-									<td>Adres:</td>
-									<td><input type="text" name="adres"></td>
+									<td>Straat:</td>
+									<td><input type="text" name="straat"></td>
+								</tr>
+								
+								<tr>
+									<td>Huisnummer:</td>
+									<td><input type="text" name="huisnummer"></td>
+								</tr>
+								
+								<tr>
+									<td>Postcode:</td>
+									<td><input type="text" name="postcode"></td>
+								</tr>
+								
+								<tr>
+									<td>Stad:</td>
+									<td><input type="text" name="stad"></td>
+								</tr>
+								
+								<tr>
+									<td>Staat:</td>
+									<td><input type="text" name="staat"></td>
+								</tr>
+								
+								<tr>
+									<td>Land:</td>
+									<td><input type="text" name="land"></td>
 								</tr>
 
 								<tr>
@@ -66,28 +91,6 @@
 								<tr>
 									<td>Tel.Nr.:</td>
 									<td><input type="text" name="telNr"></td>
-								</tr>
-
-								<tr>
-									<td>Type Contract</td>
-									<td><select name="typeContract">
-											<option value="0">Geen</option>
-											<option value="1">Verhuur</option>
-											<option value="2">Consignatie</option>
-											<option value="3">Verkoop</option>
-											<option value="4">Trunkshow</option>
-											<option value="5">Verhuur & Consignatie</option>
-									</select></td>
-								</tr>
-
-								<tr>
-									<td>Start datum contract:</td>
-									<td><input type="text" name="startDatumContract"></td>
-								</tr>
-
-								<tr>
-									<td>Eind datum contract:</td>
-									<td><input type="text" name="eindDatumContract"></td>
 								</tr>
 
 								<tr>

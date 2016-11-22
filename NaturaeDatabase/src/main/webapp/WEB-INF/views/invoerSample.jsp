@@ -46,7 +46,7 @@
 							</table>
 
 							<input type="submit">
-							<a class="btn btn-danger" href="#" role="button">Delete</a>
+							
 
 						</form>
 
