@@ -41,13 +41,14 @@
 									
 								<c:forEach items="${bestelling.orderlines}" var="orderline">
 									<table>
-									<tr>
-										<td>${orderline.product.productNaam}</td>
-										<td>${orderline.hoeveelheid}</td>
-									</tr>	
+										<tr>
+											<td>${orderline.product.productNaam}</td>
+											<td>${orderline.hoeveelheid}</td>
+										</tr>	
 									</table>
-								</c:forEach>
-																		
+								</c:forEach>							
+										<a href="/verwijderBestelling?Id=${bestelling.bestellingId}">Verwijderen</a>
+													
 							</ul>
 						</c:forEach>
 
