@@ -1,11 +1,13 @@
 package naturaedatabase;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,6 +19,7 @@ public class SampleBestelling {
 	private Date opleverDatum;
 	private Date startDatumContract;
 	private Date eindDatumContract;
+	private Set<SampleOrderline> sampleOrderlines;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -24,7 +27,7 @@ public class SampleBestelling {
 		return SampleBestellingId;
 	}
 	public void setSampleBestellingId(Long sampleBestellingId) {
-		SampleBestellingId = sampleBestellingId;
+		this.SampleBestellingId = sampleBestellingId;
 	}
 	@OneToOne
 	public Klant getKlant() {
@@ -56,5 +59,12 @@ public class SampleBestelling {
 	}
 	public void setEindDatumContract(Date eindDatumContract) {
 		this.eindDatumContract = eindDatumContract;
+	}
+	@OneToMany(orphanRemoval=true, mappedBy="sampleBestelling")
+	public Set<SampleOrderline> getSampleOrderlines() {
+		return sampleOrderlines;
+	}
+	public void setSampleOrderlines(Set<SampleOrderline> sampleOrderlines) {
+		this.sampleOrderlines = sampleOrderlines;
 	}
 }

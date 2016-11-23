@@ -25,18 +25,8 @@ public class BestellingController {
 	
 	@Autowired
 	private ProductRepository repoProduct;
-	
 
-	@Autowired
-	private SampleRepository repoSample;
-	
-	@Autowired 
-	private SampleBestellingRepository repoSampleBestelling;
-	
-	@Autowired
-	private SampleOrderlineRepository repoSampleOrderline;
-
-	private Long aanmaakBestellingId;
+	private Long aanmaakBestellingId; //Deze variable wordt gebruikt om de laastaangemaakte bestellingId mee te geven aan de 
 
 	
 	@RequestMapping("/invoerBestelling")
@@ -95,57 +85,4 @@ public class BestellingController {
 		repoBestelling.delete(Id);
 		return "redirect:overzichtBestelling";	
 	}	
-	
-	
-	
-	//Sample Bestelling
-
-	
-	@RequestMapping("/sampleBestelling")
-	public String sample(Model model){
-		model.addAttribute("alleSamples", repoSample.findAll());
-		model.addAttribute("alleKlanten", repoKlant.findAll());
-		return "sampleBestelling";
-	}
-	
-	//Resultaat van de sample bestelling form
-	@RequestMapping(value="/sampleBestelling", method=RequestMethod.POST)
-	public String maakSampleBestelling(Long klantId, Integer contractId, String opleverDatum, 
-									   String startDatumContract, String eindDatumContract) throws ParseException{
-		DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
-		Date dateOplever = format.parse(opleverDatum);
-		Date dateStart = format.parse(startDatumContract);
-		Date dateEind = format.parse(eindDatumContract);
-		
-		SampleBestelling sb = new SampleBestelling();
-		sb.setKlant(repoKlant.findOne(klantId));
-		sb.setContractId(contractId);
-		sb.setOpleverDatum(dateOplever);
-		sb.setStartDatumContract(dateStart);
-		sb.setEindDatumContract(dateEind);
-		repoSampleBestelling.save(sb);
-		return "redirect:sampleOrderline";
-	}
-	
-	//Get-request sampleOrderline
-	@RequestMapping("/sampleOrderline")
-	public String sampleOrderline(Model model){
-		model.addAttribute("alleSamples", repoSample.findAll());
-		model.addAttribute("alleKlanten", repoKlant.findAll());
-		return "sampleOrderline";
-	}
-	
-	//Resultaat van de sample Orderline form
-		@RequestMapping(value="/sampleOrderline", method=RequestMethod.POST)
-		public String maakSampleOrderline(){
-			SampleOrderline so = new SampleOrderline();
-			repoSampleOrderline.save(so);
-			return "redirect:sampleOrderline";
-		}
-
-		
-		
-		
-
-	
 }

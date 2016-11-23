@@ -60,13 +60,13 @@
 				
 							</table>
 							<table>
-							<c:forEach items="${bestelling.orderlines}" var="orderline">
+								<c:forEach items="${bestelling.orderlines}" var="orderline">
 									<tr>
 										<td>${orderline.product.productNaam}</td>
 										<td>${orderline.hoeveelheid}</td>
 									</tr>
 									
-							</c:forEach>
+								</c:forEach>
 							</table>
 							
 <!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							

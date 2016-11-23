@@ -30,49 +30,59 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Sample Bestelling</h1>
+						<h1>Sample orderline</h1>
 
-
-						<form method="post">
 							<table>
-
 								<tr>
 									<td>Klant:</td>
-									<td><select name="klantId">
-											<c:forEach items="${alleKlanten }" var="k">
-												<option value="${k.klantId}">${k.klantNaam}</option>
-											</c:forEach>
-									</select></td>
+									<td>${sampleBestelling.klant.klantNaam}</td>
 								</tr>
+								
 								<tr>
-									<td>Contract:</td>
-									<td><select name="contractId">
-											<option value="0">Geen</option>
-											<option value="1">Verhuur</option>
-											<option value="2">Consignatie</option>
-											<option value="3">Verkoop</option>
-											<option value="4">Trunkshow</option>
-											<option value="5">Verhuur & Consignatie</option>
-									</select>
+									<td>ContractId:</td>
+									<td>${sampleBestelling.contractId}</td>
 								</tr>
+								
 								<tr>
 									<td>Oplever datum:</td>
-									<td><input type="text" id="opleverDatum"></td>
-							
+									<td>${sampleBestelling.opleverDatum}</td>
+								</tr>
+								
+								<tr>
+									<td>Start datum:</td>
+									<td>${sampleBestelling.startDatumContract}</td>
+								</tr>
+								
+								<tr>
+									<td>Eind datum:</td>
+									<td>${sampleBestelling.eindDatumContract}</td>
+								</tr>
+				
 							</table>
-
-							<input type="submit">
-
+							
+							<table>
+								<c:forEach items="${sampleBestelling.sampleOrderlines}" var="ol">
+									<tr>
+										<td>${ol.sample.product.productNaam}</td>
+									</tr>
+			
+								</c:forEach>
+							</table>
+							
+						<form method="post">
+						
+							<table>
+								<tr>
+									<td>Sample:</td>
+									<td><select name="sampleId">
+											<c:forEach items="${alleSamples}" var="sample">
+												<option value="${sample.sampleId}">${sample.product.productNaam} ${sample.sampleId}</option>
+											</c:forEach>
+									</select></td>
+									<td> <input type="submit">
+								</table>
+						
 						</form>
-
-						<h1>Overzicht van bestellingen</h1>
-
-						<c:forEach items="${alleBestellingen }" var="b">
-							<ul>
-								<li>${b.opleverDatum}<br> ${b.klant.klantNaam}
-							</ul>
-						</c:forEach>
-
 
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
