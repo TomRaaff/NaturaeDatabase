@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Product {
 	private Long productId;
 	private String productNaam;
-	private double basisPrijs;
+	private double materiaalKosten;
 	private double productPrijs;
 	private double inkoopPrijs;
 	private double verkoopPrijs;
@@ -32,11 +32,11 @@ public class Product {
 	public void setProductNaam(String productNaam) {
 		this.productNaam = productNaam;
 	}
-	public double getBasisPrijs() {
-		return basisPrijs;
+	public double getMateriaalKosten() {
+		return materiaalKosten;
 	}
-	public void setBasisPrijs(double basisPrijs) {
-		this.basisPrijs = basisPrijs;
+	public void setMateriaalKosten(double materiaalKosten) {
+		this.materiaalKosten = materiaalKosten;
 	}
 	public double getProductPrijs() {
 		return productPrijs;

@@ -6,9 +6,10 @@ invloerKlant.jsp
 
 sampleOrderline form maken
 
-datepicker implementerem
 
-invoer klant bijwerken
+bestellingOrderlines
+	AJAX versie van maken
+
 
 Jsp files
 include moet binnen de head vallen. Head tags moeten zichtbaar zijn.

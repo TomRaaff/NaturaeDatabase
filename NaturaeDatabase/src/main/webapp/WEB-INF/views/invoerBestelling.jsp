@@ -13,10 +13,8 @@
 <script>
   $( function() {
     $( "#opleverDatum" ).datepicker();
-    dateFormat: "dd-mm-yy"
   } );
-
-  </script>
+</script>
 
 </head>
 
@@ -46,8 +44,7 @@
 								
 								<tr>
 									<td>Opleverdatum:</td>
-
-									<td><input type="date" id="opleverDatum" name="opleverDatum"></td>
+									<td><input type="text" id="opleverDatum" name="opleverDatum"></td>
 								</tr>
 								
 								<tr>

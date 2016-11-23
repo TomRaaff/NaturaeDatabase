@@ -85,7 +85,7 @@
 														
 							</form>
 							
-							<form action="/invoerBestelling">
+							<form action="/overzichtBestelling">
     							<input type="submit" value="Klaar"/>
 							</form>
 												

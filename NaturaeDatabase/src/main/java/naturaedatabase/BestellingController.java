@@ -1,6 +1,10 @@
 package naturaedatabase;
 
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,9 +63,13 @@ public class BestellingController {
 	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(Date opleverDatum, Long klantId, boolean verzonden, boolean betaald){
+	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald) throws ParseException{
+		//opleverdatum komt als: MM/dd/yyyy		
+		DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
+		Date date = format.parse(opleverDatum);
+		
 		Bestelling bestelling = new Bestelling();
-		bestelling.setOpleverDatum(opleverDatum);
+		bestelling.setOpleverDatum(date);
 		bestelling.setKlant(repoKlant.findOne(klantId));
 		bestelling.setVerzonden(verzonden);
 		bestelling.setBetaald(betaald);
@@ -72,8 +80,26 @@ public class BestellingController {
 		return "redirect:invoerOrderline";
 	}
 
-	//Sample Bestelling
+	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
+	public String maakBestelling(Long productId, int hoeveelheid){
+		Orderline orderline = new Orderline();
+		orderline.setProduct(repoProduct.findOne(productId));
+		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
+		orderline.setHoeveelheid(hoeveelheid);
+		repoOrderline.save(orderline);		
+		return "redirect:invoerOrderline";
+	}
 	
+	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)
+	public String verwijderBestelling(Long Id){
+		repoBestelling.delete(Id);
+		return "redirect:overzichtBestelling";	
+	}	
+	
+	
+	
+	//Sample Bestelling
+
 	
 	@RequestMapping("/sampleBestelling")
 	public String sample(Model model){
@@ -84,14 +110,19 @@ public class BestellingController {
 	
 	//Resultaat van de sample bestelling form
 	@RequestMapping(value="/sampleBestelling", method=RequestMethod.POST)
-	public String maakSampleBestelling(Long klantId, Integer contractId, Date opleverDatum, 
-									   Date startDatumContract, Date eindDatumContract){
+	public String maakSampleBestelling(Long klantId, Integer contractId, String opleverDatum, 
+									   String startDatumContract, String eindDatumContract) throws ParseException{
+		DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
+		Date dateOplever = format.parse(opleverDatum);
+		Date dateStart = format.parse(startDatumContract);
+		Date dateEind = format.parse(eindDatumContract);
+		
 		SampleBestelling sb = new SampleBestelling();
 		sb.setKlant(repoKlant.findOne(klantId));
 		sb.setContractId(contractId);
-		sb.setOpleverDatum(opleverDatum);
-		sb.setStartDatumContract(startDatumContract);
-		sb.setEindDatumContract(eindDatumContract);
+		sb.setOpleverDatum(dateOplever);
+		sb.setStartDatumContract(dateStart);
+		sb.setEindDatumContract(dateEind);
 		repoSampleBestelling.save(sb);
 		return "redirect:sampleOrderline";
 	}
@@ -112,20 +143,9 @@ public class BestellingController {
 			return "redirect:sampleOrderline";
 		}
 
-	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
-	public String maakBestelling(Long productId, int hoeveelheid){
-		Orderline orderline = new Orderline();
-		orderline.setProduct(repoProduct.findOne(productId));
-		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
-		orderline.setHoeveelheid(hoeveelheid);
-		repoOrderline.save(orderline);		
-		return "redirect:overzichtBestelling";
-	}
-	
-	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)
-	public String verwijderBestelling(Long Id){
-		repoBestelling.delete(Id);
-		return "redirect:overzichtBestelling";	
-	}	
+		
+		
+		
+
 	
 }
