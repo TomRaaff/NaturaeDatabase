@@ -96,4 +96,11 @@ public class SampleController {
 				repoSampleOrderline.save(so);
 				return "redirect:sampleOrderline";
 			}
+			
+			@RequestMapping("/overzichtSampleBestelling")
+			public String sampleBestellingTotaal(Model model){
+				model.addAttribute("alleSampleBestellingen", repoSampleBestelling.findAll());
+				return "overzichtSampleBestelling";	
+			}
+			
 }

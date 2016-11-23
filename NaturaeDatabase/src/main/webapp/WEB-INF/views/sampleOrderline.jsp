@@ -79,11 +79,13 @@
 												<option value="${sample.sampleId}">${sample.product.productNaam} ${sample.sampleId}</option>
 											</c:forEach>
 									</select></td>
-									<td> <input type="submit">
+									<td> <input type="submit" value="voeg toe">
 								</table>
-						
 						</form>
 
+						<form action="/overzichtSampleBestelling">
+    						<input type="submit" value="Klaar"/>
+						</form>
 
 						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
 							Menu</a>
