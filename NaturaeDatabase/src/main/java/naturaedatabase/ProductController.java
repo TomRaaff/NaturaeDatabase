@@ -13,7 +13,7 @@ public class ProductController {
 		private ProductRepository repo;
 		
 		@RequestMapping("/invoerProduct")
-		public String klanten(Model model){
+		public String product(Model model){
 			model.addAttribute("alleProducten", repo.findAll());
 			return "invoerProduct";
 		}
@@ -27,9 +27,20 @@ public class ProductController {
 			p.setWerkUren(werkUren);
 			p.setMaterialenUrls(materialenUrls);
 			repo.save(p);
-			return "redirect:invoerProduct";
+			return "redirect:overzichtProducten";
 		}
 		
+		@RequestMapping("/overzichtProducten")
+		public String overzicht(Model model){
+			model.addAttribute("alleProducten", repo.findAll());
+			return "overzichtProducten";
+		}
+		
+		@RequestMapping(value="/verwijderProduct", method=RequestMethod.GET)
+		public String verwijderProduct(Long Id){
+			repo.delete(Id);
+			return "redirect:overzichtProducten";	
+		}	
 
 		/*
 		private String productNaam;

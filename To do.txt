@@ -1,18 +1,15 @@
 To Do:
 
-invloerKlant.jsp
-- start en eind datum moet een date object worden
-	ook in Sample.class en andere plekken
-
-sampleOrderline form maken
+Prio 1:
+- sampleOrderline form maken
+- Gegevens wijzigen
 
 
-bestellingOrderlines
+Prio 2:
+- Overzicht paginas: Klant, product, sample
+
+Prio: 3
+- bestellingOrderlines
 	AJAX versie van maken
 
 
-Jsp files
-include moet binnen de head vallen. Head tags moeten zichtbaar zijn.
-
-
-Overzicht paginas: Klant, product, sample

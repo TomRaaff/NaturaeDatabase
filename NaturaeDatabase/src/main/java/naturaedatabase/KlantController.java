@@ -36,6 +36,18 @@ public class KlantController {
 			k.setContactPersoon(contactPersoon);
 			k.setNotitie(notitie);
 			repo.save(k);
-			return "redirect:invoerKlant";
+			return "redirect:overzichtKlanten";
 		}
+		
+		@RequestMapping("/overzichtKlanten")
+		public String overzicht(Model model){
+			model.addAttribute("alleKlanten", repo.findAll());
+			return "overzichtKlanten";
+		}
+		
+		@RequestMapping(value="/verwijderKlant", method=RequestMethod.GET)
+		public String verwijderKlant(Long Id){
+			repo.delete(Id);
+			return "redirect:overzichtKlanten";	
+		}	
 }

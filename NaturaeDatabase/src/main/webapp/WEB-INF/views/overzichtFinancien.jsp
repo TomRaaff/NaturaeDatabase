@@ -8,7 +8,7 @@
 <%@include file="header.jsp" %>
 
 
-<title>Overzicht Bestellingen</title>
+<title>Overzicht Financiën</title>
 
 </head>
 
@@ -18,35 +18,14 @@
 
 <%@include file="sidebar.jsp" %>
 
+
 		<!-- Page Content --------------------------------------------------------------------- -->
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
+						<h1>Overzicht Financiën</h1>
 						
-						<h1>Overzicht van bestellingen</h1>
-						
-						<c:forEach items="${alleBestellingen}" var="bestelling">
-							<ul>
-								<li>${bestelling.klant.klantNaam}<br>
-									${bestelling.opleverDatum}<br>
-									Verzonden:${bestelling.verzonden}<br>
-									Betaald:${bestelling.betaald}<br>
-									
-								<c:forEach items="${bestelling.orderlines}" var="orderline">
-									<table>
-										<tr>
-											<td>${orderline.product.productNaam}</td>
-											<td>${orderline.hoeveelheid}</td>
-										</tr>	
-									</table>
-								</c:forEach>							
-								<a class="btn btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>			
-							</ul>
-						</c:forEach>
-
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
-							Menu</a>
 					</div>
 				</div>
 			</div>

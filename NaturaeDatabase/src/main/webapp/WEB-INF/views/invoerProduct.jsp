@@ -1,20 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
 <%@include file="header.jsp" %>
 
 
 <title>Product Invoer</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="css/simple-sidebar.css" rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -45,6 +39,16 @@
 									<td>Product naam:</td>
 									<td><input type="text" name="productNaam"></td>
 								</tr>
+								
+								<tr>
+									<td>Materiaalkosten:</td>
+									<td><input type="number" step="0.01" name="materiaalKosten"></td>
+								</tr>
+								
+								<tr>
+									<td>Product prijs:</td>
+									<td><input type="number" step="0.01" name="productPrijs"></td>
+								</tr>
 
 								<tr>
 									<td>Inkoop prijs:</td>
@@ -61,10 +65,6 @@
 									<td><input type="number" name="werkUren"></td>
 								</tr>
 
-								<tr>
-									<td>Materialen URL's:</td>
-									<td><input type="text" name="materialenUrls"></td>
-								</tr>
 
 								<tr>
 									<td><input type="submit">
