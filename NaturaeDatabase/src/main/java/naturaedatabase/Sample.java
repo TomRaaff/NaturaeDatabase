@@ -1,18 +1,19 @@
 package naturaedatabase;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Sample {
 	private Long sampleId;
 	private Product product;
-	private Klant klant;
-	private String datumTerug;
+	private Set<SampleBestelling>sampleBestellingen;
 
 	
 	@Id
@@ -30,18 +31,13 @@ public class Sample {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	@OneToOne
-	public Klant getKlant() {
-		return klant;
+	@OneToMany
+	public Set<SampleBestelling> getSampleBestellingen() {
+		return sampleBestellingen;
 	}
-	public void setKlant(Klant klant) {
-		this.klant = klant;
+	public void setSampleBestellingen(Set<SampleBestelling> sampleBestellingen) {
+		this.sampleBestellingen = sampleBestellingen;
 	}
-	public String getDatumTerug() {
-		return datumTerug;
-	}
-	public void setDatumTerug(String datumTerug) {
-		this.datumTerug = datumTerug;
-	}
+
 	
 }
