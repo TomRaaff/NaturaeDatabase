@@ -35,16 +35,17 @@
 						<c:forEach items="${alleSampleBestellingen}" var="bestelling">
 							<ul>
 									<li><table>
-										<tr><td>Naam Klant: </td><td>${bestelling.klant.klantNaam}</td></tr>
-										<tr><td>Contract: </td><td>${bestelling.contractId}</td></tr>
-										<tr><td>Oplever Datum: </td><td>${bestelling.opleverDatum}</td></tr>
-										<tr><td>Start datum: </td><td>${bestelling.startDatumContract}</td></tr>
-										<tr><td>Eind datum: </td><td>${bestelling.eindDatumContract}</td></tr>
-										<c:forEach items="${sampleBestelling.sampleOrderlines}" var="orderline">
-										<tr><td>Sample:</td><td>${orderline.sample.product.productNaam}</td></tr>											
+											<tr><td>Naam Klant: </td><td>${bestelling.klant.klantNaam}</td></tr>
+											<tr><td>Contract: </td><td>${bestelling.contractId}</td></tr>
+											<tr><td>Oplever Datum: </td><td>${bestelling.opleverDatum}</td></tr>
+											<tr><td>Start datum: </td><td>${bestelling.startDatumContract}</td></tr>
+											<tr><td>Eind datum: </td><td>${bestelling.eindDatumContract}</td></tr>
+										<c:forEach items="${bestelling.sampleOrderlines}" var="orderline">
+											<tr><td>${orderline.sample.product.productNaam}</td></tr>
 										</c:forEach>
-										<tr><td><a class="btn btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a></td></tr>
-									</table>
+										</table>
+																				
+										<a class="btn btn-danger" href="/verwijderSampleBestelling?Id=${sampleBestelling.sampleBestellingId}" role="button">Verwijder</a>
 							</ul>
 						</c:forEach>							
 									

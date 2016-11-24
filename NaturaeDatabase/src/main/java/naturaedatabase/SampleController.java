@@ -99,8 +99,17 @@ public class SampleController {
 			
 			@RequestMapping("/overzichtSampleBestelling")
 			public String sampleBestellingTotaal(Model model){
+				model.addAttribute("alleSamples", repoSample.findAll());
+				model.addAttribute("alleKlanten", repoKlant.findAll());
+				model.addAttribute("alleProducten", repoProduct.findAll());	
 				model.addAttribute("alleSampleBestellingen", repoSampleBestelling.findAll());
 				return "overzichtSampleBestelling";	
 			}
+			
+			@RequestMapping(value="/verwijderSampleBestelling", method=RequestMethod.GET)
+			public String verwijderSampleBestelling(Long Id){
+				repoSampleBestelling.delete(Id);
+				return "redirect:overzichtSampleBestelling";	
+			}	
 			
 }
