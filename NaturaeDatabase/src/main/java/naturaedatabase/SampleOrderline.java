@@ -1,5 +1,6 @@
 package naturaedatabase;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +9,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class SampleOrderline {
-	private Long SampleOrderlineId;
+	private Long sampleOrderlineId;
 	private Sample sample;
 	private SampleBestelling sampleBestelling;
 	
@@ -16,10 +17,10 @@ public class SampleOrderline {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long getSampleOrderlineId() {
-		return SampleOrderlineId;
+		return sampleOrderlineId;
 	}
 	public void setSampleOrderlineId(Long sampleOrderlineId) {
-		SampleOrderlineId = sampleOrderlineId;
+		this.sampleOrderlineId = sampleOrderlineId;
 	}
 	
 	@ManyToOne
@@ -30,7 +31,7 @@ public class SampleOrderline {
 		this.sample = sample;
 	}
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	public SampleBestelling getSampleBestelling() {
 		return sampleBestelling;
 	}

@@ -59,10 +59,12 @@
 								</tr>
 				
 							</table>
+
 							<br>
 							<table id="orderlineTable">
 								<tr><th>Product</th><th>Aantal</th></tr>
 								<!-- INSERT ORDERLINES HERE -->
+
 							</table>
 							<br>
 <!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							
