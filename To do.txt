@@ -1,6 +1,8 @@
 To Do:
 
 Prio 1:
+- bestellingOrderlines
+	REST/AJAX versie van maken
 - sampleOrderline form maken
 - Gegevens wijzigen	(met angularJS?)
 - Alerts maken
@@ -11,7 +13,6 @@ Prio 2:
 	alle items 'clickable' maken.
 
 Prio: 3
-- bestellingOrderlines
-	AJAX versie van maken
+
 
 
