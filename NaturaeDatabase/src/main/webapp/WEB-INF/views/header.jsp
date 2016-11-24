@@ -8,8 +8,9 @@
 <meta name="author" content="">
 
 <!-- CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="css/bootstrap-theme.css" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
