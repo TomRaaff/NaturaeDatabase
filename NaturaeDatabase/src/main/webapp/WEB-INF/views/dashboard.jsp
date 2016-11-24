@@ -9,6 +9,17 @@
 
 
 <title>Dashboard</title>
+
+<script>
+$(document).ready(function(){
+	$("#bereken").click(function(totaleInkomsten);
+	function totaleInkomsten(){
+		$.get
+	}
+	
+	$("#totaleInkomsten").val(alleBestellingen)
+})
+</script>
 </head>
 
 <body>
@@ -24,7 +35,10 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Dashboard</h1>
+						Hier komen statistieken.<br>
 						
+						Totale inkomsten: <input type="text" id="totaleInkomsten">
+						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
 					</div>
 				</div>
 			</div>

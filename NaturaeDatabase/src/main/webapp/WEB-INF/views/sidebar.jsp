@@ -3,7 +3,7 @@
 <div id="sidebar-wrapper">
 	<ul class="sidebar-nav">
 		<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
-		<li><a href="#">Dashboard</a></li>
+		<li><a href="/dashboard">Dashboard</a></li>
 		<li><a href="/invoerKlant">Invoeren Klant</a></li>
 		<li><a href="/invoerBestelling">Invoeren Bestelling</a></li>
 		<li><a href="/invoerProduct">Invoeren Product</a></li>
