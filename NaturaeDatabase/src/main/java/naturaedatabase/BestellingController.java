@@ -6,11 +6,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BestellingController {
@@ -25,7 +28,6 @@ public class BestellingController {
 	
 	@Autowired
 	private ProductRepository repoProduct;
-	
 
 	@Autowired
 	private SampleRepository repoSample;
@@ -36,7 +38,6 @@ public class BestellingController {
 	@Autowired
 	private SampleOrderlineRepository repoSampleOrderline;
 
-	private Long aanmaakBestellingId;
 
 	
 	@RequestMapping("/invoerBestelling")
@@ -49,9 +50,9 @@ public class BestellingController {
 	}
 	
 	@RequestMapping("/invoerOrderline")
-	public String bestelling(Model model){
-		model.addAttribute("bestelling", repoBestelling.findOne(aanmaakBestellingId));
-		model.addAttribute("alleProducten", repoProduct.findAll());			
+	public String bestelling(Model model, HttpSession session){
+		model.addAttribute("alleProducten", repoProduct.findAll());	
+		session.getAttribute("bestelling");
 		return "invoerOrderline";
 	}
 	
@@ -63,7 +64,7 @@ public class BestellingController {
 	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald) throws ParseException{
+	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald, HttpSession session) throws ParseException{
 		//opleverdatum komt als: MM/dd/yyyy		
 		DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
 		Date date = format.parse(opleverDatum);
@@ -74,20 +75,19 @@ public class BestellingController {
 		bestelling.setVerzonden(verzonden);
 		bestelling.setBetaald(betaald);
 		repoBestelling.save(bestelling);
-		
-		aanmaakBestellingId = bestelling.getBestellingId();		
+		session.setAttribute("bestelling", bestelling);
 
 		return "redirect:invoerOrderline";
 	}
-
-	@RequestMapping(value="/invoerOrderline", method=RequestMethod.POST)
-	public String maakBestelling(Long productId, int hoeveelheid){
-		Orderline orderline = new Orderline();
-		orderline.setProduct(repoProduct.findOne(productId));
-		orderline.setBestelling(repoBestelling.findOne(aanmaakBestellingId));
-		orderline.setHoeveelheid(hoeveelheid);
-		repoOrderline.save(orderline);		
-		return "redirect:invoerOrderline";
+	
+	@RequestMapping(value="/maakOrderline", method=RequestMethod.POST)
+	public @ResponseBody Orderline maakOrderline(Long productId, int hoeveelheid, Long bestellingId){
+		Orderline o = new Orderline();
+		o.setProduct(repoProduct.findOne(productId));
+		o.setHoeveelheid(hoeveelheid);
+		o.setBestelling(repoBestelling.findOne(bestellingId));
+		repoOrderline.save(o);
+		return o;
 	}
 	
 	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)

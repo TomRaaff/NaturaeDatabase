@@ -7,12 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Orderline {
 	private Long orderlineId;
 	private Product product;
 	private int hoeveelheid;
-	private Bestelling bestelling;
+	@JsonIgnore private Bestelling bestelling;
 	
 	//Getters en setters
 	@Id

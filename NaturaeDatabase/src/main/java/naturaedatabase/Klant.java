@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Klant {
 	private Long klantId;
@@ -24,7 +26,7 @@ public class Klant {
 	private String telNr;
 	private String contactPersoon;
 	private String notitie;
-	private List<Bestelling> bestellingen = new ArrayList<>();
+	@JsonIgnore private List<Bestelling> bestellingen = new ArrayList<>();
 	
 	//Getters en Setters
 	@Id

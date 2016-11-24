@@ -8,23 +8,29 @@
 <%@include file="header.jsp" %>
 
 <title>Orderline Invoer</title>
-
+<script>
+	$(document).ready(function(){
+		$("#toevoegen").click(voegProductToe);
+		function voegProductToe(){
+ 			$.post("maakOrderline", {
+				productId: $("#productId").val(),
+				hoeveelheid: $("#hoeveelheid").val(),
+				bestellingId: ${bestelling.bestellingId}
+			}, function(orderline){
+				var orderline = $("<tr><td>" + orderline.product.productNaam + "</td><td> "+ orderline.hoeveelheid + "</td></tr>" );
+				$("#orderlineTable").append(orderline);
+			}); 
+		}
+	})
+</script>
 </head>
 
 <body>
 
 	<div id="wrapper">
 
-		<!-- Sidebar -->
-		<div id="sidebar-wrapper">
-			<ul class="sidebar-nav">
-				<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
-				<li><a href="#">Dashboard</a></li>
-				<li><a href="/invoerKlant">Invoeren Klant</a></li>
-				<li><a href="/invoerBestelling">Invoeren Bestelling</a></li>
-				<li><a href="/invoerProduct">Invoeren Product</a></li>
-			</ul>
-		</div>
+<%@include file="sidebar.jsp" %>
+
 		<!-- /#sidebar-wrapper -->
 
 		<!-- Page Content --------------------------------------------------------------------- -->
@@ -53,28 +59,24 @@
 								</tr>
 				
 							</table>
-							<table>
-							<c:forEach items="${bestelling.orderlines}" var="orderline">
-									<tr>
-										<td>${orderline.product.productNaam}</td>
-										<td>${orderline.hoeveelheid}</td>
-									</tr>
-									
-							</c:forEach>
+							<br>
+							<table id="orderlineTable">
+								<tr><th>Product</th><th>Aantal</th></tr>
+								<!-- INSERT ORDERLINES HERE -->
 							</table>
-							
+							<br>
 <!-- Hier begint een nieuwe form voor orderline, deze staat in de form voor product -->							
 						
 							
 							<form method="post">
 								<table>
-									<tr><td><select name="productId">
+									<tr><td><select name="productId" id="productId">
 											<c:forEach items="${alleProducten}" var="product">
 												<option value="${product.productId}">${product.productNaam}</option>
 											</c:forEach>
 									</select></td>
-									<td> hoeveelheid:<input type="number" name="hoeveelheid" >
-									<td> <input type="submit">
+									<td> hoeveelheid:<input type="number" name="hoeveelheid" id="hoeveelheid">
+									<td> <input type="button" value="toevoegen" id="toevoegen">
 								</table>
 														
 							</form>
@@ -82,9 +84,7 @@
 							<form action="/overzichtBestelling">
     							<input type="submit" value="Klaar"/>
 							</form>
-												
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
-							Menu</a>
+
 					</div>
 				</div>
 			</div>

@@ -1,10 +1,7 @@
 To Do:
 
 Prio 1:
-- bestellingOrderlines
-	REST/AJAX versie van maken
-- sampleOrderline form maken
-- Gegevens wijzigen	(met angularJS?)
+- Gegevens wijzigen functies	(met angularJS?)
 - Alerts maken
 
 
