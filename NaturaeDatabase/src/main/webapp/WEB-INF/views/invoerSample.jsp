@@ -56,12 +56,10 @@
 							<tr>
 								<th>Product Naam</th>
 								<th>ID</th>
-								<th>Klant naam</th>
 							<c:forEach items="${alleSamples }" var="s">
 							<tr>
 								<td>${s.product.productNaam}</td>
 								<td>ID: ${s.sampleId}</td>
-								<td>${s.klant.klantNaam }</td>
 							</tr>
 							</c:forEach>
 						</table>
