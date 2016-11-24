@@ -84,4 +84,10 @@ public class BestellingController {
 		repoBestelling.delete(Id);
 		return "redirect:overzichtBestelling";	
 	}	
+	
+	@RequestMapping(value="/getBestelling", method=RequestMethod.GET)
+	public @ResponseBody Bestelling getBestelling(Long id){
+		Bestelling b = repoBestelling.findOne(id);
+		return b;
+	}
 }

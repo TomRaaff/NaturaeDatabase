@@ -25,12 +25,6 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Invoer Product</h1>
-						<c:forEach items="${alleProducten }" var="p">
-							<ul>
-								<li>${p.productNaam}
-							</ul>
-						</c:forEach>
-
 
 
 						<form method="post">
@@ -71,8 +65,7 @@
 								</tr>
 							</table>
 						</form>
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
-							Menu</a>
+
 					</div>
 				</div>
 			</div>

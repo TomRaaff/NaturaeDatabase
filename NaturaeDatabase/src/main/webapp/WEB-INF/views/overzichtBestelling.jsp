@@ -7,7 +7,24 @@
 <head>
 <%@include file="header.jsp" %>
 
+<script>
+$(document).ready(function(){
+	$(':button').click(bekijkBestelling);
+	
+	
+	function bekijkBestelling(){
+		console.log($(this).attr("id"));
+		var id = $(this).attr("id");
+ 		$.get("getBestelling", { id }, 
+				function(bestelling){
+					$("#naam").val(bestelling.klant.klantNaam);
+					$("#opleverDatum").val(bestelling.opleverDatum);
+					//$("#producten").attr("items").val(bestelling);
+		}); 
+	}
 
+});
+</script>
 <title>Overzicht Bestellingen</title>
 
 </head>
@@ -22,31 +39,47 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
-						
+					<div class="col-lg-6">
+
 						<h1>Overzicht van bestellingen</h1>
-						
+
 						<c:forEach items="${alleBestellingen}" var="bestelling">
-							<ul>
-								<li>${bestelling.klant.klantNaam}<br>
-									${bestelling.opleverDatum}<br>
-									Verzonden:${bestelling.verzonden}<br>
-									Betaald:${bestelling.betaald}<br>
-									
-								<c:forEach items="${bestelling.orderlines}" var="orderline">
-									<table>
-										<tr>
-											<td>${orderline.product.productNaam}</td>
-											<td>${orderline.hoeveelheid}</td>
-										</tr>	
-									</table>
-								</c:forEach>							
-								<a class="btn btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>			
-							</ul>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">${bestelling.klant.klantNaam}</h3>
+								</div>
+								<div class="panel-body">
+									${bestelling.opleverDatum}<br> 
+									Verzonden: ${bestelling.verzonden}<br> 
+									Betaald: ${bestelling.betaald}<br>
+									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId }" value="bekijk"> 
+									<a class="btn btn-xs btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>
+								</div>
+							</div>
+
 						</c:forEach>
 
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
-							Menu</a>
+					</div>
+					<div class="col-lg-6">
+						<h1>Info van bestelling</h1>
+						<form method='post'>
+						<table>
+							<tr>
+								<td>Naam: </td><td><input type="text" id="naam"></td>
+							</tr>
+							<tr>
+								<td>Opleverdatum: </td><td><input type="text" id="opleverDatum"></td>
+							</tr>
+<%-- 							<c:forEach items="${bestelling.orderlines }" var="o" id="producten">
+								<tr>
+									<td>Product: </td>
+									<td>${o.product.productNaam }</td>
+								</tr>
+							</c:forEach> --%>				
+						</table>
+						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
+						</form>
+
 					</div>
 				</div>
 			</div>

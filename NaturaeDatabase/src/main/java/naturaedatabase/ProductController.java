@@ -19,9 +19,11 @@ public class ProductController {
 		}
 		
 		@RequestMapping(value="/invoerProduct", method=RequestMethod.POST)
-		public String maakProduct(String productNaam, double inkoopPrijs, double verkoopPrijs, double werkUren, String materialenUrls){
+		public String maakProduct(String productNaam, double materiaalKosten, double productPrijs, double inkoopPrijs, double verkoopPrijs, double werkUren, String materialenUrls){
 			Product p = new Product();
 			p.setProductNaam(productNaam);
+			p.setMateriaalKosten(materiaalKosten);
+			p.setProductPrijs(productPrijs);
 			p.setInkoopPrijs(inkoopPrijs);
 			p.setVerkoopPrijs(verkoopPrijs);
 			p.setWerkUren(werkUren);

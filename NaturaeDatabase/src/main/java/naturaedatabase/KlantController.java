@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class KlantController {
@@ -50,4 +51,10 @@ public class KlantController {
 			repo.delete(Id);
 			return "redirect:overzichtKlanten";	
 		}	
+		
+		@RequestMapping(value="/getKlant", method=RequestMethod.GET)
+		public @ResponseBody Klant getKlant(Long id){
+			Klant k = repo.findOne(id);
+			return k;
+		}
 }
