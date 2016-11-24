@@ -2,11 +2,13 @@ To Do:
 
 Prio 1:
 - sampleOrderline form maken
-- Gegevens wijzigen
+- Gegevens wijzigen	(met angularJS?)
+- Alerts maken
 
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample
+	alle items 'clickable' maken.
 
 Prio: 3
 - bestellingOrderlines
