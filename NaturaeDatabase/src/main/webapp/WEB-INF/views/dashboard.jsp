@@ -36,9 +36,22 @@ $(document).ready(function(){
 					<div class="col-lg-12">
 						<h1>Dashboard</h1>
 						Hier komen statistieken.<br>
+					
+
+						<h2>Verlopen contracten</h2>
+						
+						<table>
+								<tr><th>Klant</th><th>Eind Datum</th></tr>
+							<c:forEach items="${verlopenContracten}" var="verlopenContract">
+								<tr><td>${verlopenContract.klant.klantNaam}</td>
+									<td>${verlopenContract.eindDatumContract}</td></tr>
+							</c:forEach>
+						
+						</table>
 						
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
+						
 					</div>
 				</div>
 			</div>

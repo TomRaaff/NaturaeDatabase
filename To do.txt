@@ -2,8 +2,9 @@ To Do:
 
 Prio 1:
 - Gegevens wijzigen functies	(met angularJS?)
-- Alerts maken
-
+- Dashboard: 
+	- Alerts maken (mail functie)
+	- aangeven of bestelling terug is of niet
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample

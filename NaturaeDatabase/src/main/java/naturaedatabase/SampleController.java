@@ -98,10 +98,7 @@ public class SampleController {
 			}
 			
 			@RequestMapping("/overzichtSampleBestelling")
-			public String sampleBestellingTotaal(Model model){
-				model.addAttribute("alleSamples", repoSample.findAll());
-				model.addAttribute("alleKlanten", repoKlant.findAll());
-				model.addAttribute("alleProducten", repoProduct.findAll());	
+			public String sampleBestellingTotaal(Model model){	
 				model.addAttribute("alleSampleBestellingen", repoSampleBestelling.findAll());
 				return "overzichtSampleBestelling";	
 			}

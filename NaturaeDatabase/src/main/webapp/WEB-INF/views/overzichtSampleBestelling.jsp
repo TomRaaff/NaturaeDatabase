@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="en">
+
 <%@include file="header.jsp" %>
 
 
@@ -33,20 +39,17 @@
 						<h1>Overzicht van Sample bestellingen</h1>
 						
 						<c:forEach items="${alleSampleBestellingen}" var="sb">
-							<ul>
-									<li><table>
-											<tr><td>Naam Klant: </td><td>${sb.klant.klantNaam}</td></tr>
-											<tr><td>Contract: </td><td>${sb.contractId}</td></tr>
-											<tr><td>Oplever Datum: </td><td>${sb.opleverDatum}</td></tr>
-											<tr><td>Start datum: </td><td>${sb.startDatumContract}</td></tr>
-											<tr><td>Eind datum: </td><td>${sb.eindDatumContract}</td></tr>
-										<c:forEach items="${sb.sampleOrderlines}" var="orderline">
-											<tr><td>${orderline.sample.product.productNaam}</td></tr>
-										</c:forEach>
-										</table>
-																				
-										<a class="btn btn-danger" href="/verwijderSampleBestelling?Id=${sb.sampleBestellingId}" role="button">Verwijder</a>
-							</ul>
+							<table>
+								<tr><td>Naam Klant: </td><td>${sb.klant.klantNaam}</td></tr>
+								<tr><td>Contract: </td><td>${sb.contractId}</td></tr>
+								<tr><td>Oplever Datum: </td><td>${sb.opleverDatum}</td></tr>
+								<tr><td>Start datum: </td><td>${sb.startDatumContract}</td></tr>
+								<tr><td>Eind datum: </td><td>${sb.eindDatumContract}</td></tr>
+								<c:forEach items="${sb.sampleOrderlines}" var="orderline">
+									<tr><td>${orderline.sample.product.productNaam}</td></tr>
+								</c:forEach>
+								<tr><td><a class="btn btn-danger" href="/verwijderSampleBestelling?Id=${sb.sampleBestellingId}" role="button">Verwijder</a></td></tr>
+							</table>
 						</c:forEach>							
 									
 
