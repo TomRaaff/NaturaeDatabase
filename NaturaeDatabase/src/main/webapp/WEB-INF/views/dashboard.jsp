@@ -12,13 +12,15 @@
 
 <script>
 $(document).ready(function(){
-	$("#bereken").click(function(totaleInkomsten);
-	function totaleInkomsten(){
-		$.get
-	}
 	
-	$("#totaleInkomsten").val(alleBestellingen)
-})
+	$('input[type="button"][value="bereken"]').click(function(clickButton);
+	
+	function clickButton(){
+		console.log("Click!");
+		
+	}
+
+});
 </script>
 </head>
 
@@ -39,18 +41,24 @@ $(document).ready(function(){
 					
 
 						<h2>Verlopen contracten</h2>
-						
+
 						<table>
-								<tr><th>Klant</th><th>Eind Datum</th></tr>
+							<tr>
+								<th>Klant</th>
+								<th>Eind Datum</th>
+							</tr>
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
-								<tr><td>${verlopenContract.klant.klantNaam}</td>
-									<td>${verlopenContract.eindDatumContract}</td></tr>
+								<tr>
+									<td>${verlopenContract.klant.klantNaam}</td>
+									<td>${verlopenContract.eindDatumContract}</td>
+								</tr>
 							</c:forEach>
-						
+
 						</table>
-						
+
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
+						<input type="button" class="btn btn-xs btn-warning" id="bekijk" value="bekijk">
 						
 					</div>
 				</div>
