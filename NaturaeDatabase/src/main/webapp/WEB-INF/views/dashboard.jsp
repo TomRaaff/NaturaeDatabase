@@ -12,49 +12,27 @@
 
 <script>
 $(document).ready(function(){
-<<<<<<< HEAD
+
 	
-$('btn btn-xs btn-default').click(bekijkBestelling);
-function bekijkBestelling(){
-	console.log("click!");
-}
+	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);
 	
-	
-	
-	
-	
-	/* function bekijkBestelling(){
+	function bekijkBestelling(){
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
-					//$("#producten").attr("items").val(bestelling);
+					for (var i = 0; i < bestelling.orderlines.length; i++){
+						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+						$("#bestellingTable").append(newElement);
+					}
+					
 		}); 
-	} */
-	
-	
-});
-/* 	$("#bereken").click(function(totaleInkomsten);
-	function totaleInkomsten(){
-		$.get
-	}
-	
-	$("#totaleInkomsten").val(alleBestellingen)
-}) */
-
-=======
-	
-	$('input[type="button"][value="bereken"]').click(function(clickButton);
-	
-	function clickButton(){
-		console.log("Click!");
 		
 	}
 
 });
->>>>>>> master
 </script>
 
 </head>
@@ -99,30 +77,27 @@ function bekijkBestelling(){
 						<h2>Verlopen contracten</h2>
 
 						<table>
-							<tr>
-								<th>Klant</th>
-								<th>Eind Datum</th>
-							</tr>
+							<tr><th>Klant</th><th>Eind Datum</th></tr>
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
-<<<<<<< HEAD
 								<tr><td>${verlopenContract.klant.klantNaam}</td>
 									<td>${verlopenContract.eindDatumContract}</td></tr>
-							</c:forEach>						
-=======
-								<tr>
-									<td>${verlopenContract.klant.klantNaam}</td>
-									<td>${verlopenContract.eindDatumContract}</td>
-								</tr>
 							</c:forEach>
 
->>>>>>> master
 						</table>
 
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
 						<input type="button" class="btn btn-xs btn-warning" id="bekijk" value="bekijk">
 						
-					</div>					
+					</div>	
+					
+					<div class="col-lg-6">
+
+						<%@include file="formBestelling.jsp" %>
+						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
+
+					</div>
+									
 				</div>
 			</div>
 		</div>

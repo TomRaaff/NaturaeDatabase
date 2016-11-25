@@ -19,7 +19,11 @@ $(document).ready(function(){
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
-					//$("#producten").attr("items").val(bestelling);
+					for (var i = 0; i < bestelling.orderlines.length; i++){
+						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+						$("#bestellingTable").append(newElement);
+					}
+					
 		}); 
 	}
 
@@ -61,25 +65,8 @@ $(document).ready(function(){
 
 					</div>
 					<div class="col-lg-6">
-						<h1>Info van bestelling</h1>
-						<form method='post'>
-						<table>
-							<tr>
-								<td>Naam: </td><td><input type="text" id="naam"></td>
-							</tr>
-							<tr>
-								<td>Opleverdatum: </td><td><input type="text" id="opleverDatum"></td>
-							</tr>
-<%-- 							<c:forEach items="${bestelling.orderlines }" var="o" id="producten">
-								<tr>
-									<td>Product: </td>
-									<td>${o.product.productNaam }</td>
-								</tr>
-							</c:forEach> --%>				
-						</table>
-						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
-						</form>
-
+						<%@include file="formBestelling.jsp" %>
+							<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
 					</div>
 				</div>
 			</div>
