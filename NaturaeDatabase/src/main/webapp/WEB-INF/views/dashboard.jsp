@@ -12,6 +12,7 @@
 
 <script>
 $(document).ready(function(){
+<<<<<<< HEAD
 	
 $('btn btn-xs btn-default').click(bekijkBestelling);
 function bekijkBestelling(){
@@ -43,6 +44,17 @@ function bekijkBestelling(){
 	$("#totaleInkomsten").val(alleBestellingen)
 }) */
 
+=======
+	
+	$('input[type="button"][value="bereken"]').click(function(clickButton);
+	
+	function clickButton(){
+		console.log("Click!");
+		
+	}
+
+});
+>>>>>>> master
 </script>
 
 </head>
@@ -85,17 +97,30 @@ function bekijkBestelling(){
 						</table>
 
 						<h2>Verlopen contracten</h2>
-						
+
 						<table>
-								<tr><th>Klant</th><th>Eind Datum</th></tr>
+							<tr>
+								<th>Klant</th>
+								<th>Eind Datum</th>
+							</tr>
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
+<<<<<<< HEAD
 								<tr><td>${verlopenContract.klant.klantNaam}</td>
 									<td>${verlopenContract.eindDatumContract}</td></tr>
 							</c:forEach>						
+=======
+								<tr>
+									<td>${verlopenContract.klant.klantNaam}</td>
+									<td>${verlopenContract.eindDatumContract}</td>
+								</tr>
+							</c:forEach>
+
+>>>>>>> master
 						</table>
-						
+
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
+						<input type="button" class="btn btn-xs btn-warning" id="bekijk" value="bekijk">
 						
 					</div>					
 				</div>
