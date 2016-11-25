@@ -37,6 +37,17 @@ $(document).ready(function(){
 						<h1>Dashboard</h1>
 						Hier komen statistieken.<br>
 					
+						<h2>Bestellingen ToDo</h2>
+						
+						<table>
+								<tr><th>Klant</th><th>Oplever Datum</th></tr><tr>
+							<c:forEach items="${BestellingenTweeWeek}" var="bestellingDl"> 
+								<tr><td>${bestellingDl.klant.klantNaam}</td>
+									<td>${bestellingDl.opleverDatum}</td></tr>
+							</c:forEach>		
+						</table>
+
+
 
 						<h2>Verlopen contracten</h2>
 						
@@ -45,8 +56,7 @@ $(document).ready(function(){
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
 								<tr><td>${verlopenContract.klant.klantNaam}</td>
 									<td>${verlopenContract.eindDatumContract}</td></tr>
-							</c:forEach>
-						
+							</c:forEach>						
 						</table>
 						
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
