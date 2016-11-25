@@ -12,14 +12,39 @@
 
 <script>
 $(document).ready(function(){
-	$("#bereken").click(function(totaleInkomsten);
+	
+$('btn btn-xs btn-default').click(bekijkBestelling);
+function bekijkBestelling(){
+	console.log("click!");
+}
+	
+	
+	
+	
+	
+	/* function bekijkBestelling(){
+		console.log($(this).attr("id"));
+		var id = $(this).attr("id");
+ 		$.get("getBestelling", { id }, 
+				function(bestelling){
+					$("#naam").val(bestelling.klant.klantNaam);
+					$("#opleverDatum").val(bestelling.opleverDatum);
+					//$("#producten").attr("items").val(bestelling);
+		}); 
+	} */
+	
+	
+});
+/* 	$("#bereken").click(function(totaleInkomsten);
 	function totaleInkomsten(){
 		$.get
 	}
 	
 	$("#totaleInkomsten").val(alleBestellingen)
-})
+}) */
+
 </script>
+
 </head>
 
 <body>
@@ -33,21 +58,31 @@ $(document).ready(function(){
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+				
+					<!-- Links -->
+					<div class="col-lg-6">
 						<h1>Dashboard</h1>
 						Hier komen statistieken.<br>
 					
 						<h2>Bestellingen ToDo</h2>
 						
 						<table>
-								<tr><th>Klant</th><th>Oplever Datum</th></tr><tr>
 							<c:forEach items="${BestellingenTweeWeek}" var="bestellingDl"> 
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">${bestellingDl.klant.klantNaam}</h3>
+								</div>
+								<div class="panel-body"> 
+									Oplever Datum: ${bestellingDl.opleverDatum}<br>
+									<input type="button" class="btn btn-xs btn-default" id="${bestellingDl.bestellingId }" value="Bekijk">
+									<input type="button" class="btn btn-xs btn-success" id="${bestellingDl.bestellingId }" value="Klaar"> 
+								</div>
+							</div>
+								
 								<tr><td>${bestellingDl.klant.klantNaam}</td>
 									<td>${bestellingDl.opleverDatum}</td></tr>
 							</c:forEach>		
 						</table>
-
-
 
 						<h2>Verlopen contracten</h2>
 						
@@ -62,7 +97,7 @@ $(document).ready(function(){
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
 						
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>
