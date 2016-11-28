@@ -88,6 +88,7 @@ public class DashboardController {
 //
 //	}
 	
+	
 	@RequestMapping(value="/getDashBestelling", method=RequestMethod.GET)
 	public @ResponseBody Bestelling getBestelling(Long id){
 		Bestelling bestelling = repoBestelling.findOne(id);

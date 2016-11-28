@@ -21,8 +21,8 @@ $(document).ready(function(){
  		$.get("getDashBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
-					var opleverDatum = bestelling.opleverDatum;
-					moment(opleverDatum.format('DD/MM/YYYY'));
+					var datum = bestelling.opleverDatum;
+					var opleverDatum = moment(datum.format('DD/MM/YYYY'));
 					$("#opleverDatum").val(opleverDatum);  // <-- ander argument
 					for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
