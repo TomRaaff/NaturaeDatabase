@@ -13,6 +13,7 @@ $(document).ready(function(){
 	
 	
 	function bekijkBestelling(){
+		$(".orderline").remove();
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
@@ -20,7 +21,7 @@ $(document).ready(function(){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
 					for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 						$("#bestellingTable").append(newElement);
 					}
 					
