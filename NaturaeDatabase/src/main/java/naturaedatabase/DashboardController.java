@@ -78,10 +78,19 @@ public class DashboardController {
 //
 //	}
 	
-	@RequestMapping(value="/getBestelling", method=RequestMethod.GET)
+	@RequestMapping(value="/getDashBestelling", method=RequestMethod.GET)
 	public @ResponseBody Bestelling getBestelling(Long id){
 		Bestelling bestelling = repoBestelling.findOne(id);
 		return bestelling;
 	}
+	
+	@RequestMapping(value="/klaarBestelling", method=RequestMethod.GET)
+	public String klaarBestelling(Long Id){
+		Bestelling klaar = repoBestelling.findOne(Id);
+		klaar.setVerzonden(true);
+		repoBestelling.save(klaar);
+		return "redirect:dashboard";	
+	}	
+	
 	
 }

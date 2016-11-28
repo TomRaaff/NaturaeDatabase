@@ -17,20 +17,25 @@ $(document).ready(function(){
 	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);
 	
 	function bekijkBestelling(){
-		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
- 		$.get("getBestelling", { id }, 
+ 		$.get("getDashBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
 					for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 						$("#bestellingTable").append(newElement);
-					}
-					
+					}			
 		}); 
-		
 	}
+
+	$('input[type="button"][value="Klaar"]').click(klaarBestelling;)
+	
+	function klaarBestelling(){
+		var id = $(this).attr("id");
+		$.
+	}
+	
 
 });
 </script>
