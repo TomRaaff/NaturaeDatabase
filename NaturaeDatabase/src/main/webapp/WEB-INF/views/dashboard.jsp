@@ -123,6 +123,8 @@ $(document).ready(function(){
     });
     </script>
 
+	<script src="dashboard.controller.js"></script>
+	<script src="dashboard.module.js"></script>
 </body>
 
 </html>
