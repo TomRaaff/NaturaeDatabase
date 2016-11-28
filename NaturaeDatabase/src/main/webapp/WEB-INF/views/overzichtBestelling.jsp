@@ -21,7 +21,8 @@ $(document).ready(function(){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
 					for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td>
+								<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');
 						$("#bestellingTable").append(newElement);
 					}
 					
@@ -67,7 +68,6 @@ $(document).ready(function(){
 					</div>
 					<div class="col-lg-6">
 						<%@include file="formBestelling.jsp" %>
-							<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
 					</div>
 				</div>
 			</div>
