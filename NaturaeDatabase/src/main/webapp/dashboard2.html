@@ -4,9 +4,8 @@
 
 <meta charset="UTF-8">
 <title>Dashboard</title>
-	<style>
-		.bold{font-weight: bold};
-	</style>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
 </head>
 
@@ -14,13 +13,13 @@
 	<div ng-controller="dashboard2Controller as vm">
 		Filter by: <input type="text" ng-model="filterBy">
 		<ul>
-			<li ng-repeat="item in vm.bestellingen">{{item.klant.klantNaam}}</li>
+			<li ng-repeat="item in vm.klanten">{{item.klantNaam}}</li>
 		</ul>
 		
 
 	</div>
 	
-	<script src="dashboard2.module.js"></script>
-	<script src="dashboard2.controller.js"></script>
+	<script src="js/dashboard2.module.js"></script>
+	<script src="js/dashboard2.controller.js"></script>
 </body>
 </html>

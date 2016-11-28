@@ -4,9 +4,9 @@
 		
 	function dashboard2Controller(){
 		var vm = this;
-		$.get("/alleBestellingen",  
-				function(bestellingen){
-					vm.bestellingen = bestellingen;			
+		$.get("/alleKlanten",  
+				function(klanten){
+					vm.klanten = klanten;			
 		}); 
 		
 		
