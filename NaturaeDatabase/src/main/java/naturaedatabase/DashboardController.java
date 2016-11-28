@@ -2,6 +2,7 @@ package naturaedatabase;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -16,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class DashboardController {
@@ -34,15 +34,15 @@ public class DashboardController {
 	public String verlopenContract(Model model){
 		model.addAttribute("alleBestellingen", repoBestelling);
 		model.addAttribute("alleProducten", repoProduct);
+		
 		Date datumVerlopen = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));//Verlopen: 2 week verlopen
-		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen));
+		List<SampleBestelling> verlopenContracten = repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen);
+ 		model.addAttribute("verlopenContracten", verlopenContracten);
+ 		//if (verlopenContracten.size() != 0) { sendMail(); }
 		return "dashboard";
 	}
 
-	@RequestMapping("/sendMail")
-	public @ResponseBody void sendMailToDaniella(){
-		
-	}
+
 	
 	public void sendMail(){
 		final String username = "NaturaeDesignDatabase@gmail.com";

@@ -5,12 +5,14 @@ Prio 1:
 - Dashboard: 
 	- Alerts maken (mail functie)
 	- aangeven of bestelling terug is of niet
+- verwijder knoppen: alert: weet je het zeker???
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample
 	alle items 'clickable' maken.
 
-Prio: 3
+Prio: 3:
+- pagina's op UML bijwerken
 
 
 

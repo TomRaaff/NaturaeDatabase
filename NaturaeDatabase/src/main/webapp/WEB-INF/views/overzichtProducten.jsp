@@ -36,8 +36,8 @@
 									ID: ${p.productId}<br> 
 									Materiaalkosten: &#8364 ${p.materiaalKosten }<br> 
 									Productprijs: &#8364 ${p.productPrijs }<br>
-									Retail prijs: &#8364 ${p.inkoopPrijs }<br>
-									Wholesale prijs: &#8364 ${p.verkoopPrijs } (Klopt de term?)<br>
+									Wholesale prijs: &#8364 ${p.inkoopPrijs }<br>
+									Retail prijs: &#8364 ${p.verkoopPrijs } (Klopt de term?)<br>
 									Werk uren: ${p.werkUren }<br>
 									
 									<input type="button" class="btn btn-xs btn-default" id="${p.productId }" value="bekijk"> 

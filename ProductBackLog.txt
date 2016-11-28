@@ -45,6 +45,7 @@ WebPagina's:
 		- Verzonden: Ja/Nee	-> archiveren
 		- Betaald: Ja/Nee
 		- Track&trace nr.
+		- Open en voldaan knop.
 	- Alert: 3 weken na invoerdatum bestelling wholesale
 	- Alert: 2 weken na invoerdatum bestelling 
 		// invoerdatum bestelling? Niet startdatum contract?
@@ -62,6 +63,9 @@ WebPagina's:
 	- Hoe vaak verkocht 
 	- wijzig hoeveelheid functie
 	- Url's van materialen
+
+Overzicht klanten:
+	- actief/non-actief knop
 
 - Trunkshow pagina:
 	route van producten

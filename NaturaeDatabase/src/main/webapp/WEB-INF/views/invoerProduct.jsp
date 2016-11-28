@@ -33,12 +33,17 @@
 									<td>Product naam:</td>
 									<td><input type="text" name="productNaam"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Materiaalkosten:</td>
-									<td><input type="number" step="0.01" name="materiaalKosten"></td>
+									<td><input type="number" step="0.01"
+										name="materiaalKosten"></td>
 								</tr>
-								
+
+								<tr>
+									<td>Werk uren per product:</td>
+									<td><input type="number" name="werkUren"></td>
+								</tr>
 								<tr>
 									<td>Product prijs:</td>
 									<td><input type="number" step="0.01" name="productPrijs"></td>
@@ -54,10 +59,7 @@
 									<td><input type="number" step="0.01" name="verkoopPrijs"></td>
 								</tr>
 
-								<tr>
-									<td>Werk uren per product:</td>
-									<td><input type="number" name="werkUren"></td>
-								</tr>
+
 
 
 								<tr>

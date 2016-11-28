@@ -47,8 +47,8 @@ public class KlantController {
 		}
 		
 		@RequestMapping(value="/verwijderKlant", method=RequestMethod.GET)
-		public String verwijderKlant(Long Id){
-			repo.delete(Id);
+		public String verwijderKlant(Long id){
+			repo.delete(id); //DELETE of REMOVE??
 			return "redirect:overzichtKlanten";	
 		}	
 		

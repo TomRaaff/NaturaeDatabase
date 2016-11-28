@@ -12,7 +12,7 @@
 <script>
 $(document).ready(function(){
 	$('input[type="button"][value="Bekijk"]').click(bekijkKlant);
-	
+	$('input[type="button"][value="Verwijder"]').click(verwijderKlant);
 	
 	function bekijkKlant(){
 		console.log($(this).attr("id"));
@@ -44,9 +44,20 @@ $(document).ready(function(){
 					$("#contactPersoon").val(klant.contactPersoon);
 					$("#notitie").val(klant.notitie);
 
-		}); 
-	}
+			}); 
+		}
 
+	function verwijderKlant(){
+			var id = $(this).attr('id');
+			console.log(id);
+			var y = confirm("Weet je zeker dat je deze klant wil verwijderen?");
+		    if (y == true){
+		    	console.log("VERWIJDEREN");
+		    	$.get("verwijderKlant", { id });
+		    } else {
+		    	console.log("NIET VERWIJDEREN");
+		    }
+	}
 });
 </script>
 </head>
@@ -71,7 +82,7 @@ $(document).ready(function(){
 								<div class="panel-heading">
 									<h3 class="panel-title">${k.klantNaam}
 									<input type="button" class="btn btn-xs btn-default" id="${k.klantId }" value="Bekijk"> 
-									<a class="btn btn-xs btn-danger" href="/verwijderKlant?Id=${k.klantId}" role="button">Verwijder</a>
+									<input type='button' class="btn btn-xs btn-danger" id="${k.klantId}" value="Verwijder">
 									</h3>
 								</div>
 							</div>

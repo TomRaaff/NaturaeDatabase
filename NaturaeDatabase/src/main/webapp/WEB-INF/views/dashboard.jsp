@@ -12,8 +12,17 @@
 
 <script>
 $(document).ready(function(){
+
 	
-	$('input[type="button"][value="bereken"]').click(function(clickButton);
+	
+/* 	if (${verlopenContracten}.length != 0){
+		console.log("Send mail!");
+	} else {
+		console.log("Send no mail");
+	} */
+	
+	
+	$('input[type="button"][value="bereken"]').click(clickButton);
 	
 	function clickButton(){
 		console.log("Click!");
