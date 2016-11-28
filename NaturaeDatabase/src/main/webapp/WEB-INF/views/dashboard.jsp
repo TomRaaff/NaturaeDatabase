@@ -13,24 +13,34 @@
 <script>
 $(document).ready(function(){
 
+
 	
+	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);
 	
-/* 	if (${verlopenContracten}.length != 0){
-		console.log("Send mail!");
-	} else {
-		console.log("Send no mail");
-	} */
-	
-	
-	$('input[type="button"][value="bereken"]').click(clickButton);
-	
-	function clickButton(){
-		console.log("Click!");
-		
+	function bekijkBestelling(){
+		var id = $(this).attr("id");
+ 		$.get("getDashBestelling", { id }, 
+				function(bestelling){
+					$("#naam").val(bestelling.klant.klantNaam);
+					$("#opleverDatum").val(bestelling.opleverDatum);
+					for (var i = 0; i < bestelling.orderlines.length; i++){
+						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+						$("#bestellingTable").append(newElement);
+					}			
+		}); 
 	}
+
+	$('input[type="button"][value="Klaar"]').click(klaarBestelling;)
+	
+	function klaarBestelling(){
+		var id = $(this).attr("id");
+		$.
+	}
+	
 
 });
 </script>
+
 </head>
 
 <body>
@@ -44,23 +54,39 @@ $(document).ready(function(){
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+				
+					<!-- Links -->
+					<div class="col-lg-6">
 						<h1>Dashboard</h1>
 						Hier komen statistieken.<br>
 					
+						<h2>Bestellingen ToDo</h2>
+						
+						<table>
+							<c:forEach items="${BestellingenTweeWeek}" var="bestellingDl"> 
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">${bestellingDl.klant.klantNaam}</h3>
+								</div>
+								<div class="panel-body"> 
+									Oplever Datum: ${bestellingDl.opleverDatum}<br>
+									<input type="button" class="btn btn-xs btn-default" id="${bestellingDl.bestellingId }" value="Bekijk">
+									<input type="button" class="btn btn-xs btn-success" id="${bestellingDl.bestellingId }" value="Klaar"> 
+								</div>
+							</div>
+								
+								<tr><td>${bestellingDl.klant.klantNaam}</td>
+									<td>${bestellingDl.opleverDatum}</td></tr>
+							</c:forEach>		
+						</table>
 
 						<h2>Verlopen contracten</h2>
 
 						<table>
-							<tr>
-								<th>Klant</th>
-								<th>Eind Datum</th>
-							</tr>
+							<tr><th>Klant</th><th>Eind Datum</th></tr>
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
-								<tr>
-									<td>${verlopenContract.klant.klantNaam}</td>
-									<td>${verlopenContract.eindDatumContract}</td>
-								</tr>
+								<tr><td>${verlopenContract.klant.klantNaam}</td>
+									<td>${verlopenContract.eindDatumContract}</td></tr>
 							</c:forEach>
 
 						</table>
@@ -69,7 +95,15 @@ $(document).ready(function(){
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
 						<input type="button" class="btn btn-xs btn-warning" id="bekijk" value="bekijk">
 						
+					</div>	
+					
+					<div class="col-lg-6">
+
+						<%@include file="formBestelling.jsp" %>
+						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
+
 					</div>
+									
 				</div>
 			</div>
 		</div>
