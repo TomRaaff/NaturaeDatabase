@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +14,6 @@
 <script>
 $(document).ready(function(){
 
-
-	
 	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);
 	
 	function bekijkBestelling(){
@@ -22,7 +21,9 @@ $(document).ready(function(){
  		$.get("getDashBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
-					$("#opleverDatum").val(bestelling.opleverDatum);
+					var opleverDatum = bestelling.opleverDatum;
+					moment(opleverDatum.format('DD/MM/YYYY'));
+					$("#opleverDatum").val(opleverDatum);  // <-- ander argument
 					for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 						$("#bestellingTable").append(newElement);
@@ -30,11 +31,10 @@ $(document).ready(function(){
 		}); 
 	}
 
-	$('input[type="button"][value="Klaar"]').click(klaarBestelling;)
+	$('input[type="button"][value="Klaar"]').click(klaarBestelling);
 	
 	function klaarBestelling(){
 		var id = $(this).attr("id");
-		$.
 	}
 	
 
@@ -59,7 +59,7 @@ $(document).ready(function(){
 					<div class="col-lg-6">
 						<h1>Dashboard</h1>
 						Hier komen statistieken.<br>
-					
+						
 						<h2>Bestellingen ToDo</h2>
 						
 						<table>
@@ -69,14 +69,11 @@ $(document).ready(function(){
 									<h3 class="panel-title">${bestellingDl.klant.klantNaam}</h3>
 								</div>
 								<div class="panel-body"> 
-									Oplever Datum: ${bestellingDl.opleverDatum}<br>
+									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestellingDl.opleverDatum}" /><br>
 									<input type="button" class="btn btn-xs btn-default" id="${bestellingDl.bestellingId }" value="Bekijk">
 									<input type="button" class="btn btn-xs btn-success" id="${bestellingDl.bestellingId }" value="Klaar"> 
 								</div>
 							</div>
-								
-								<tr><td>${bestellingDl.klant.klantNaam}</td>
-									<td>${bestellingDl.opleverDatum}</td></tr>
 							</c:forEach>		
 						</table>
 

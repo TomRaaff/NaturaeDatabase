@@ -3,9 +3,9 @@ To Do:
 Prio 1:
 - Gegevens wijzigen functies	(met angularJS?)
 - Dashboard: 
-	- Alerts maken (mail functie)
 	- aangeven of bestelling terug is of niet
-- verwijder knoppen: alert: weet je het zeker???
+- executable programma maken
+
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample
@@ -15,4 +15,18 @@ Prio: 3:
 - pagina's op UML bijwerken
 
 
+
+Prio 4:
+- verwijder knoppen: 
+	- samples	
+	- orderlines
+
+
+
+
+.bat file
+
+@echo off (google of het nodig is)
+cd C:/ naar map
+mvn spring-boot:run
 
