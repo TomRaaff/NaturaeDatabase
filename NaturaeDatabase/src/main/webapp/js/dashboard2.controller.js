@@ -8,6 +8,6 @@
 				function(response){
 					vm.bestellingen = response.data;
 		}); 
-		
+
 	}
 })();

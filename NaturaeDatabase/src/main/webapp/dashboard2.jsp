@@ -22,36 +22,38 @@
 			<div class="container-fluid">
 				<div class="row">
 
+					<div ng-controller="dashboard2Controller as vm">
+						<!-- Linkerkant Pagina -->
+						<div class="col-lg-6">
+							<h1>Invoer Bestelling</h1>
 
-					<!-- Linkerkant Pagina -->
-					<div class="col-lg-6">
-						<h1>Invoer Bestelling</h1>
-
-						<div ng-controller="dashboard2Controller as vm">
 							<ul class="list-group">
 								<li class="list-group-item" ng-repeat="b in vm.bestellingen">
-									<input type="button" ng-click="selectie = b"
-									class="btn btn-xs btn-default" value="Bekijk"> {{b.klant.klantNaam}}
+									<input type="button" ng-click="vm.selectie = b"
+									class="btn btn-xs btn-default" value="Bekijk">
+									{{b.klant.klantNaam}}
 								</li>
 							</ul>
 						</div>
 
-
 						<!-- Rechterkant Pagina -->
 						<div class="col-lg-6">
 							<h1>Info van bestelling</h1>
+
 							<table id="bestellingTable" class="table table-striped">
 								<tr>
 									<td>Naam:</td>
-									<td><input type="text" ng-model="selectie.klant.klantNaam"></td>
+									<td><input type="text"
+										ng-model="vm.selectie.klant.klantNaam"></td>
 								</tr>
 								<tr>
 									<td>Opleverdatum:</td>
-									<td><input type="date" ng-model="selectie.opleverDatum"></td>
+									<td><input type="date" ng-model="vm.selectie.opleverDatum"></td>
 								</tr>
 							</table>
 							<input type="button" class="btn btn-xs btn-default" id="wijzig"
 								value="wijzig">
+
 
 						</div>
 					</div>
