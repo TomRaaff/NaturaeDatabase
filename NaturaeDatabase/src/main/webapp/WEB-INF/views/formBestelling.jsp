@@ -1,6 +1,5 @@
 <h1>Info van bestelling</h1>
 
-<!-- Hoe kan id meegegeven worden? -->
 <form method="post" action="wijzigBestelling">
     <input type="hidden" id="idForm" name="id">
 	<table id="bestellingTable" class="table table-striped">

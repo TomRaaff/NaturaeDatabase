@@ -23,9 +23,12 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<h1>Overzicht Samples</h1>
 						
+					</div>
+					<div class="col-lg-6">
+					<%@include file="formSampleBestelling.jsp" %>
 					</div>
 				</div>
 			</div>
