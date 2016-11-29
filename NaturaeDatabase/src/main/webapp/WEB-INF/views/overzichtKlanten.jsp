@@ -31,6 +31,8 @@ $(document).ready(function(){
 						typeKlant = "Overig";
 						break;
 					}
+					$(".idForm").val(klant.klantId);
+					$(".naam").val(klant.klantNaam);
 					$(".typeKlant").val(typeKlant);
 					$(".naam").val(klant.klantNaam);
 					$(".straat").val(klant.straat);
@@ -47,17 +49,6 @@ $(document).ready(function(){
 			}); 
 		}
 
-	function verwijderKlant(){
-			var id = $(this).attr('id');
-			console.log(id);
-			var y = confirm("Weet je zeker dat je deze klant wil verwijderen?");
-		    if (y == true){
-		    	console.log("VERWIJDEREN");
-		    	$.get("verwijderKlant", { id });
-		    } else {
-		    	console.log("NIET VERWIJDEREN");
-		    }
-	}
 });
 </script>
 </head>
@@ -81,8 +72,7 @@ $(document).ready(function(){
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h3 class="panel-title">${k.klantNaam}
-									<input type="button" class="btn btn-xs btn-default" id="${k.klantId }" value="Bekijk"> 
-									<input type='button' class="btn btn-xs btn-danger" id="${k.klantId}" value="Verwijder">
+									<input type="button" class="btn btn-xs btn-default" id="${k.klantId }" value="Bekijk">
 									</h3>
 								</div>
 							</div>
@@ -93,8 +83,6 @@ $(document).ready(function(){
  					<div class="col-lg-6">
 
 						<%@include file="formKlant.jsp" %>
-						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
-
 					</div>
 				</div>
 			</div>
