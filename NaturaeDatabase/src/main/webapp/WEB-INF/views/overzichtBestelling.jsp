@@ -20,9 +20,14 @@ $(document).ready(function(){
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
-					for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td>
-								<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');
+					$("#betaald").val(bestelling.betaald);
+					$("#klaar").val(bestelling.klaar);
+					$("#verzonden").val(bestelling.verzonden);
+					$("#trackAndTrace").val(bestelling.trackAndTrace);
+				for (var i = 0; i < bestelling.orderlines.length; i++){
+						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
+								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
 						$("#bestellingTable").append(newElement);
 					}
 					
