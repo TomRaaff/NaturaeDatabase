@@ -13,17 +13,26 @@ $(document).ready(function(){
 	
 	
 	function bekijkBestelling(){
+		$(".orderline").remove();
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
-					for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+					$("#betaald").prop("checked", bestelling.betaald );
+					$("#klaar").prop("checked", bestelling.klaar);
+					$("#verzonden").prop("checked", bestelling.verzonden);
+					$("#trackAndTrace").val(bestelling.trackAndTrace);
+				for (var i = 0; i < bestelling.orderlines.length; i++){
+						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
+								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
+								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
 						$("#bestellingTable").append(newElement);
 					}
-					
+				
+				$("#betaald").click(wijzigBetaald);		
+				
 		}); 
 	}
 
@@ -66,7 +75,6 @@ $(document).ready(function(){
 					</div>
 					<div class="col-lg-6">
 						<%@include file="formBestelling.jsp" %>
-							<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
 					</div>
 				</div>
 			</div>

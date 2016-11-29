@@ -32,8 +32,7 @@
 								<div class="panel-heading">
 									<h3 class="panel-title">${p.productNaam}</h3>
 								</div>
-								<div class="panel-body">
-									ID: ${p.productId}<br> 
+								<div class="panel-body"> 
 									Materiaalkosten: &#8364 ${p.materiaalKosten }<br> 
 									Productprijs: &#8364 ${p.productPrijs }<br>
 									Wholesale prijs: &#8364 ${p.inkoopPrijs }<br>

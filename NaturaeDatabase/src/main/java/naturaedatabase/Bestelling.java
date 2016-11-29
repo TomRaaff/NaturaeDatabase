@@ -18,7 +18,9 @@ public class Bestelling {
 	private Klant klant;
 	private Date opleverDatum;
 	private boolean verzonden;
+	private boolean klaar;
 	private boolean betaald;
+	private String trackAndTrace;
 	private Set<Orderline> orderlines;
 	
 	@Id
@@ -61,6 +63,18 @@ public class Bestelling {
 	}
 	public void setOrderlines(Set<Orderline> orderlines) {
 		this.orderlines = orderlines;
+	}
+	public boolean isKlaar() {
+		return klaar;
+	}
+	public void setKlaar(boolean klaar) {
+		this.klaar = klaar;
+	}
+	public String getTrackAndTrace() {
+		return trackAndTrace;
+	}
+	public void setTrackAndTrace(String trackAndTrace) {
+		this.trackAndTrace = trackAndTrace;
 	}
 	
 }
