@@ -6,6 +6,34 @@
 
 <head>
 <%@include file="header.jsp" %>
+<script>
+
+$(document).ready(function(){
+	$(':button').click(bekijkProduct);
+	
+	p.setMateriaalKosten(materiaalKosten);
+	p.setProductPrijs(productPrijs);
+	p.setInkoopPrijs(inkoopPrijs);
+	p.setVerkoopPrijs(verkoopPrijs);
+	p.setWerkUren(werkUren);
+	
+	
+	function bekijkProduct(){
+		var id = $(this).attr("id");
+ 		$.get("getProduct", { id }, 
+				function(product){
+ 					$(".idForm").val(product.productId);
+					$(".naam").val(product.productNaam);
+					$(".materiaalKosten").val(product.materiaalKosten);  // <-- ander argument
+					$(".productPrijs").val(product.productPrijs);
+					$(".inkoopPrijs").val(product.inkoopPrijs);
+					$(".verkoopPrijs").val(product.verkoopPrijs);
+					$(".werkUren").val(product.werkUren);
+		}); 
+	}
+
+});
+</script>
 
 
 <title>Overzicht Producten</title>
@@ -32,42 +60,17 @@
 								<div class="panel-heading">
 									<h3 class="panel-title">${p.productNaam}</h3>
 								</div>
-								<div class="panel-body"> 
-									Materiaalkosten: &#8364 ${p.materiaalKosten }<br> 
-									Productprijs: &#8364 ${p.productPrijs }<br>
-									Wholesale prijs: &#8364 ${p.inkoopPrijs }<br>
-									Retail prijs: &#8364 ${p.verkoopPrijs } (Klopt de term?)<br>
-									Werk uren: ${p.werkUren }<br>
-									
+								<div class="panel-body"> 	
 									<input type="button" class="btn btn-xs btn-default" id="${p.productId }" value="bekijk"> 
-									<a class="btn btn-xs btn-danger" href="/verwijderProduct?Id=${p.productId}" role="button">Verwijder</a>
 								</div>
 							</div>
 
 						</c:forEach>
 
 					</div>
-<%-- 					<div class="col-lg-6">
-						<h1>Info van Product</h1>
-						<form method='post'>
-						<table>
-							<tr>
-								<td>Naam: </td><td><input type="text" id="naam"></td>
-							</tr>
-							<tr>
-								<td>Opleverdatum: </td><td><input type="text" id="opleverDatum"></td>
-							</tr>
-							<c:forEach items="${bestelling.orderlines }" var="o" id="producten">
-								<tr>
-									<td>Product: </td>
-									<td>${o.product.productNaam }</td>
-								</tr>
-							</c:forEach>				
-						</table>
-						<input type="button" class="btn btn-xs btn-default" id="wijzig" value="wijzig">
-						</form>
-
-					</div> --%>
+					<div class="col-lg-6">
+						<%@include file="formProduct.jsp" %>
+					</div>
 				</div>
 			</div>
 		</div>
