@@ -21,9 +21,8 @@ $(document).ready(function(){
  		$.get("getDashBestelling", { id }, 
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
-					var opleverDatum = bestelling.opleverDatum;
-					moment(opleverDatum.format('DD/MM/YYYY'));
-					$("#opleverDatum").val(opleverDatum);  // <-- ander argument
+					var opleverDatum = moment(bestelling.opleverDatum);
+					$("#opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
 					for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 						$("#bestellingTable").append(newElement);
@@ -115,16 +114,6 @@ $(document).ready(function(){
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 
-	<!-- Menu Toggle Script -->
-	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
-	<script src="dashboard.controller.js"></script>
-	<script src="dashboard.module.js"></script>
 </body>
 
 </html>
