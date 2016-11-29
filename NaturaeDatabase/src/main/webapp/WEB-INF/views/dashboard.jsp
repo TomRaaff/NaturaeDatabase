@@ -18,7 +18,7 @@ $(document).ready(function(){
 	
 	function bekijkBestelling(){
 		$("#formBestelling").show();
-		/* $("#formSampleBestelling").hide(); */
+		$("#formSampleBestelling").hide();
 		$(".orderline").remove();
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
@@ -34,18 +34,58 @@ $(document).ready(function(){
 				for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
 								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
-								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
 						$("#bestellingTable").append(newElement);
 					}
 			
 				
 		}); 
 	}
-
-	$('input[type="button"][value="Klaar"]').click(klaarBestelling);
 	
-	function klaarBestelling(){
+	$('input[type="button"][value="BekijkSampleBestelling"]').click(bekijkSampleBestelling);
+	function bekijkSampleBestelling(){
+		$("#formBestelling").hide();
+		$("#formSampleBestelling").show();
+		$(".sampleOrderline").remove();
 		var id = $(this).attr("id");
+ 		$.get("getSampleBestelling", { id }, 
+				function(sampleBestelling){
+					$(".naam").val(sampleBestelling.klant.klantNaam);
+					var contractNaam;
+					switch (sampleBestelling.contractId){
+					case 0: 
+						contractNaam = 'geen';
+						break;
+					case 1: 
+						contractMaam = 'verhuur';
+						break;
+					case 2: 
+						contractNaam = 'consignatie';
+						break;
+					case 3: 
+						contractNaam = 'verkoop';
+						break;
+					case 4: 
+						contractNaam = 'trunkshow';
+						break;
+					case 5: 
+						contractNaam = 'verhuur & consignatie';
+						break;
+					}
+					$(".contract").val(contractNaam);
+					var opleverDatum = moment(sampleBestelling.opleverDatum);
+					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));
+					var startDatum = moment(sampleBestelling.startDatumContract);
+					$(".startDatumContract").val(startDatum.format("DD/MM/YYYY"));
+					var eindDatum = moment(sampleBestelling.eindDatumContract);
+					$(".eindDatumContract").val(eindDatum.format("DD/MM/YYYY"));
+				for (var i = 0; i < sampleBestelling.sampleOrderlines.length; i++){
+						var newElement = $('<tr class="sampleOrderline"><td>' + sampleBestelling.sampleOrderlines[i].sample.product.productNaam 
+								+ '</td><td>1x</td></tr>');
+						$("#sampleBestellingTable").append(newElement);
+					}
+			
+				
+		}); 
 	}
 	
 
@@ -80,13 +120,10 @@ $(document).ready(function(){
 										<h3 class="panel-title">${bestellingDl.klant.klantNaam}</h3>
 									</div>
 									<div class="panel-body">
-										Opleverdatum:
-										<fmt:formatDate pattern="dd-MM-YYYY"
-											value="${bestellingDl.opleverDatum}" />
-										<br> <input type="button" class="btn btn-xs btn-default"
-											id="${bestellingDl.bestellingId }" value="Bekijk"> <input
-											type="button" class="btn btn-xs btn-success"
-											id="${bestellingDl.bestellingId }" value="Klaar">
+										<input type="button" class="btn btn-xs btn-success" id="${bestellingDl.bestellingId }" value="Bekijk">
+										Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestellingDl.opleverDatum}" />
+										<br>
+																			
 									</div>
 								</div>
 							</c:forEach>
@@ -95,17 +132,18 @@ $(document).ready(function(){
 						<h2>Verlopen contracten</h2>
 
 						<table>
-							<tr>
-								<th>Klant</th>
-								<th>Eind Datum</th>
-							</tr>
 							<c:forEach items="${verlopenContracten}" var="verlopenContract">
-								<tr>
-									<td>${verlopenContract.klant.klantNaam}</td>
-									<td>${verlopenContract.eindDatumContract}</td>
-								</tr>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">${verlopenContract.klant.klantNaam}</h3>
+									</div>
+									<div class="panel-body">
+									<input type="button" class="btn btn-xs btn-warning" id="${verlopenContract.sampleBestellingId }" value="BekijkSampleBestelling">
+										Contract einddatum:
+										<fmt:formatDate pattern="dd-MM-YYYY" value="${verlopenContract.eindDatumContract}" /> <br> 										 											
+									</div>
+								</div>
 							</c:forEach>
-
 						</table>
 
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
@@ -116,15 +154,15 @@ $(document).ready(function(){
 					</div>
 
 					<div class="col-lg-6">
-						
-						<div id="formSampleBestelling" style="display:none">
+
+						<div id="formSampleBestelling" style="display: none">
 							<%@include file="formSampleBestelling.jsp"%>
 						</div>
-						
-						<div id="formBestelling" style="display:none">
+
+						<div id="formBestelling" style="display: none">
 							<%@include file="formBestelling.jsp"%>
 						</div>
-						
+
 					</div>
 
 				</div>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,9 +63,8 @@ $(document).ready(function(){
 									<h3 class="panel-title">${bestelling.klant.klantNaam}</h3>
 								</div>
 								<div class="panel-body">
-<!-- DIT WERKT NOG NIET -->			Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestelling.opleverDatum}" /><br>
-									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk"> 
-									<a class="btn btn-xs btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>
+									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk">
+									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestelling.opleverDatum}" /><br> 
 								</div>
 							</div>
 
@@ -87,14 +87,6 @@ $(document).ready(function(){
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
-
-	<!-- Menu Toggle Script -->
-	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 

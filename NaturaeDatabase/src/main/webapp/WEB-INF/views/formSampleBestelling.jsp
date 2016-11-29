@@ -13,7 +13,7 @@
 	
 	<tr>
 		<td>Oplever datum:</td>
-		<td><input type="date" class="opleverDatum">
+		<td><input type="text" class="opleverDatum">
 	</td>
 	
 	<tr>

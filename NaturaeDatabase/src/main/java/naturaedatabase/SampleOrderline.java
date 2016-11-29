@@ -7,11 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class SampleOrderline {
 	private Long sampleOrderlineId;
 	private Sample sample;
-	private SampleBestelling sampleBestelling;
+	@JsonIgnore private SampleBestelling sampleBestelling;
 	
 	//getters en setters
 	@Id

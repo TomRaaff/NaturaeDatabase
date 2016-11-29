@@ -30,7 +30,7 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<h1>Sample Bestelling</h1>
 
 
@@ -52,7 +52,7 @@
 						</form>
 
 						<h1>Overzicht van Samples</h1>
-						<table>
+						<table class="table table-striped">
 							<tr>
 								<th>Product Naam</th>
 								<th>ID</th>
@@ -65,8 +65,7 @@
 						</table>
 
 
-						<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle
-							Menu</a>
+				
 					</div>
 				</div>
 			</div>

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class SampleController {
@@ -107,6 +108,12 @@ public class SampleController {
 			public String verwijderSampleBestelling(Long Id){
 				repoSampleBestelling.delete(Id);
 				return "redirect:overzichtSampleBestelling";	
-			}	
+			}
+			
+			@RequestMapping(value="/getSampleBestelling", method=RequestMethod.GET)
+			public @ResponseBody SampleBestelling getSampleBestelling(Long id){
+				SampleBestelling sb = repoSampleBestelling.findOne(id);
+				return sb;
+			}
 			
 }
