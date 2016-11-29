@@ -20,7 +20,8 @@ $(document).ready(function(){
 				function(bestelling){
  					$("#idForm").val(bestelling.bestellingId);
 					$("#naam").val(bestelling.klant.klantNaam);
-					$("#opleverDatum").val(bestelling.opleverDatum);
+					var opleverDatum = moment(bestelling.opleverDatum);
+					$("#opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
 					$("#betaald").prop("checked", bestelling.betaald );
 					$("#klaar").prop("checked", bestelling.klaar);
 					$("#verzonden").prop("checked", bestelling.verzonden);
@@ -61,7 +62,7 @@ $(document).ready(function(){
 									<h3 class="panel-title">${bestelling.klant.klantNaam}</h3>
 								</div>
 								<div class="panel-body">
-									${bestelling.opleverDatum}<br> 
+									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestelling.opleverDatum}" /><br>
 									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk"> 
 									<a class="btn btn-xs btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>
 								</div>
