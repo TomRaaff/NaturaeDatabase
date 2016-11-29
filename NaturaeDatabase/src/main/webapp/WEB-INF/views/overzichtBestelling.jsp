@@ -18,6 +18,7 @@ $(document).ready(function(){
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
+ 					$("#idForm").val(bestelling.bestellingId);
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
 					$("#betaald").prop("checked", bestelling.betaald );
@@ -30,9 +31,7 @@ $(document).ready(function(){
 								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
 						$("#bestellingTable").append(newElement);
 					}
-				
-				$("#betaald").click(wijzigBetaald);		
-				
+						
 		}); 
 	}
 
@@ -63,9 +62,7 @@ $(document).ready(function(){
 								</div>
 								<div class="panel-body">
 									${bestelling.opleverDatum}<br> 
-									Verzonden: ${bestelling.verzonden}<br> 
-									Betaald: ${bestelling.betaald}<br>
-									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId }" value="bekijk"> 
+									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk"> 
 									<a class="btn btn-xs btn-danger" href="/verwijderBestelling?Id=${bestelling.bestellingId}" role="button">Verwijder</a>
 								</div>
 							</div>

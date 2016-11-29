@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,4 +91,17 @@ public class BestellingController {
 		Bestelling b = repoBestelling.findOne(id);
 		return b;
 	}
+	
+	@RequestMapping(value="/wijzigBestelling", method=RequestMethod.POST)
+	public String wijzigBestelling(Long id, HttpServletResponse resp, boolean betaald, boolean klaar, boolean verzonden, String trackAndTrace){
+		Bestelling bestelling = repoBestelling.findOne(id);
+		bestelling.setBetaald(betaald);
+		bestelling.setKlaar(klaar);
+		bestelling.setVerzonden(verzonden);
+		bestelling.setTrackAndTrace(trackAndTrace);
+		repoBestelling.save(bestelling);
+		return "redirect:overzichtBestelling";
+	}
+	
+	
 }
