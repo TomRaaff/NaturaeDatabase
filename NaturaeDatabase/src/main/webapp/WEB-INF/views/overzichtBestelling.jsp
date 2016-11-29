@@ -20,9 +20,9 @@ $(document).ready(function(){
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					$("#opleverDatum").val(bestelling.opleverDatum);
-					$("#betaald").val(bestelling.betaald);
-					$("#klaar").val(bestelling.klaar);
-					$("#verzonden").val(bestelling.verzonden);
+					$("#betaald").prop("checked", bestelling.betaald );
+					$("#klaar").prop("checked", bestelling.klaar);
+					$("#verzonden").prop("checked", bestelling.verzonden);
 					$("#trackAndTrace").val(bestelling.trackAndTrace);
 				for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
@@ -30,7 +30,9 @@ $(document).ready(function(){
 								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
 						$("#bestellingTable").append(newElement);
 					}
-					
+				
+				$("#betaald").click(wijzigBetaald);		
+				
 		}); 
 	}
 
