@@ -22,7 +22,7 @@ $(document).ready(function(){
 				function(bestelling){
 					$("#naam").val(bestelling.klant.klantNaam);
 					var datum = bestelling.opleverDatum;
-					var opleverDatum = moment(datum.format('DD/MM/YYYY'));
+					var opleverDatum = moment(datum);
 					$("#opleverDatum").val(opleverDatum);  // <-- ander argument
 					for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr><td>' + bestelling.orderlines[i].product.productNaam + '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
@@ -115,16 +115,7 @@ $(document).ready(function(){
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 
-	<!-- Menu Toggle Script -->
-	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
-	<script src="dashboard.controller.js"></script>
-	<script src="dashboard.module.js"></script>
 </body>
 
 </html>
