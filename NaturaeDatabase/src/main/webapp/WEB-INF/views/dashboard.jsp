@@ -14,8 +14,7 @@
 <script>
 $(document).ready(function(){
 
-	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);
-	
+	$('input[type="button"][value="Bekijk"]').click(bekijkBestelling);	
 	function bekijkBestelling(){
 		$("#formBestelling").show();
 		$("#formSampleBestelling").hide();
@@ -24,6 +23,7 @@ $(document).ready(function(){
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
+ 					$(".id").val(bestelling.bestellingId);
 					$(".naam").val(bestelling.klant.klantNaam);
 					var opleverDatum = moment(bestelling.opleverDatum);
 					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));
@@ -35,11 +35,11 @@ $(document).ready(function(){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
 								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 						$("#bestellingTable").append(newElement);
-					}
-			
-				
+					}				
 		}); 
 	}
+	
+	
 	
 	$('input[type="button"][value="BekijkSampleBestelling"]').click(bekijkSampleBestelling);
 	function bekijkSampleBestelling(){
@@ -82,11 +82,12 @@ $(document).ready(function(){
 						var newElement = $('<tr class="sampleOrderline"><td>' + sampleBestelling.sampleOrderlines[i].sample.product.productNaam 
 								+ '</td><td>1x</td></tr>');
 						$("#sampleBestellingTable").append(newElement);
-					}
-			
-				
+					}		
 		}); 
 	}
+	
+	
+	
 	
 
 });
@@ -147,9 +148,8 @@ $(document).ready(function(){
 						</table>
 
 						Totale inkomsten: <input type="text" id="totaleInkomsten">
-						<input type="button" class="btn btn-xs btn-warning" id="bereken"
-							value="bereken"> <input type="button"
-							class="btn btn-xs btn-warning" id="bekijk" value="bekijk">
+						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
+							 
 
 					</div>
 

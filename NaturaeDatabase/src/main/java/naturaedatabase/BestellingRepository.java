@@ -9,5 +9,5 @@ public interface BestellingRepository
 	extends CrudRepository<Bestelling, Long>{
 	
 	List<Bestelling> findByOpleverDatumAfter(@Param("deadlineBestelling") Date deadlineBestelling);
-
+	List<Bestelling> findByOpleverDatumAfterAndKlaar(@Param("deadlineBestelling") Date deadlineBestelling, @Param("klaar") boolean klaar);
 }

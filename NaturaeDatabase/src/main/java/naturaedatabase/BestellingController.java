@@ -92,8 +92,9 @@ public class BestellingController {
 		return b;
 	}
 	
+	//, HttpServletResponse resp
 	@RequestMapping(value="/wijzigBestelling", method=RequestMethod.POST)
-	public String wijzigBestelling(Long id, HttpServletResponse resp, boolean betaald, boolean klaar, boolean verzonden, String trackAndTrace){
+	public String wijzigBestelling(Long id, boolean betaald, boolean klaar, boolean verzonden, String trackAndTrace){
 		Bestelling bestelling = repoBestelling.findOne(id);
 		bestelling.setBetaald(betaald);
 		bestelling.setKlaar(klaar);

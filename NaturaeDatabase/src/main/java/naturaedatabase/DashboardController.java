@@ -41,7 +41,7 @@ public class DashboardController {
 		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen));
 		
 		Date deadlineBestelling = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));//Deadline is 2week voor de orderline, Date.now() + 2 week -> dus melding 2 week voor deadline
-		model.addAttribute("BestellingenTweeWeek", repoBestelling.findByOpleverDatumAfter(deadlineBestelling));
+		model.addAttribute("BestellingenTweeWeek", repoBestelling.findByOpleverDatumAfterAndKlaar(deadlineBestelling, false));
 		
 		return "dashboard";
 	}

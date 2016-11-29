@@ -1,9 +1,11 @@
 <h1>Info van bestelling</h1>
 
 <form method="post" action="wijzigBestelling">
-    <input type="hidden" class="idForm" name="id">
 	<table id="bestellingTable" class="table table-striped">
-		
+		<tr>
+			<td>Id: </td>
+			<td><input type="text" class="id" name="id"></td>
+		</tr>
 		<tr>
 			<td>Naam:</td>
 			<td><input type="text" class="naam" name="naam"></td>
