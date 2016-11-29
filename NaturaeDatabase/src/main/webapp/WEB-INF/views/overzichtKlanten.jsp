@@ -31,18 +31,18 @@ $(document).ready(function(){
 						typeKlant = "Overig";
 						break;
 					}
-					$("#typeKlant").val(typeKlant);
-					$("#naam").val(klant.klantNaam);
-					$("#straat").val(klant.straat);
-					$("#huisnummer").val(klant.huisnummer);
-					$("#postcode").val(klant.postcode);
-					$("#stad").val(klant.stad);
-					$("#land").val(klant.land);
-					$("#staat").val(klant.staat);
-					$("#mail").val(klant.mail);
-					$("#telNr").val(klant.telNr);
-					$("#contactPersoon").val(klant.contactPersoon);
-					$("#notitie").val(klant.notitie);
+					$(".typeKlant").val(typeKlant);
+					$(".naam").val(klant.klantNaam);
+					$(".straat").val(klant.straat);
+					$(".huisnummer").val(klant.huisnummer);
+					$(".postcode").val(klant.postcode);
+					$(".stad").val(klant.stad);
+					$(".land").val(klant.land);
+					$(".staat").val(klant.staat);
+					$(".mail").val(klant.mail);
+					$(".telNr").val(klant.telNr);
+					$(".contactPersoon").val(klant.contactPersoon);
+					$(".notitie").val(klant.notitie);
 
 			}); 
 		}

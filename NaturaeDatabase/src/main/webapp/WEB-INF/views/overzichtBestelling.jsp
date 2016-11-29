@@ -18,19 +18,19 @@ $(document).ready(function(){
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
- 					$("#idForm").val(bestelling.bestellingId);
-					$("#naam").val(bestelling.klant.klantNaam);
+ 					$(".idForm").val(bestelling.bestellingId);
+					$(".naam").val(bestelling.klant.klantNaam);
 					var opleverDatum = moment(bestelling.opleverDatum);
-					$("#opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
-					$("#betaald").prop("checked", bestelling.betaald );
-					$("#klaar").prop("checked", bestelling.klaar);
-					$("#verzonden").prop("checked", bestelling.verzonden);
-					$("#trackAndTrace").val(bestelling.trackAndTrace);
+					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
+					$(".betaald").prop("checked", bestelling.betaald );
+					$(".klaar").prop("checked", bestelling.klaar);
+					$(".verzonden").prop("checked", bestelling.verzonden);
+					$(".trackAndTrace").val(bestelling.trackAndTrace);
 				for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
 								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
-						$("#bestellingTable").append(newElement);
+						$(".bestellingTable").append(newElement);
 					}
 						
 		}); 
