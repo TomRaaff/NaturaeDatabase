@@ -2,3 +2,22 @@ Kort overzicht van wat we gaan vertellen
 
 - ontbreekt: persoonlijk verhaal van wat we hebben geleerd
 	mag technische zijn.
+
+
+Volgende presentatie:
+
+Geleerd:
+op pagina:
+- Java
+- JavaScript (JQuery / AJAX)
+- Hibernate / SQL
+- AngularJS
+
+vertellen: persoonlijk verhaal
+
+Tom: 
+- kom van muziek
+- alle talen door elkaar: bende. Volgende keer veel beter idee over hoe de code netter kan.
+- debuggen
+- geleerd hoe MVC processen lopen 
+Joeri: ...
