@@ -147,9 +147,9 @@ $(document).ready(function(){
 							</c:forEach>
 						</table>
 
-						Totale inkomsten: <input type="text" id="totaleInkomsten">
+<!-- 					Totale inkomsten: <input type="text" id="totaleInkomsten">
 						<input type="button" class="btn btn-xs btn-warning" id="bereken" value="bereken">
-							 
+							 --> 
 
 					</div>
 

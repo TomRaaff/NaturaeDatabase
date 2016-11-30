@@ -19,7 +19,7 @@ $(document).ready(function(){
 		var id = $(this).attr("id");
  		$.get("getBestelling", { id }, 
 				function(bestelling){
- 					$(".idForm").val(bestelling.bestellingId);
+ 					$(".id").val(bestelling.bestellingId);
 					$(".naam").val(bestelling.klant.klantNaam);
 					var opleverDatum = moment(bestelling.opleverDatum);
 					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
