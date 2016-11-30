@@ -46,12 +46,18 @@ $(document).ready(function(){
 					$(".startDatumContract").val(startDatum.format("DD/MM/YYYY"));
 					var eindDatum = moment(sampleBestelling.eindDatumContract);
 					$(".eindDatumContract").val(eindDatum.format("DD/MM/YYYY"));
+					var datumNu = moment();
+					checkSampleKlant(datumNu);
 				for (var i = 0; i < sampleBestelling.sampleOrderlines.length; i++){
 						var newElement = $('<tr class="sampleOrderline"><td>' + sampleBestelling.sampleOrderlines[i].sample.product.productNaam 
 								+ '</td><td>1x</td></tr>');
 						$("#sampleBestellingTable").append(newElement);
 					}		
 		}); 
+	}
+	
+	function checkSampleKlant(datumNu){
+		console.log(datumNu);
 	}
 
 });
