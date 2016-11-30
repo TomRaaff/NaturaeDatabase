@@ -63,7 +63,7 @@ $(document).ready(function(){
 									<h3 class="panel-title">${bestelling.klant.klantNaam}</h3>
 								</div>
 								<div class="panel-body">
-									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk">
+									<input type="button" class="btn btn-xs btn-success" id="${bestelling.bestellingId}" value="bekijk">
 									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestelling.opleverDatum}" /><br> 
 								</div>
 							</div>

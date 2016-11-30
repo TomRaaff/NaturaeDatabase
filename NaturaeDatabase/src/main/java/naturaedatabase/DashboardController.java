@@ -40,7 +40,7 @@ public class DashboardController {
 		Date wekenVoorOpleverdatum = java.sql.Date.valueOf(LocalDate.now().plusWeeks(3));
 		model.addAttribute("BestellingenTweeWeek", repoBestelling.findByOpleverDatumBeforeAndKlaar(wekenVoorOpleverdatum, false));
 		
-		Date datumVerlopen = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));//Verlopen: 2 week verlopen, Date.now is 2 week eerder, dus melding twee week na einddatum contract
+		Date datumVerlopen = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));
 		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen));
 		
 		return "dashboard";

@@ -12,7 +12,6 @@
 <script>
 $(document).ready(function(){
 	$('input[type="button"][value="Bekijk"]').click(bekijkKlant);
-	$('input[type="button"][value="Verwijder"]').click(verwijderKlant);
 	
 	function bekijkKlant(){
 		console.log($(this).attr("id"));
@@ -71,8 +70,9 @@ $(document).ready(function(){
 						<c:forEach items="${alleKlanten}" var="k">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h3 class="panel-title">${k.klantNaam}
-									<input type="button" class="btn btn-xs btn-default" id="${k.klantId }" value="Bekijk">
+									<h3 class="panel-title">
+									<input type="button" class="btn btn-xs btn-info" id="${k.klantId }" value="Bekijk">
+									${k.klantNaam}
 									</h3>
 								</div>
 							</div>
