@@ -31,7 +31,7 @@ $(document).ready(function(){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
 								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
-						$(".bestellingTable").append(newElement);
+						$("#bestellingTable").append(newElement);
 					}
 						
 		}); 
