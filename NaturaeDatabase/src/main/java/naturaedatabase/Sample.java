@@ -8,14 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Sample {
 	private Long sampleId;
 	private Product product;
 	private Set<SampleBestelling>sampleBestellingen;
-	private Klant huidigeKlant;
 
 	
 	@Id
@@ -39,13 +37,6 @@ public class Sample {
 	}
 	public void setSampleBestellingen(Set<SampleBestelling> sampleBestellingen) {
 		this.sampleBestellingen = sampleBestellingen;
-	}
-	@OneToOne
-	public Klant getHuidigeKlant() {
-		return huidigeKlant;
-	}
-	public void setHuidigeKlant(Klant huidigeKlant) {
-		this.huidigeKlant = huidigeKlant;
 	}
 
 

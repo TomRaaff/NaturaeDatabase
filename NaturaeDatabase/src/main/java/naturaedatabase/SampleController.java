@@ -115,7 +115,15 @@ public class SampleController {
 				SampleBestelling sb = repoSampleBestelling.findOne(id);
 				return sb;
 			}
+					
 			
-
+			@RequestMapping(value="/wijzigSampleBestelling", method=RequestMethod.POST)
+			public String wijzigSampleBestelling(Long id, int contractId, boolean isTerug){
+				SampleBestelling sb = repoSampleBestelling.findOne(id);
+				sb.setContractId(contractId);
+				sb.setIsTerug(isTerug);
+				repoSampleBestelling.save(sb);
+				return "redirect:dashboard";
+			}
 			
 }

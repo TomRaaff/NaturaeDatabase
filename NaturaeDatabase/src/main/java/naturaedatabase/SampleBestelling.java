@@ -19,7 +19,7 @@ public class SampleBestelling {
 	private Date startDatumContract;
 	private Date eindDatumContract;
 	private Set<SampleOrderline> sampleOrderlines;
-	private Boolean isTerug;
+	private boolean isTerug;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -67,10 +67,10 @@ public class SampleBestelling {
 	public void setSampleOrderlines(Set<SampleOrderline> sampleOrderlines) {
 		this.sampleOrderlines = sampleOrderlines;
 	}
-	public Boolean getIsTerug() {
+	public boolean getIsTerug() {
 		return isTerug;
 	}
-	public void setIsTerug(Boolean isTerug) {
+	public void setIsTerug(boolean isTerug) {
 		this.isTerug = isTerug;
 	}
 	
