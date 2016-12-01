@@ -58,6 +58,13 @@ $(document).ready(function(){
 	
 	function checkSampleKlant(datumNu){
 		console.log(datumNu);
+		if ($(".isTerug") == true){
+			if (datumNu < sampleBestelling.opleverDatum){
+				sample.klant = sampleBestelling.klant;	// Hoe krijgen we dit voor elkaar?
+			} else {
+				sample.klant = daniella;	// Hoe krijgen we dit voor elkaar?
+			}
+		}
 	}
 
 });
