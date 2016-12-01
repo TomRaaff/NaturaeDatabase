@@ -21,26 +21,34 @@
 	
 	
 $(document).ready(function(){
-	$("#bekijkLocatie").click(bekijkLocatie);	
+	$('input[type="button"][value="Bekijk locatie"]').click(bekijkLocatie);	
 	function bekijkLocatie(){
-		//pas de boel even aan aan bekijk locatie
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
- 		$.get("getBestelling", { id }, 
-				function(bestelling){
- 					$(".id").val(bestelling.bestellingId);
-					$(".naam").val(bestelling.klant.klantNaam);
-					var opleverDatum = moment(bestelling.opleverDatum);
-					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));
-					$(".betaald").prop("checked", bestelling.betaald );
-					$(".klaar").prop("checked", bestelling.klaar);
-					$(".verzonden").prop("checked", bestelling.verzonden);
-					$(".trackAndTrace").val(bestelling.trackAndTrace);
-				for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
-								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
-						$("#bestellingTable").append(newElement);
-					}				
+ 		$.get("getSampleBestellingKlant", { id }, 
+ 				function(sampleBestelling){
+ 			console.log(sampleBestelling);
+/* 			var typeKlant;
+			switch(sampleBestelling.klant.typeKlant){
+			case 0:
+				typeKlant = "Stockist";
+				break;
+			case 1:
+				typeKlant = "Particulier";
+				break;
+			case 2:
+				typeKlant = "Overig";
+				break;
+			}
+			$(".naam").val(sampleBestelling.klant.klantNaam);
+			$(".typeKlant").val(typeKlant);
+			$(".naam").val(sampleBestelling.klant.klantNaam);
+			$(".straat").val(sampleBestelling.klant.straat);
+			$(".huisnummer").val(sampleBestelling.klant.huisnummer);
+			$(".postcode").val(sampleBestelling.klant.postcode);
+			$(".stad").val(sampleBestelling.klant.stad);
+			$(".land").val(sampleBestelling.klant.land);
+			$(".staat").val(sampleBestelling.klant.staat); */
 		}); 
 	}
 });
@@ -91,7 +99,8 @@ $(document).ready(function(){
 									<tr>
 										<td>${s.product.productNaam}</td>
 										<td>ID: ${s.sampleId}</td>
-										<td><button type="button" class="btn btn-xs btn-default" id="bekijkLocatie">Bekijk locatie</button></td>											
+										<td><input type="button" class="btn btn-xs btn-default"
+												id="${s.sampleId}" value="Bekijk locatie"></td>
 									</tr>
 								</c:forEach>
 						</table>
@@ -103,10 +112,6 @@ $(document).ready(function(){
 						<h1>Sample Locatie</h1>
 
 						<table class="table table-striped">
-							<tr>
-								<th>Sample</th>
-								<td><input type="text" class="naam"></td>
-							</tr>
 							<tr>
 								<td>Naam:</td>
 								<td><input type="text" class="naam" name="klantNaam"></td>
@@ -143,23 +148,7 @@ $(document).ready(function(){
 								<td>Land:</td>
 								<td><input type="text" class="land" name="land"></td>
 							</tr>
-							<tr>
-								<td>E-mail adres:</td>
-								<td><input type="text" class="mail" name="mail"></td>
-							</tr>
-							<tr>
-								<td>Tel.nr.:</td>
-								<td><input type="text" class="telNr" name="telNr"></td>
-							</tr>
-							<tr>
-								<td>Contact-persoon:</td>
-								<td><input type="text" class="contactPersoon"
-									name="contactPersoon"></td>
-							</tr>
-							<tr>
-								<td>Notitie:</td>
-								<td><input type="text" class="notitie" name="notitie"></td>
-							</tr>
+
 						</table>
 
 					</div>

@@ -1,11 +1,8 @@
 To Do:
 
 Prio 1:
-- Gegevens wijzigen functies	(met angularJS?)
 - Dashboard: 
 	- aangeven of bestelling terug is of niet
-- executable programma maken
-
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample
@@ -13,6 +10,7 @@ Prio 2:
 
 Prio: 3:
 - pagina's op UML bijwerken
+- Universele invoerpagina maken
 
 
 
@@ -23,12 +21,6 @@ Prio 4:
 
 
 
-
-.bat file
-
-@echo off (google of het nodig is)
-cd C:/ naar map
-mvn spring-boot:run
 
 
 
