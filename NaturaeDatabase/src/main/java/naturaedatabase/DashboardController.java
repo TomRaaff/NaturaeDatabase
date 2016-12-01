@@ -34,7 +34,7 @@ public class DashboardController {
 		
 		//Query voor sampleBestelling
 		Date datumVerlopen = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));
-		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen));
+		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBeforeAndIsTerug(datumVerlopen, false));
 		
 		return "dashboard";
 	}
