@@ -118,8 +118,7 @@ public class SampleController {
 				return sb;
 			}
 			
-			// wordt aan gewerkt
-			//Should return:  List<sampleBestelling> WHERE (opleverdatum < nu) && (isTerug == false)
+
 			@RequestMapping(value="/getSampleBestellingKlant", method=RequestMethod.GET)
 			public @ResponseBody SampleBestelling getSampleBestellingKlant(Long id){ //is id van sample
 				SampleBestelling sb = repoSampleBestelling.findOne(1L);  //SampleBestelling id=1  moet naar Daniella verwijzen.
@@ -145,7 +144,7 @@ public class SampleController {
 				sb.setContractId(contractId);
 				sb.setIsTerug(isTerug);
 				repoSampleBestelling.save(sb);
-				return "redirect:dashboard";
+				return "redirect:overzichtSampleBestelling";
 			}
 			
 }

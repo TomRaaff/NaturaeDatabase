@@ -28,7 +28,7 @@ $(document).ready(function(){
  		$.get("getSampleBestellingKlant", { id }, 
  				function(sampleBestelling){
  			console.log(sampleBestelling);
-/* 			var typeKlant;
+ 			var typeKlant;
 			switch(sampleBestelling.klant.typeKlant){
 			case 0:
 				typeKlant = "Stockist";
@@ -48,7 +48,9 @@ $(document).ready(function(){
 			$(".postcode").val(sampleBestelling.klant.postcode);
 			$(".stad").val(sampleBestelling.klant.stad);
 			$(".land").val(sampleBestelling.klant.land);
-			$(".staat").val(sampleBestelling.klant.staat); */
+			$(".staat").val(sampleBestelling.klant.staat); 
+			var eindDatum = moment(sampleBestelling.eindDatumContract);
+			$(".eindDatumContract").val(eindDatum.format("DD/MM/YYYY"));
 		}); 
 	}
 });
@@ -100,7 +102,7 @@ $(document).ready(function(){
 										<td>${s.product.productNaam}</td>
 										<td>ID: ${s.sampleId}</td>
 										<td><input type="button" class="btn btn-xs btn-default"
-												id="${s.sampleId}" value="Bekijk locatie"></td>
+											id="${s.sampleId}" value="Bekijk locatie"></td>
 									</tr>
 								</c:forEach>
 						</table>
@@ -147,6 +149,10 @@ $(document).ready(function(){
 							<tr>
 								<td>Land:</td>
 								<td><input type="text" class="land" name="land"></td>
+							</tr>
+							<tr>
+								<td>Einddatum contract:</td>
+								<td><input type="text" class="eindDatumContract"></td>
 							</tr>
 
 						</table>
