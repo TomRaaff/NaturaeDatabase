@@ -30,3 +30,22 @@ Prio 4:
 cd C:/ naar map
 mvn spring-boot:run
 
+
+
+
+Ideeën: sampleLocatie:
+
+stap1: voeg wijzig functionaliteit toe aan dashboard -> sampleBestelling
+stap2: dashboard query aanpassing: sampleBestelling WHERE (eind datum < NU) && (isTerug == false)
+stap3: SampleOverzicht -> bekijkSample knop
+	- locatie = ( List<sampleBestelling> WHERE (opleverdatum < nu) && (isTerug == false) ).klant
+	- if(List<QUERY> == empty) -> locatie = thuis.
+
+
+ALERT: fouten tegengekomen!
+We kunnen de data nog niet wijzigen! Gaat fout.
+En 'naam' willen we, denk ik, ook niet wijzigen
+
+
+
+
