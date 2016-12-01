@@ -2,16 +2,6 @@ package naturaedatabase;
 
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,11 +27,14 @@ public class DashboardController {
 		model.addAttribute("alleBestellingen", repoBestelling);
 		model.addAttribute("alleProducten", repoProduct);
 
+		//Query voor bestelling
 		Date wekenVoorOpleverdatum = java.sql.Date.valueOf(LocalDate.now().plusWeeks(3));
 		model.addAttribute("BestellingenTweeWeek", repoBestelling.findByOpleverDatumBeforeAndKlaar(wekenVoorOpleverdatum, false));
 		
+		
+		//Query voor sampleBestelling
 		Date datumVerlopen = java.sql.Date.valueOf(LocalDate.now().minusWeeks(2));
-		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBefore(datumVerlopen));
+		model.addAttribute("verlopenContracten", repoSampleBestelling.findByEindDatumContractBeforeAndIsTerug(datumVerlopen, false));
 		
 		return "dashboard";
 	}

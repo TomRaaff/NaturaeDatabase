@@ -30,3 +30,15 @@ Prio 4:
 cd C:/ naar map
 mvn spring-boot:run
 
+
+
+
+Ideeën: sampleLocatie:
+
+stap3: SampleOverzicht -> bekijkSample knop
+	- locatie = ( List<sampleBestelling> WHERE (opleverdatum < nu) && (isTerug == false) ).klant
+	- if(List<QUERY> == empty) -> locatie = thuis.
+
+
+
+

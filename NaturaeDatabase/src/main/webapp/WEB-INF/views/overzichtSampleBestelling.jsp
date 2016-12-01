@@ -12,40 +12,24 @@ $(document).ready(function(){
 	$('input[type="button"][value="bekijk"]').click(bekijkSampleBestelling);
 	
 	
+	$('input[type="button"][value="BekijkSampleBestelling"]').click(bekijkSampleBestelling);
 	function bekijkSampleBestelling(){
+		$("#formBestelling").hide();
+		$("#formSampleBestelling").show();
 		$(".sampleOrderline").remove();
 		var id = $(this).attr("id");
  		$.get("getSampleBestelling", { id }, 
 				function(sampleBestelling){
+ 					$(".id").val(sampleBestelling.sampleBestellingId);
 					$(".naam").val(sampleBestelling.klant.klantNaam);
-					var contractNaam;
-					switch (sampleBestelling.contractId){
-					case 0: 
-						contractNaam = 'geen';
-						break;
-					case 1: 
-						contractMaam = 'verhuur';
-						break;
-					case 2: 
-						contractNaam = 'consignatie';
-						break;
-					case 3: 
-						contractNaam = 'verkoop';
-						break;
-					case 4: 
-						contractNaam = 'trunkshow';
-						break;
-					case 5: 
-						contractNaam = 'verhuur & consignatie';
-						break;
-					}
-					$(".contract").val(contractNaam);
+					$(".contract").val(sampleBestelling.contractId);
 					var opleverDatum = moment(sampleBestelling.opleverDatum);
 					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));
 					var startDatum = moment(sampleBestelling.startDatumContract);
 					$(".startDatumContract").val(startDatum.format("DD/MM/YYYY"));
 					var eindDatum = moment(sampleBestelling.eindDatumContract);
 					$(".eindDatumContract").val(eindDatum.format("DD/MM/YYYY"));
+					$(".isTerug").val(sampleBestelling.isTerug);
 				for (var i = 0; i < sampleBestelling.sampleOrderlines.length; i++){
 						var newElement = $('<tr class="sampleOrderline"><td>' + sampleBestelling.sampleOrderlines[i].sample.product.productNaam 
 								+ '</td><td>1x</td></tr>');
@@ -53,6 +37,8 @@ $(document).ready(function(){
 					}		
 		}); 
 	}
+	
+
 
 });
 </script>
