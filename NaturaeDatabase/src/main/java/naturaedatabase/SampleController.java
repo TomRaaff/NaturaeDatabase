@@ -3,7 +3,9 @@ package naturaedatabase;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,6 +116,35 @@ public class SampleController {
 			public @ResponseBody SampleBestelling getSampleBestelling(Long id){
 				SampleBestelling sb = repoSampleBestelling.findOne(id);
 				return sb;
+			}
+			
+
+			@RequestMapping(value="/getSampleBestellingKlant", method=RequestMethod.GET)
+			public @ResponseBody SampleBestelling getSampleBestellingKlant(Long id){ //is id van sample
+				SampleBestelling sb = repoSampleBestelling.findOne(1L);  //SampleBestelling id=1  moet naar Daniella verwijzen.
+				Date datumNu = java.sql.Date.valueOf(LocalDate.now());
+				List<SampleBestelling> sbLijst = repoSampleBestelling.findByOpleverDatumBeforeAndIsTerug(datumNu, false);
+				
+				for (SampleBestelling sBestelling : sbLijst){
+					for (SampleOrderline so : sBestelling.getSampleOrderlines()){
+						Sample sample = so.getSample();
+						if (sample.getSampleId() == id){
+							sb = repoSampleBestelling.findOne(sBestelling.getSampleBestellingId());
+							break;
+						}
+					}
+				}
+				return sb;
+			}
+					
+			
+			@RequestMapping(value="/wijzigSampleBestelling", method=RequestMethod.POST)
+			public String wijzigSampleBestelling(Long id, int contractId, boolean isTerug){
+				SampleBestelling sb = repoSampleBestelling.findOne(id);
+				sb.setContractId(contractId);
+				sb.setIsTerug(isTerug);
+				repoSampleBestelling.save(sb);
+				return "redirect:overzichtSampleBestelling";
 			}
 			
 }

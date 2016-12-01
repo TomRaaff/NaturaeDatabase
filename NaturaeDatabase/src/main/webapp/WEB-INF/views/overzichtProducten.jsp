@@ -11,12 +11,6 @@
 $(document).ready(function(){
 	$(':button').click(bekijkProduct);
 	
-	p.setMateriaalKosten(materiaalKosten);
-	p.setProductPrijs(productPrijs);
-	p.setInkoopPrijs(inkoopPrijs);
-	p.setVerkoopPrijs(verkoopPrijs);
-	p.setWerkUren(werkUren);
-	
 	
 	function bekijkProduct(){
 		var id = $(this).attr("id");
@@ -24,7 +18,7 @@ $(document).ready(function(){
 				function(product){
  					$(".idForm").val(product.productId);
 					$(".naam").val(product.productNaam);
-					$(".materiaalKosten").val(product.materiaalKosten);  // <-- ander argument
+					$(".materiaalKosten").val(product.materiaalKosten); 
 					$(".productPrijs").val(product.productPrijs);
 					$(".inkoopPrijs").val(product.inkoopPrijs);
 					$(".verkoopPrijs").val(product.verkoopPrijs);
@@ -58,10 +52,10 @@ $(document).ready(function(){
 						<c:forEach items="${alleProducten}" var="p">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h3 class="panel-title">${p.productNaam}</h3>
-								</div>
-								<div class="panel-body"> 	
-									<input type="button" class="btn btn-xs btn-default" id="${p.productId }" value="bekijk"> 
+									<h3 class="panel-title">
+									<input type="button" class="btn btn-xs btn-primary" id="${p.productId }" value="bekijk">
+									${p.productNaam}
+									</h3>
 								</div>
 							</div>
 

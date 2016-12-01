@@ -31,7 +31,7 @@ $(document).ready(function(){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
 								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
 								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
-						$(".bestellingTable").append(newElement);
+						$("#bestellingTable").append(newElement);
 					}
 						
 		}); 
@@ -63,7 +63,7 @@ $(document).ready(function(){
 									<h3 class="panel-title">${bestelling.klant.klantNaam}</h3>
 								</div>
 								<div class="panel-body">
-									<input type="button" class="btn btn-xs btn-default" id="${bestelling.bestellingId}" value="bekijk">
+									<input type="button" class="btn btn-xs btn-success" id="${bestelling.bestellingId}" value="bekijk">
 									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${bestelling.opleverDatum}" /><br> 
 								</div>
 							</div>

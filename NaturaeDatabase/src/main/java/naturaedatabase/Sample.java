@@ -39,5 +39,6 @@ public class Sample {
 		this.sampleBestellingen = sampleBestellingen;
 	}
 
+
 	
 }
