@@ -1,0 +1,23 @@
+Installatie handelingen:
+
+1.
+.bat file
+
+@echo off (google of het nodig is)
+cd C:/ naar map
+mvn spring-boot:run
+
+
+2.
+programma's installeren:
+- Maven
+- sql
+- tomcat
+
+3.
+naturaeDatabase folder maken
+
+4.
+Als alles werkt:
+Eerste klant = Daniella
+Eerste SampleBestelling = Daniella
