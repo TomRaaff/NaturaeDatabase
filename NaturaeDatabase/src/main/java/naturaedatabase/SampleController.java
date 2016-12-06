@@ -119,6 +119,8 @@ public class SampleController {
 			}
 			
 
+	
+			
 			@RequestMapping(value="/getSampleBestellingKlant", method=RequestMethod.GET)
 			public @ResponseBody SampleBestelling getSampleBestellingKlant(Long id){ //is id van sample
 				SampleBestelling sb = repoSampleBestelling.findOne(1L);  //SampleBestelling id=1  moet naar Daniella verwijzen.
@@ -136,7 +138,9 @@ public class SampleController {
 				}
 				return sb;
 			}
-					
+				
+			
+			
 			
 			@RequestMapping(value="/wijzigSampleBestelling", method=RequestMethod.POST)
 			public String wijzigSampleBestelling(Long id, int contractId, boolean isTerug){

@@ -22,6 +22,9 @@ public class Bestelling {
 	private boolean betaald;
 	private String trackAndTrace;
 	private Set<Orderline> orderlines;
+	private double totaleInkoopPrijs = 0;
+	private double totaleVerkoopPrijs = 0;
+
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -76,5 +79,18 @@ public class Bestelling {
 	public void setTrackAndTrace(String trackAndTrace) {
 		this.trackAndTrace = trackAndTrace;
 	}
+	public double getTotaleInkoopPrijs() {
+		return totaleInkoopPrijs;
+	}
+	public void setTotaleInkoopPrijs(double totaleInkoopPrijs) {
+		this.totaleInkoopPrijs = totaleInkoopPrijs;
+	}
+	public double getTotaleVerkoopPrijs() {
+		return totaleVerkoopPrijs;
+	}
+	public void setTotaleVerkoopPrijs(double totaleVerkoopPrijs) {
+		this.totaleVerkoopPrijs = totaleVerkoopPrijs;
+	}
+
 	
 }

@@ -15,6 +15,8 @@ public class Orderline {
 	private Product product;
 	private int hoeveelheid;
 	@JsonIgnore private Bestelling bestelling;
+	private double orderlineInkoopPrijs = 0;
+	private double orderlineVerkoopPrijs = 0;
 	
 	//Getters en setters
 	@Id
@@ -47,4 +49,18 @@ public class Orderline {
 	public void setBestelling(Bestelling bestelling) {
 		this.bestelling = bestelling;
 	}
+	public double getOrderlineInkoopPrijs() {
+		return orderlineInkoopPrijs;
+	}
+	public void setOrderlineInkoopPrijs(double orderlineInkoopPrijs) {
+		this.orderlineInkoopPrijs = orderlineInkoopPrijs;
+	}
+	public double getOrderlineVerkoopPrijs() {
+		return orderlineVerkoopPrijs;
+	}
+	public void setOrderlineVerkoopPrijs(double orderlineVerkoopPrijs) {
+		this.orderlineVerkoopPrijs = orderlineVerkoopPrijs;
+	}
+
+	
 }

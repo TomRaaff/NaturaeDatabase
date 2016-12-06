@@ -3,6 +3,10 @@ To Do:
 Prio 1:
 - Dashboard: 
 	- aangeven of bestelling terug is of niet
+	- bestelling pas weg als verzonden. niet als klaar
+- Bestellingen:
+	- totale prijs bestelling toevoegen
+
 
 Prio 2:
 - Overzicht paginas: Klant, product, sample
@@ -25,12 +29,8 @@ Prio 4:
 
 
 
-Ideeën: sampleLocatie:
 
-stap3: SampleOverzicht -> bekijkSample knop
-	- locatie = ( List<sampleBestelling> WHERE (opleverdatum < nu) && (isTerug == false) ).klant
-	- if(List<QUERY> == empty) -> locatie = thuis.
-
-
+Ideeën: totale prijs
+nieuwe variabele van bestelling
 
 

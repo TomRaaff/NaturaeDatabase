@@ -27,11 +27,13 @@ $(document).ready(function(){
 					$(".klaar").prop("checked", bestelling.klaar);
 					$(".verzonden").prop("checked", bestelling.verzonden);
 					$(".trackAndTrace").val(bestelling.trackAndTrace);
+					$(".totaleInkoopPrijs").val(bestelling.totaleInkoopPrijs);
+					$(".totaleVerkoopPrijs").val(bestelling.totaleVerkoopPrijs);
 				for (var i = 0; i < bestelling.orderlines.length; i++){
 						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
-								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
-								/*<a class="btn btn-xs btn-danger" href="/verwijderOrderline?Id=${bestelling.bestellingId}" role="button">Verwijder</a></tr>');*/
-						$("#bestellingTable").append(newElement);
+								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td><td>' + bestelling.orderlines[i].orderlineInkoopPrijs +
+								'</td><td>' + bestelling.orderlines[i].orderlineVerkoopPrijs +'</td></tr>');
+						$("#orderlineTable").append(newElement);
 					}
 						
 		}); 
@@ -73,6 +75,14 @@ $(document).ready(function(){
 					</div>
 					<div class="col-lg-6">
 						<%@include file="formBestelling.jsp" %>
+						<table id="orderlineTable" class="table table-striped">
+							<tr>
+							<th>Product</th>
+							<th>Hoeveelheid</th>
+							<th>Wholesale</th>
+							<th>Retail</th>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>

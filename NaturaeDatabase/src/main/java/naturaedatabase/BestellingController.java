@@ -53,8 +53,7 @@ public class BestellingController {
 	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
-	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald, HttpSession session) throws ParseException{
-		//opleverdatum komt als: MM/dd/yyyy		
+	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald, HttpSession session) throws ParseException{	
 		DateFormat format = new SimpleDateFormat("MM/dd/yyyy", Locale.ENGLISH);
 		Date date = format.parse(opleverDatum);
 		
@@ -75,7 +74,17 @@ public class BestellingController {
 		o.setProduct(repoProduct.findOne(productId));
 		o.setHoeveelheid(hoeveelheid);
 		o.setBestelling(repoBestelling.findOne(bestellingId));
+		o.setOrderlineInkoopPrijs(o.getProduct().getInkoopPrijs() * hoeveelheid);
+		o.setOrderlineVerkoopPrijs(o.getProduct().getVerkoopPrijs() * hoeveelheid);
 		repoOrderline.save(o);
+		
+		//Tel prijzen van product bij elkaar op en stop ze in totalePrijs
+		Bestelling b = repoBestelling.findOne(bestellingId);
+		double inkoopPrijs = o.getProduct().getInkoopPrijs() * hoeveelheid;
+		b.setTotaleInkoopPrijs(b.getTotaleInkoopPrijs() + inkoopPrijs);
+		double verkoopPrijs = o.getProduct().getVerkoopPrijs() * hoeveelheid;
+		b.setTotaleVerkoopPrijs(b.getTotaleVerkoopPrijs() + verkoopPrijs);
+		repoBestelling.save(b);
 		return o;
 	}
 	

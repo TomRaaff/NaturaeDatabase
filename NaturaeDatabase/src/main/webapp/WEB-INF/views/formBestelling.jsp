@@ -28,6 +28,14 @@
 			<td><input type="text" class="trackAndTrace" name="trackAndTrace"></td>
 		</tr>
 		<tr>
+			<td>Totale Wholesale Prijs:</td>
+			<td><input type="text" class="totaleInkoopPrijs" name="totaleInkoopPrijs"></td>
+		</tr>
+		<tr>
+			<td>Totale Retail Prijs:</td>
+			<td><input type="text" class="totaleVerkoopPrijs" name="totaleVerkoopPrijs"></td>
+		</tr>
+		<tr>
 			<td></td>
 			<td><input type="submit" value="wijzig"></td>
 		</tr>
