@@ -1,7 +1,7 @@
 <h1>Info van bestelling</h1>
 
 <form method="post" action="wijzigBestelling">
-<input type="hidden" class="id" name="id">
+	<input type="hidden" class="id" name="id">
 	<table id="bestellingTable" class="table table-striped">
 		<tr>
 			<td>Naam:</td>
@@ -9,7 +9,7 @@
 		</tr>
 		<tr>
 			<td>Opleverdatum:</td>
-			<td><input class="opleverDatum" name="opleverDatum" ></td>
+			<td><input class="opleverDatum" name="opleverDatum"></td>
 		</tr>
 		<tr>
 			<td>Betaald:</td>
@@ -25,15 +25,8 @@
 		</tr>
 		<tr>
 			<td>Track and Trace:</td>
-			<td><input type="text" class="trackAndTrace" name="trackAndTrace"></td>
-		</tr>
-		<tr>
-			<td>Totale Wholesale Prijs:</td>
-			<td><input type="text" class="totaleInkoopPrijs" name="totaleInkoopPrijs"></td>
-		</tr>
-		<tr>
-			<td>Totale Retail Prijs:</td>
-			<td><input type="text" class="totaleVerkoopPrijs" name="totaleVerkoopPrijs"></td>
+			<td><input type="text" class="trackAndTrace"
+				name="trackAndTrace"></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -41,3 +34,11 @@
 		</tr>
 	</table>
 </form>
+<table id="orderlineTable" class="table table-striped">
+	<tr>
+		<th>Product</th>
+		<th>Hoeveelheid</th>
+		<th>Wholesale</th>
+		<th>Retail</th>
+	</tr>
+</table>

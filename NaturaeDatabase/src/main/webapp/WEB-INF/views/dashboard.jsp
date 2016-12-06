@@ -19,24 +19,30 @@ $(document).ready(function(){
 		$("#formBestelling").show();
 		$("#formSampleBestelling").hide();
 		$(".orderline").remove();
+		$('.totaal').remove();
 		console.log($(this).attr("id"));
 		var id = $(this).attr("id");
- 		$.get("getBestelling", { id }, 
+		$.get("getBestelling", { id }, 
 				function(bestelling){
  					$(".id").val(bestelling.bestellingId);
 					$(".naam").val(bestelling.klant.klantNaam);
 					var opleverDatum = moment(bestelling.opleverDatum);
-					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));
+					$(".opleverDatum").val(opleverDatum.format("DD/MM/YYYY"));  // <-- ander argument
 					$(".betaald").prop("checked", bestelling.betaald );
 					$(".klaar").prop("checked", bestelling.klaar);
 					$(".verzonden").prop("checked", bestelling.verzonden);
 					$(".trackAndTrace").val(bestelling.trackAndTrace);
 				for (var i = 0; i < bestelling.orderlines.length; i++){
-						var newElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
-								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td></tr>');
-						$("#bestellingTable").append(newElement);
-					}				
-		}); 
+						var orderlineElement = $('<tr class="orderline"><td>' + bestelling.orderlines[i].product.productNaam 
+								+ '</td><td>' + bestelling.orderlines[i].hoeveelheid + '</td><td>' + bestelling.orderlines[i].orderlineInkoopPrijs +
+								'</td><td>' + bestelling.orderlines[i].orderlineVerkoopPrijs +'</td></tr>');
+						$("#orderlineTable").append(orderlineElement);
+					}
+				var totaalElement = $('<tr class="totaal"><td><b>Totaal</b></td><td></td><td><b>' + 
+						bestelling.totaleInkoopPrijs + '</b></td><td><b>' + bestelling.totaleVerkoopPrijs + '</b></td></tr>');
+				$("#orderlineTable").append(totaalElement);
+						
+		});  
 	}
 	
 	
