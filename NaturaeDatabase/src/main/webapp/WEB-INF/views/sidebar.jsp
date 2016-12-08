@@ -11,7 +11,7 @@
 		<li><a href="/invoerSample">Samples</a></li>
 		<li><a href="/overzichtBestelling">Overzicht Bestellingen</a></li>
 		<li><a href="/overzichtProducten">Overzicht Producten</a></li>
-<!-- 	<li><a href="/#">Overzicht Financiën</a></li> -->
+  		<li><a href="/overzichtFinancien">Overzicht Financiën</a></li>
 		<li><a href="/overzichtKlanten">Overzicht Klanten</a></li>
 		<li><a href="/overzichtSampleBestelling">Overzicht Sample Bestelling</a></li>
 

@@ -10,23 +10,24 @@
 		</tr>
 		<tr>
 			<td>Materiaalkosten:</td>
-			<td><input type="number" class="materiaalKosten" name="materiaalKosten" ></td>
+			<td><input type="number" step="0.01"
+			 class="materiaalKosten" name="materiaalKosten" ></td>
 		</tr>
 		<tr>
 			<td>Product prijs:</td>
-			<td><input type="number" class="productPrijs" name="productPrijs"></td>
+			<td><input type="number" step="0.01" class="productPrijs" name="productPrijs"></td>
 		</tr>
 		<tr>
 			<td>Wholesale prijs:</td>
-			<td><input type="number" class="inkoopPrijs" name="inkoopPrijs"></td>
+			<td><input type="number" step="0.01" class="inkoopPrijs" name="inkoopPrijs"></td>
 		</tr>
 		<tr>
 			<td>Retail prijs:</td>
-			<td><input type="number" class="verkoopPrijs" name="verkoopPrijs"></td>
+			<td><input type="number" step="0.01" class="verkoopPrijs" name="verkoopPrijs"></td>
 		</tr>
 		<tr>
 			<td>Werk uren:</td>
-			<td><input type="number" class="werkUren" name="werkUren"></td>
+			<td><input type="number" step="0.01" class="werkUren" name="werkUren"></td>
 		</tr>
 		<tr>
 			<td></td>

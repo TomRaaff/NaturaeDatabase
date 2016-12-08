@@ -25,6 +25,15 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Overzicht Financiën</h1>
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+								Inkomsten totaal
+							</div>
+							<div class="panel-body">
+								een mooi groot getal.
+							</div>
+						</div>
+						
 						
 					</div>
 				</div>
@@ -41,13 +50,6 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 
-	<!-- Menu Toggle Script -->
-	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 
