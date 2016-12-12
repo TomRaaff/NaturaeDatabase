@@ -1,36 +1,29 @@
 To Do:
 
 Prio 1:
-- Dashboard: 
-	- aangeven of bestelling terug is of niet
-	- bestelling pas weg als verzonden. niet als klaar
-- Bestellingen:
-	- totale prijs bestelling toevoegen
+- financien pagina
+	Query geformuleerd, nu berekeningen maken
+	Hoe?
+	$(document).onload (ofzo iets) -> doe berekening met bestellingenDezeMaand
+	Dropdown: kies uit voorgaande maanden.
+	Moet er een statistiek klasse komen? Een die maandinkomens bijhoud?
 
 
 Prio 2:
-- Overzicht paginas: Klant, product, sample
-	alle items 'clickable' maken.
+- zoekfuncties
+- Dashboard: 
+	- bestelling pas weg als verzonden. niet als klaar
+- Bestellingen:
+	- wijzig orderlines
+
 
 Prio: 3:
-- pagina's op UML bijwerken
 - Universele invoerpagina maken
 
 
 
 Prio 4:
-- verwijder knoppen: 
-	- samples	
-	- orderlines
 
 
-
-
-
-
-
-
-Ideeën: totale prijs
-nieuwe variabele van bestelling
 
 
