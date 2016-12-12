@@ -1,26 +1,25 @@
 To Do:
 
 Prio 1:
+- financien pagina
+	Query geformuleerd, nu berekeningen maken
+
+
+Prio 2:
+- zoekfuncties
 - Dashboard: 
 	- bestelling pas weg als verzonden. niet als klaar
 - Bestellingen:
 	- wijzig orderlines
 
 
-Prio 2:
-- Overzicht paginas: Klant, product, sample
-	alle items 'clickable' maken.
-
 Prio: 3:
-- pagina's op UML bijwerken
 - Universele invoerpagina maken
 
 
 
 Prio 4:
-- verwijder knoppen: 
-	- samples	
-	- orderlines
+
 
 
 
