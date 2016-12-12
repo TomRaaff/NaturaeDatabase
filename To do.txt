@@ -9,6 +9,7 @@ Prio 1:
 	Moet er een statistiek klasse komen? Een die maandinkomens bijhoud?
 
 
+
 Prio 2:
 - zoekfuncties
 - Dashboard: 
@@ -23,7 +24,6 @@ Prio: 3:
 
 
 Prio 4:
-
 
 
 

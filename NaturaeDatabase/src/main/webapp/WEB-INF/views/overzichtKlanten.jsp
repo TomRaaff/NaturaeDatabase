@@ -43,6 +43,7 @@ $(document).ready(function(){
 					$(".mail").val(klant.mail);
 					$(".telNr").val(klant.telNr);
 					$(".contactPersoon").val(klant.contactPersoon);
+					$(".vat").val(klant.vat);
 					$(".notitie").val(klant.notitie);
 
 			}); 

@@ -27,13 +27,18 @@
 						<h1>Overzicht Financiën</h1>
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								Inkomsten totaal
+								Inkomsten deze maand
 							</div>
 							<div class="panel-body">
 								een mooi groot getal.
 							</div>
 						</div>
-						
+						<ul>
+							<c:forEach items="${bestellingenDezeMaand }" var="bestelling">
+								<li>${bestelling.klant.klantNaam }, ${bestelling.totaleInkoopPrijs }, ${bestelling.totaleVerkoopPrijs}</li>
+							</c:forEach>
+						</ul>
+
 						
 					</div>
 				</div>

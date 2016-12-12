@@ -22,7 +22,7 @@ public class KlantController {
 		@RequestMapping(value="/invoerKlant", method=RequestMethod.POST)
 		public String maakKlant(int typeKlant, String klantNaam, String straat, String huisnummer, String postcode, String stad, 
 								String staat, String land, String mail, String telNr, 
-								String contactPersoon, String notitie){
+								String contactPersoon, String vat, String notitie){
 			Klant k = new Klant();
 			k.setTypeKlant(typeKlant);
 			k.setKlantNaam(klantNaam);
@@ -36,6 +36,7 @@ public class KlantController {
 			k.setTelNr(telNr);
 			k.setContactPersoon(contactPersoon);
 			k.setNotitie(notitie);
+			k.setVat(vat);
 			repo.save(k);
 			return "redirect:overzichtKlanten";
 		}

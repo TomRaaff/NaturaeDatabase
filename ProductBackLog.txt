@@ -1,21 +1,11 @@
 Naturae Design
 Product Backlog
 
-Prioriteit:
-- toverstok
-- bestellingen
-- Overzicht van wie welke producten heeft
-
 
 
 WebPagina's:
 - Invoerpagina Klant
 - Invoerpagina Product
-	basisprijs
-	werk uren (1 uur = 60 euro)
-	productprijs   /// <- WTF?
-	wholesale prijs
-	retail prijs
 - Invoerpagina Bestelling / (sampleBestelling)
 - Invoerpagina Trunkshow
 - Invoerpagina Sample?
@@ -24,9 +14,10 @@ WebPagina's:
 - Dashboard: (schema's en statistieken)
 	- Inkomsten
 	- Hoeveelheid bestellingen
+	- Ranglijst welk product het meest verkocht is.
+	Zoek:
 	- optie kijken voor welke periode: afgelopen maand, afgelopen jaar
 	- optie kijken per land
-	- Ranglijst welk product het meest verkocht is.
 
 
 - Overzicht: Samples
@@ -46,26 +37,31 @@ WebPagina's:
 		- Betaald: Ja/Nee
 		- Track&trace nr.
 		- Open en voldaan knop.
-	- Alert: 3 weken na invoerdatum bestelling wholesale
-	- Alert: 2 weken na invoerdatum bestelling 
-		// invoerdatum bestelling? Niet startdatum contract?
+	- Zoek: voltooid/onvoltooid
 
-	Alert: automatische e-mail + dikgedrukt in bestellingsoverzicht. (Niet rood, want is negatief)
 
 - Overzicht: Financiën
 	- Verkoop statistieken
-	- inkomsten
+	- Product hoeveelheid
+		geld per product
+	- totale inkomsten
 	- uitgaven
 	- in kas
+	Zoek: 
+		- per maand
+		- per continent
 
 - Overzicht: Producten
 	- Overzicht in stock
 	- Hoe vaak verkocht 
 	- wijzig hoeveelheid functie
 	- Url's van materialen
+	
 
 Overzicht klanten:
 	- actief/non-actief knop
+	Zoek:
+	- type klant
 
 - Trunkshow pagina:
 	route van producten

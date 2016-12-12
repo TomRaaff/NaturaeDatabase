@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-<%@include file="header.jsp" %>
+<%@include file="header.jsp"%>
 
 <title>Invoer Klant</title>
 
@@ -15,7 +15,7 @@
 
 	<div id="wrapper">
 
-<%@include file="sidebar.jsp" %>
+		<%@include file="sidebar.jsp"%>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
@@ -45,27 +45,27 @@
 									<td>Straat:</td>
 									<td><input type="text" name="straat"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Huisnummer:</td>
 									<td><input type="text" name="huisnummer"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Postcode:</td>
 									<td><input type="text" name="postcode"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Stad:</td>
 									<td><input type="text" name="stad"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Staat:</td>
 									<td><input type="text" name="staat"></td>
 								</tr>
-								
+
 								<tr>
 									<td>Land:</td>
 									<td><input type="text" name="land"></td>
@@ -85,7 +85,12 @@
 									<td>Naam contactpersoon:</td>
 									<td><input type="text" name="contactPersoon"></td>
 								</tr>
-
+								
+								<tr>
+									<td>VAT:</td>
+									<td><input type="text" class="vat" name="vat"></td>
+								</tr>
+					
 								<tr>
 									<td>Notitie:</td>
 									<td><input type="text" name="notitie"></td>
@@ -115,11 +120,11 @@
 
 	<!-- Menu Toggle Script -->
 	<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
 
 </body>
 
