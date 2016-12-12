@@ -2,10 +2,9 @@ To Do:
 
 Prio 1:
 - Dashboard: 
-	- aangeven of bestelling terug is of niet
 	- bestelling pas weg als verzonden. niet als klaar
 - Bestellingen:
-	- totale prijs bestelling toevoegen
+	- wijzig orderlines
 
 
 Prio 2:

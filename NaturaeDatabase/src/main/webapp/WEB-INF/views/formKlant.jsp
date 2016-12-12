@@ -54,6 +54,10 @@
 				name="contactPersoon"></td>
 		</tr>
 		<tr>
+			<td>VAT:</td>
+			<td><input type="text" class="vat" name="vat"></td>
+		</tr>
+		<tr>
 			<td>Notitie:</td>
 			<td><input type="text" class="notitie" name="notitie"></td>
 		</tr>

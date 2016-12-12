@@ -26,6 +26,7 @@ public class Klant {
 	private String telNr;
 	private String contactPersoon;
 	private String notitie;
+	private String vat;
 	@JsonIgnore private List<Bestelling> bestellingen = new ArrayList<>();
 	
 	//Getters en Setters
@@ -116,6 +117,13 @@ public class Klant {
 	public void setBestellingen(List<Bestelling> bestellingen) {
 		this.bestellingen = bestellingen;
 	}
+	public String getVat() {
+		return vat;
+	}
+	public void setVat(String vat) {
+		this.vat = vat;
+	}
+	
 	
 	
 }
