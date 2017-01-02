@@ -151,4 +151,15 @@ public class SampleController {
 				return "redirect:overzichtSampleBestelling";
 			}
 			
+			@RequestMapping("/contract")
+			public String consignmentContract(Model model, Long id){
+				model.addAttribute("sampleBestelling", repoSampleBestelling.findOne(id));
+//				model.addAttribute("klantNaam", "Bridal");
+//				model.addAttribute("startDatumContract", "2 april 3074");
+//				model.addAttribute("eindDatumContract", "4 april 3074");
+//				model.addAttribute("adres", "Luttemerstraat 6, Luttjebroek");
+//				model.addAttribute("contactPersoon", "Paul McCartney");
+				return "consignmentContract";
+			}
+			
 }

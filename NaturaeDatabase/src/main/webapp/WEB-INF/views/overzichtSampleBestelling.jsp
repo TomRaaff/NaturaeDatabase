@@ -37,8 +37,6 @@ $(document).ready(function(){
 					}		
 		}); 
 	}
-	
-
 
 });
 </script>
@@ -67,7 +65,8 @@ $(document).ready(function(){
 								</div>
 								<div class="panel-body">
 									<input type="button" class="btn btn-xs btn-warning" id="${sb.sampleBestellingId}" value="bekijk">
-									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${sb.opleverDatum}" /><br> 
+									Opleverdatum: <fmt:formatDate pattern="dd-MM-YYYY" value="${sb.opleverDatum}" />
+									<a href="/contract?id=${sb.sampleBestellingId }" class="btn btn-xs btn-default">Contract</a>
 								</div>
 							</div>
 

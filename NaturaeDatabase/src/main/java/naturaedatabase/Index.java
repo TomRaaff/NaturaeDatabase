@@ -13,13 +13,14 @@ public class Index {
 		return "index";
 	}
 	
-	@RequestMapping("/contract")
-	public String consignmentContract(Model model){
-		model.addAttribute("klantNaam", "Bridal");
-		model.addAttribute("startDatumContract", "2 april 3074");
-		model.addAttribute("eindDatumContract", "4 april 3074");
-		model.addAttribute("adres", "Luttemerstraat 6, Luttjebroek");
-		model.addAttribute("contactPersoon", "Paul McCartney");
-		return "consignmentContract";
-	}
+//	@RequestMapping("/contract")
+//	public String consignmentContract(Model model){
+//		
+//		model.addAttribute("klantNaam", "Bridal");
+//		model.addAttribute("startDatumContract", "2 april 3074");
+//		model.addAttribute("eindDatumContract", "4 april 3074");
+//		model.addAttribute("adres", "Luttemerstraat 6, Luttjebroek");
+//		model.addAttribute("contactPersoon", "Paul McCartney");
+//		return "consignmentContract";
+//	}
 }

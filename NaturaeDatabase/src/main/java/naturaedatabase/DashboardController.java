@@ -40,46 +40,6 @@ public class DashboardController {
 	}
 
 	
-//	public void sendMail(){
-//		final String username = "NaturaeDesignDatabase@gmail.com";
-//		final String password = "NDDatabase";
-//
-//		Properties props = new Properties();
-//		props.put("mail.smtp.auth", "true");
-//		props.put("mail.smtp.starttls.enable", "true");
-//		props.put("mail.smtp.host", "smtp.gmail.com");
-//		props.put("mail.smtp.port", "587");
-//
-//		Session session = Session.getInstance(props,
-//		  new javax.mail.Authenticator() {
-//			protected PasswordAuthentication getPasswordAuthentication() {
-//				return new PasswordAuthentication(username, password);
-//			}
-//		  });
-//
-//		try {
-//
-//			Message message = new MimeMessage(session);
-//			message.setFrom(new InternetAddress("NaturaeDesignDatabase@gmail.com"));
-//			message.setRecipients(Message.RecipientType.TO,
-//				InternetAddress.parse("NaturaeDesignDatabase@gmail.com"));
-//			message.setSubject("Bestellingen");
-//			message.setText("Lieve Daniella,"
-//				+ "\n\n Je hebt de komende week een aantal bestellingen af te maken."
-//				+ "\n Bekijk ze hier: http://localhost:8080/dashboard"
-//				+ "\n\n Groetjes,"
-//				+ "\n Truus van de administratie"
-//					);
-//
-//			Transport.send(message);
-//
-//			System.out.println("Done");
-//
-//		} catch (MessagingException e) {
-//			throw new RuntimeException(e);
-//		}
-//
-//	}
 	
 	@RequestMapping(value="/getDashBestelling", method=RequestMethod.GET)
 	public @ResponseBody Bestelling getBestelling(Long id){
