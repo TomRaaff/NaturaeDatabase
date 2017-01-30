@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
@@ -29,6 +30,8 @@ public class BestellingController {
 	@Autowired
 	private ProductRepository repoProduct;
 	
+	
+	//BESTELLING
 	@RequestMapping("/invoerBestelling")
 	public String klanten(Model model){
 		model.addAttribute("alleBestellingen", repoBestelling.findAll());
@@ -38,19 +41,11 @@ public class BestellingController {
 		return "invoerBestelling";
 	}
 	
-	@RequestMapping("/invoerOrderline")
-	public String bestelling(Model model, HttpSession session){
-		model.addAttribute("alleProducten", repoProduct.findAll());	
-		session.getAttribute("bestelling");
-		return "invoerOrderline";
-	}
-	
 	@RequestMapping("/overzichtBestelling")
 	public String bestellingTotaal(Model model){
 		model.addAttribute("alleBestellingen", repoBestelling.findAll());
 		return "overzichtBestelling";	
-	}
-	
+	}	
 	
 	@RequestMapping(value="/invoerBestelling", method=RequestMethod.POST)
 	public String maakBestelling(String opleverDatum, Long klantId, boolean verzonden, boolean betaald, HttpSession session) throws ParseException{	
@@ -66,26 +61,6 @@ public class BestellingController {
 		session.setAttribute("bestelling", bestelling);
 
 		return "redirect:invoerOrderline";
-	}
-	
-	@RequestMapping(value="/maakOrderline", method=RequestMethod.POST)
-	public @ResponseBody Orderline maakOrderline(Long productId, int hoeveelheid, Long bestellingId){
-		Orderline o = new Orderline();
-		o.setProduct(repoProduct.findOne(productId));
-		o.setHoeveelheid(hoeveelheid);
-		o.setBestelling(repoBestelling.findOne(bestellingId));
-		o.setOrderlineInkoopPrijs(o.getProduct().getInkoopPrijs() * hoeveelheid);
-		o.setOrderlineVerkoopPrijs(o.getProduct().getVerkoopPrijs() * hoeveelheid);
-		repoOrderline.save(o);
-		
-		//Tel prijzen van product bij elkaar op en stop ze in totalePrijs
-		Bestelling b = repoBestelling.findOne(bestellingId);
-		double inkoopPrijs = o.getProduct().getInkoopPrijs() * hoeveelheid;
-		b.setTotaleInkoopPrijs(b.getTotaleInkoopPrijs() + inkoopPrijs);
-		double verkoopPrijs = o.getProduct().getVerkoopPrijs() * hoeveelheid;
-		b.setTotaleVerkoopPrijs(b.getTotaleVerkoopPrijs() + verkoopPrijs);
-		repoBestelling.save(b);
-		return o;
 	}
 	
 	@RequestMapping(value="/verwijderBestelling", method=RequestMethod.GET)
@@ -111,5 +86,42 @@ public class BestellingController {
 		return "redirect:overzichtBestelling";
 	}
 	
+	
+	//ORDERLINES
+	@RequestMapping("/invoerOrderline")
+	public String bestelling(Model model, HttpSession session){
+		model.addAttribute("alleProducten", repoProduct.findAll());	
+		session.getAttribute("bestelling");
+		return "invoerOrderline";
+	}
+	
+	
+	@RequestMapping(value="/maakOrderline", method=RequestMethod.POST)
+	public @ResponseBody Orderline maakOrderline(Long productId, int hoeveelheid, Long bestellingId){
+		Orderline o = new Orderline();
+		o.setProduct(repoProduct.findOne(productId));
+		o.setHoeveelheid(hoeveelheid);
+		o.setBestelling(repoBestelling.findOne(bestellingId));
+		o.setOrderlineInkoopPrijs(o.getProduct().getInkoopPrijs() * hoeveelheid);
+		o.setOrderlineVerkoopPrijs(o.getProduct().getVerkoopPrijs() * hoeveelheid);
+		repoOrderline.save(o);
+		
+		//Tel prijzen van product bij elkaar op en stop ze in totalePrijs
+		Bestelling b = repoBestelling.findOne(bestellingId);
+		double inkoopPrijs = o.getProduct().getInkoopPrijs() * hoeveelheid;
+		b.setTotaleInkoopPrijs(b.getTotaleInkoopPrijs() + inkoopPrijs);
+		double verkoopPrijs = o.getProduct().getVerkoopPrijs() * hoeveelheid;
+		b.setTotaleVerkoopPrijs(b.getTotaleVerkoopPrijs() + verkoopPrijs);
+		repoBestelling.save(b);
+		return o;
+	}
+	
+	// verwijderd orderlines. Moet nog redirect handling hebben. 
+	@RequestMapping(value="/verwijderOrderline", method=RequestMethod.GET)
+	public String verwijderOrderline(Long Id){
+		repoOrderline.delete(Id);
+		// Welke orderlines moeten er meegestuurd worden?
+		return "redirect:invoerOrderline";	
+	}
 	
 }

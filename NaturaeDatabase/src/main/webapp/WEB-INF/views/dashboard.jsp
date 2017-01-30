@@ -128,7 +128,8 @@ $(document).ready(function(){
 									<div class="panel-body">
 									<input type="button" class="btn btn-xs btn-warning" id="${verlopenContract.sampleBestellingId }" value="BekijkSampleBestelling">
 										Contract einddatum:
-										<fmt:formatDate pattern="dd-MM-YYYY" value="${verlopenContract.eindDatumContract}" /> <br> 										 											
+										<fmt:formatDate pattern="dd-MM-YYYY" value="${verlopenContract.eindDatumContract}" /> <br>
+										<a href="/contract?id=${verlopenContract.sampleBestellingId }" target="_blank" class="btn btn-xs btn-default">Contract</a> 										 											
 									</div>
 								</div>
 							</c:forEach>

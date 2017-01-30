@@ -1,13 +1,10 @@
 To Do:
 
 Prio 1:
-- financien pagina
-	Query geformuleerd, nu berekeningen maken
-	Hoe?
-	$(document).onload (ofzo iets) -> doe berekening met bestellingenDezeMaand
-	Dropdown: kies uit voorgaande maanden.
-	Moet er een statistiek klasse komen? Een die maandinkomens bijhoud?
-
+- Wijzig functie:
+	- Datum moet wijzigbaar zijn.
+	- Orderlines moeten wijzigbaar zijn.
+	- Orderlines moeten verwijdert kunnen worden
 
 
 Prio 2:
@@ -20,10 +17,22 @@ Prio 2:
 
 Prio: 3:
 - Universele invoerpagina maken
+- financien pagina
+	Query geformuleerd, nu berekeningen maken
+	Hoe?
+	$(document).onload (ofzo iets) -> doe berekening met bestellingenDezeMaand
+	Dropdown: kies uit voorgaande maanden.
+	Moet er een statistiek klasse komen? Een die maandinkomens bijhoud?
 
 
 
 Prio 4:
 
+BUGS:
+- Dashboard: wijzigen datum (en meer?) functie werkt niet goed: maakt een tweede aan zonder de andere te wijzigen.
+- Bestelling en samplebestelling moet verwijdert kunnen worden.
+- SampleBestelling datum throws exception als oplever datum leeg is.
+- Orderlines van bestellingen moeten gewijzigd kunnen worden.
+- Samples moeten verwijdert kunnen worden.
 
 

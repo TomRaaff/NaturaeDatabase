@@ -10,6 +10,7 @@
 <title>Orderline Invoer</title>
 <script>
 	$(document).ready(function(){
+		//Functie die orderlines toevoegd
 		$("#toevoegen").click(voegProductToe);
 		function voegProductToe(){
  			$.post("maakOrderline", {
@@ -17,10 +18,27 @@
 				hoeveelheid: $("#hoeveelheid").val(),
 				bestellingId: ${bestelling.bestellingId}
 			}, function(orderline){
-				var orderline = $("<tr><td>" + orderline.product.productNaam + "</td><td> "+ orderline.hoeveelheid + "</td></tr>" );
+				var orderline = $("<tr><td>" + orderline.product.productNaam + "</td><td> "+ orderline.hoeveelheid + "</td></tr>");
+ 				//var deleteButton = $('<tr><td><input type="button" value="verwijder" class="verwijder" id="' + orderline.product.productId + '"></td></tr>'); 
 				$("#orderlineTable").append(orderline);
-			}); 
+				//$("#orderlineTable").append(deleteButton);
+			});
 		}
+		
+		//verwijder ORDERLINES functie
+/* 		$(".verwijder").click(verwijderOrderline);
+		function verwijderOrderline(){
+			$.post("verwijderOrderline", {
+				productId: $("#productId") // hoe zet ik de productID?
+			}, function verwijderRow(){
+				$(this).parents("tr").siblings().remove();
+				$(this).remove();
+			});
+		} */
+		
+		//Verwijder knop wil nog niet lukken. Waarom niet?
+		//Moet ik een andere aanpak verzinnen?
+		//Als ik <div> gebruik ipv tables, wordt het dan makkelijker?
 	})
 </script>
 </head>
@@ -62,8 +80,8 @@
 
 							<br>
 							<table id="orderlineTable">
-								<tr><th>Product</th><th>Aantal</th></tr>
-								<!-- INSERT ORDERLINES HERE -->
+								<tr><th>Product</th><th>Aantal</th><th> </th></tr>
+								<!-- ORDERLINES ARE INSERTED HERE -->
 
 							</table>
 							<br>
@@ -79,8 +97,7 @@
 									</select></td>
 									<td> hoeveelheid:<input type="number" name="hoeveelheid" id="hoeveelheid">
 									<td> <input type="button" value="toevoegen" id="toevoegen">
-								</table>
-														
+								</table>														
 							</form>
 							
 							<form action="/overzichtBestelling">
